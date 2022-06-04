@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import {MenuItems} from "./MenuItems";
+import Avatar from "../Avatar/Avatar";
 import logo from "../../images/logo_transparent.png";
 import "./Navbar.css";
 
@@ -21,11 +22,14 @@ class Navbar extends Component{
             <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                 {MenuItems.map((item,index)=>{
                     return(
-                        <li key={index}>
+                        <li key={index} className={this.state.clicked ? 'clicked' : 'noclicked'}>
                             <Link to={item.url} className={item.cName}><i className={item.icon}></i>{item.title}</Link>
                         </li>
                     )}
                  )}
+                 <Avatar/>
+                 <i className="fa-solid fa-caret-down"></i>
+                 
                 
             </ul>
         
