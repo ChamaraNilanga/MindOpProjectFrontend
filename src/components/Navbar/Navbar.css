@@ -50,10 +50,6 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     
 }
-.nav-links a:active{
-    color: rgb(17, 194, 243);
-
-}
 .fa-caret-down{
     color: rgb(55, 61, 96);
     margin-top: 5px;
