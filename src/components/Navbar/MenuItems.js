@@ -20,11 +20,3 @@ export const MenuItems=[
 
 ];
 
-export const SubMenuItem=[
-    {
-        title: 'Logout',
-        url: '#',
-        cName: 'sub-link'
-    }
-];
-
