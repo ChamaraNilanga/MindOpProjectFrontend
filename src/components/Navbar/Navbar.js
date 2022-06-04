@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link , NavLink } from "react-router-dom";
 import {MenuItems} from "./MenuItems";
 import Avatar from "../Avatar/Avatar";
 import logo from "../../images/logo_transparent.png";
@@ -52,8 +52,8 @@ class Navbar extends Component{
             <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
                 {MenuItems.map((item,index)=>{
                     return(
-                        <li key={index} className={this.state.clicked ? 'clicked' : 'noclicked'}>
-                            <Link to={item.url} className={item.cName}><i className={item.icon}></i>{item.title}</Link>
+                        <li key={index}>
+                            <NavLink to={item.url} activeclassName="nav-link-active" className={item.cName}><i className={item.icon}></i>{item.title}</NavLink>
                         </li>
                     )}
                  )}

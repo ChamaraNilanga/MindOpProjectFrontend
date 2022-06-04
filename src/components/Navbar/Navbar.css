@@ -50,6 +50,10 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     
 }
+.nav-links a:active{
+    color: rgb(17, 194, 243);
+
+}
 .fa-caret-down{
     color: rgb(55, 61, 96);
     margin-top: 5px;
@@ -57,7 +61,8 @@
 }
 
 .nav-links:hover{
-    background-color: #f8d2f8;
+    /* background-color: #0f0f0f93; */
+    color: #fff;
     border-radius: 4px;
     transition: all 0.2s ease-out;
     size: 9px;
@@ -65,9 +70,6 @@
 .fa-bars{
     color: #fff;
     padding-left: 20px;
-}
-.clickedclass{
-    color: rgb(228, 46, 46);
 }
 
 .nav-links-mobile{

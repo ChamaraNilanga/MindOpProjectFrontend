@@ -1,19 +1,19 @@
 export const MenuItems=[
     {
         title: '  Home',
-        url: '#',
+        url: '/Home',
         cName: 'nav-links',
         icon: 'fa-solid fa-house-chimney'
     },
     {
         title: '  Blogs',
-        url: '#',
+        url: '/Blogs',
         cName: 'nav-links',
         icon: 'fa-brands fa-blogger-b'
     },
     {
         title: '  Forums',
-        url: '#',
+        url: '/Forums',
         cName: 'nav-links',
         icon: 'fa-solid fa-clipboard-question'
     }
