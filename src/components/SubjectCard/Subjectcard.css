@@ -13,7 +13,6 @@
 
 .btn{
     height: 30px;
-    align-content: center;
     margin-top: auto;
     font-size: small;
     
@@ -25,3 +24,12 @@
     margin-bottom: 2px;
   }
 
+.subject-card{
+    margin-left: 20px;
+    display:inline-flex;
+    max-lines: 5;
+    grid-template-columns: repeat(5,auto);
+    grid-gap: 10px;
+    column-gap: 20px;
+    
+}

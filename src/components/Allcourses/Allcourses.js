@@ -6,7 +6,7 @@ function Allcourses(){
     return(
         <div className="Container">
             <h3 className="head3">All Courses</h3>
-            <Subjectcard />
+            <Subjectcard/>
         </div>
     )
 }
