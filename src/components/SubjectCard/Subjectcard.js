@@ -19,20 +19,6 @@ function Subjectcard (func){
                 console.log(err);
             })
         }
-        //loged user id
-    //     function getEnrolledCourses(id){
-    //         axios.get(`http://localhost:8070/coursedetails//enroll/&id`)
-    //         .then((res)=>{
-    //             console.log(res);
-    //         setCourses(res.data);
-    //         }).catch((err)=>{
-    //             console.log(err);
-    //         })
-    //     }
-        
-    //     getAllCourses();
-        
-    // },[])
     function getEnrolledCourses(id){
         axios.get(`http://localhost:8070/coursedetails//enroll/&id`)
         .then((res)=>{
