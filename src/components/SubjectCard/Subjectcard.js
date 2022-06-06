@@ -20,19 +20,32 @@ function Subjectcard (func){
             })
         }
         //loged user id
-        function getEnrolledCourses(id){
-            axios.get(`http://localhost:8070/coursedetails//enroll/&id`)
-            .then((res)=>{
-                console.log(res);
-            setCourses(res.data);
-            }).catch((err)=>{
-                console.log(err);
-            })
-        }
+    //     function getEnrolledCourses(id){
+    //         axios.get(`http://localhost:8070/coursedetails//enroll/&id`)
+    //         .then((res)=>{
+    //             console.log(res);
+    //         setCourses(res.data);
+    //         }).catch((err)=>{
+    //             console.log(err);
+    //         })
+    //     }
         
-        getAllCourses();
+    //     getAllCourses();
         
-    },[])
+    // },[])
+    function getEnrolledCourses(id){
+        axios.get(`http://localhost:8070/coursedetails//enroll/&id`)
+        .then((res)=>{
+            console.log(res);
+        setCourses(res.data);
+        }).catch((err)=>{
+            console.log(err);
+        })
+    }
+    
+    getAllCourses();
+    
+},[])
 
    
     return(
