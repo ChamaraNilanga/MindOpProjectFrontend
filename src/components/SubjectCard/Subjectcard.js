@@ -5,36 +5,8 @@ import axios from "axios";
 import Progressbar from "../Progressbar/Progressbar";
 import "./Subjectcard.css";
 
-function Subjectcard (func){
-    
-    const [courses,setCourses] = useState([]);
-    
-    useEffect(()=>{
-        function getAllCourses(){
-            axios.get(`http://localhost:8070/coursedetails`)
-            .then((res)=>{
-                console.log(res);
-            setCourses(res.data);
-            }).catch((err)=>{
-                console.log(err);
-            })
-        }
-    function getEnrolledCourses(id){
-        axios.get(`http://localhost:8070/coursedetails//enroll/&id`)
-        .then((res)=>{
-            console.log(res);
-        setCourses(res.data);
-        }).catch((err)=>{
-            console.log(err);
-        })
-    }
-    
-    getAllCourses();
-    
-},[])
-
-   
-    return(
+function Subjectcard ({courses}){
+     return(
         <div class="overflow-auto">
         <div className="subject-card">
             {courses.map(course=>{
