@@ -35,9 +35,11 @@ function Subjectcard (func){
 
    
     return(
+        <div class="overflow-auto">
         <div className="subject-card">
             {courses.map(course=>{
                 return(
+                    
                     <Card style={{ width: '12rem' , height:'12rem'}} >
                     <Card.Body>
                     <Card.Title key={course.modid}>{course.modname}</Card.Title>
@@ -51,8 +53,10 @@ function Subjectcard (func){
                         <Button className="btn" variant="warning" key={course.modid}>Enroll</Button>
                     </Card.Footer>
                     </Card>
+                    
                 )
             })}
+        </div>
         </div>
        
         

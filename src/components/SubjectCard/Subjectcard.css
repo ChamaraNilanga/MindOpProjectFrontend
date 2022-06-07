@@ -26,8 +26,8 @@
 
 .subject-card{
     margin-left: 20px;
-    /* display:inline-flex; */
     display:inline-flex;
+    overflow-x: scroll;
     max-lines: 5;
     grid-template-columns: repeat(5,auto);
     grid-gap: 10px;

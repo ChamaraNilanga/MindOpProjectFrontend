@@ -7,6 +7,7 @@
     /* align-items: center; */
     border-radius: 10px;
     background-color: rgba(55, 61, 96, 0.835);
+    margin-right: 40px;
     
 }
 .head3{
@@ -17,4 +18,17 @@
     padding-bottom: 10px;
     padding-top: 10px;
 
+}
+.fa-circle-right{
+    color: rgb(251, 251, 255);
+    margin-top: 25px;
+    
+
+}
+.head{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    column-gap: 1120px;
+    justify-content:center;
+    
 }
