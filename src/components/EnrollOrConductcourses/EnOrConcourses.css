@@ -3,6 +3,7 @@
     width: 1350px;
     height: auto;
     left: 47px;
+    display: block;
     /* justify-content: center; */
     /* align-items: center; */
     border-radius: 10px;

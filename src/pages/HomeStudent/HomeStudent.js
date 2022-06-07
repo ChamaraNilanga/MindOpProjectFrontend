@@ -8,8 +8,12 @@ function HomeStudent(){
     return(
         <div>
             <header><Navbar/></header>
-            <div className="div1"><EnrollConductcourses id={"194075X"} role={'s'}/></div>
-            <div className="div2"><Allcourses/></div>
+           
+            <div className="div1"><EnrollConductcourses id={"194075X"} role={'c'}/></div>
+            <div className="div2"><Allcourses role={'s'}/></div>
+           
+            
+        
             
         </div>
         
