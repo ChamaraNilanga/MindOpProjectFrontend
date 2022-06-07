@@ -3,7 +3,7 @@ import axios from "axios";
 import "./Allcourses.css";
 import Subjectcard from "../SubjectCard/Subjectcard";
 
-function Allcourses(){
+function Allcourses({role}){
     const [courses,setCourses] = useState([]);
     
     useEffect(()=>{
@@ -25,8 +25,8 @@ function Allcourses(){
                 <h3 className="head3">All Courses</h3>
                 <i class="fa-solid fa-circle-right fa-xl"></i>
             </div>
+            {role=='s' ? <Subjectcard courses={courses} text={"Enroll"}/> : <Subjectcard courses={courses} text={"Conduct"}/>}
             
-            <Subjectcard courses={courses}/>
             
         </div>
     )

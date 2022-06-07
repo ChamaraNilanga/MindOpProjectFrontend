@@ -5,7 +5,7 @@ import axios from "axios";
 import Progressbar from "../Progressbar/Progressbar";
 import "./Subjectcard.css";
 
-function Subjectcard ({courses , role}){
+function Subjectcard ({courses , role , text}){
      return(
         <div class="overflow-auto">
         <div className="subject-card">
@@ -21,7 +21,7 @@ function Subjectcard ({courses , role}){
                     
                     </Card.Body>
                     <Card.Footer>
-                        {role=='s' ? <Progressbar progress={course.progress}/> :<Button className="btn" variant="warning" key={course.modid}>Enroll</Button>}
+                        {role=='s' ? <Progressbar progress={course.progress}/> :<Button className="btn" variant="warning" key={course.modid}>{text}</Button>}
                         {/* <Button className="btn" variant="warning" key={course.modid}>Enroll</Button> */}
                     </Card.Footer>
                     </Card>
