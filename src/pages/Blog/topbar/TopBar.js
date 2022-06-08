@@ -11,15 +11,15 @@ export default function TopBar() {
         <ul className="topList">
 
           <li className="topListItem">
-          <Link to="Blogs/" className="nav-link">Blogs</Link>
+          <Link to="/Blogs" className="nav-link">Blogs</Link>
           </li>
 
           <li className="topListItem">
-          <Link to="write/" className="nav-link">Write Blogs</Link>
+          <Link to="/write" className="nav-link">Write Blogs</Link>
           </li>
           
           <li className="topListItem">
-          <Link to="myblogs/" className="nav-link">My Blogs</Link>
+          <Link to="/myblogs" className="nav-link">My Blogs</Link>
           </li>
         </ul>
       </div>

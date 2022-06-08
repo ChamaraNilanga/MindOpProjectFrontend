@@ -12,7 +12,7 @@ export default function Post() {
     
     useEffect(()=>{
         function getAllBlogs(){
-            axios.get("/blog/").then((res)=>{
+            axios.get(`http://localhost:8052/blog/user/1943`).then((res)=>{
                 console.log(res);
             setBlogs(res.data);
             }).catch((err)=>{
@@ -26,13 +26,14 @@ export default function Post() {
   return (
  
     <div className="row m-2"> 
-<div className="post">
+    <TopBar/>
 
+<div className="post">
 {blogs.map(blog => {
   return(
     <div className="postInfo">
 
-<TopBar/>
+
       <div className="col-sm-2 col-md-12 v my-2" key={blog.blogid}>
 
       <img className="postImg" 

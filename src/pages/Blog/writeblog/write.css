@@ -1,5 +1,5 @@
 .write{
-    padding-top: 50px;
+    padding-top: 10px;
 }
 
 .writeForm{
@@ -60,6 +60,7 @@ position: relative;
 }
 
 .writeImg{
+    padding-top: 10px;
     margin-left: 150px;
     width: 70vw;
     height: 250px;
