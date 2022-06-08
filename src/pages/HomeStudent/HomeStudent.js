@@ -4,18 +4,19 @@ import Allcourses from "../../components/Allcourses/Allcourses";
 import EnrollConductcourses from "../../components/EnrollOrConductcourses/EnOrConcourses";
 import "./HomeStudent.css";
 
-function HomeStudent(){
+function HomeStudent({role}){
     return(
         <div>
             <header><Navbar/></header>
-           
-            <div className="div1"><EnrollConductcourses id={"194075X"} role={'c'}/></div>
-            <div className="div2"><Allcourses role={'s'}/></div>
-           
+           {role==='a' ? 
+           <div className="div3"><Allcourses role={role}/></div>
+        :
+        <div><div className="div1"><EnrollConductcourses id={"194075X"} role={role}/></div>
+        <div className="div2"><Allcourses role={role}/></div></div>
+        }
             
-        
-            
-        </div>
+           
+         </div>
         
     )
 }

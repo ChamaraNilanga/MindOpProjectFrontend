@@ -34,3 +34,12 @@
     column-gap: 20px;
     
 }
+.subject-card-admin{
+    margin-left: 20px;
+    display:grid;
+    overflow-y: scroll;
+    max-lines: 5;
+    grid-template-columns: repeat(6,auto);
+    grid-gap: 10px;
+    
+}

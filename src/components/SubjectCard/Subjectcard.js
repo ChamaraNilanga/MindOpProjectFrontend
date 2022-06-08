@@ -7,8 +7,8 @@ import "./Subjectcard.css";
 
 function Subjectcard ({courses , role , text}){
      return(
-        <div class="overflow-auto">
-        <div className="subject-card">
+        <div className="overflow-auto">
+        <div className={role==='a' ? "subject-card-admin":"subject-card"}>
             {courses.map(course=>{
                 return(
                     
@@ -21,7 +21,7 @@ function Subjectcard ({courses , role , text}){
                     
                     </Card.Body>
                     <Card.Footer>
-                        {role=='s' ? <Progressbar progress={course.progress}/> : role=='c' ? <></>:<Button className="btn" variant="warning" key={course.modid}>{text}</Button>}
+                        {role==='s' ? <Progressbar progress={course.progress}/> : role==='c' ? <></>:<Button className="btn" variant="warning" key={course.modid}>{text}</Button>}
                         {/* <Button className="btn" variant="warning" key={course.modid}>Enroll</Button> */}
                     </Card.Footer>
                     </Card>
