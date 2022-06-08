@@ -31,9 +31,9 @@ function CourseForm(){
       
       
     return(
-        <div className="courseforum">
-            <h3>Add New Course</h3>
-                <form>
+        
+            <form className="courseform">
+                <h3 className="head2">Add New Course</h3>
                 <div class="form-group">
                     <label for="coursename">Course Name</label>
                     <input type="text" onChange={(event) => {
@@ -47,7 +47,7 @@ function CourseForm(){
                     <input  type="text" onChange={(event) => {
                         setDescription(event.target.value)
                       }}
-                        className="form-control" id="description" placeholder="Enter the Module description"/>
+                        className="form-control" id="description" placeholder="Enter the Course description"/>
                 </div>
                 <div class="form-group">
                     <label for="sdate">Start Date</label>
@@ -65,22 +65,25 @@ function CourseForm(){
                 </div>
                 <div class="form-group">
                     <label for="price">Course Price</label>
-                    <input  type="price" onChange={(event) => {
+                    <input  type="money" onChange={(event) => {
                         setPrice(event.target.value)
                       }}
-                        className="form-control" id="price" placeholder="price"/>
+                        className="form-control" id="price" placeholder="Enter price"/>
                 </div>
                 <div class="form-group">
                     <label for="modcode">Module Code</label>
                     <input type="modcode" onChange={(event) => {
                         setModcode(event.target.value)
                       }}
-                        className="form-control" id="modcode" placeholder="modcode"/>
+                        className="form-control" id="modcode" placeholder="Enter course code"/>
+                </div>
+                <div className="buttons">
+                    <button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: '1px solid black'}} className="btn btn-primary">Cancel</button>
+                    <button type="submit" onClick={addCourse} className="btn btn-primary">Submit</button>
                 </div>
                 
-                <button type="submit" onClick={addCourse} className="btn btn-primary">Submit</button>
-                </form>
-        </div>
+            </form>
+        
     )
 
 };
