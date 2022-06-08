@@ -8,7 +8,7 @@ import "./Subjectcard.css";
 function Subjectcard ({courses , role , text}){
      return(
         <div className="overflow-auto">
-        <div className={role==='a' ? "subject-card-admin":"subject-card"}>
+        <div className={role==='a' ? "subject-card active":"subject-card"}>
             {courses.map(course=>{
                 return(
                     

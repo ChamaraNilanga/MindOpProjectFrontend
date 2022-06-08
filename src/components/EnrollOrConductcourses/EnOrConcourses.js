@@ -28,7 +28,7 @@ function EnrollConductcourses({id , role}){
     return(
         <div className="Container">
             <div className="head1">
-                {role=='s' ? <h3 className="head3">Enroll Courses</h3> : <h3 className="head3">Conducting Courses</h3>}
+                {role==='s' ? <h3 className="head3">Enroll Courses</h3> : <h3 className="head3">Conducting Courses</h3>}
                 
                 <i class="fa-solid fa-circle-right fa-xl"></i>
             </div>

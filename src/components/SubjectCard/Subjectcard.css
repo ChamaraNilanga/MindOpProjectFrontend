@@ -25,7 +25,7 @@
   }
 
 .subject-card{
-    margin-left: 20px;
+    /* margin-left: 20px; */
     display:inline-flex;
     overflow-x: scroll;
     max-lines: 5;
@@ -34,7 +34,7 @@
     column-gap: 20px;
     
 }
-.subject-card-admin{
+.subject-card.active{
     margin-left: 20px;
     display:grid;
     overflow-y: scroll;
