@@ -1,22 +1,34 @@
 export const MenuItems=[
     {
         title: '  Home',
-        url: '/Home',
+        url: '#',
         cName: 'nav-links',
         icon: 'fa-solid fa-house-chimney'
     },
     {
         title: '  Blogs',
-        url: '/Blogs',
+        url: '#',
         cName: 'nav-links',
         icon: 'fa-brands fa-blogger-b'
     },
     {
         title: '  Forums',
-        url: '/Forums',
+        url: '#',
         cName: 'nav-links',
         icon: 'fa-solid fa-clipboard-question'
-    }
+    },
+    {
+        
+        url: '#',
+        cName: 'nav-links',
+        icon: 'fa-solid fa-address-card'
+    },
+    {
+        title: '  Logout',
+        url: '#',
+        cName: 'nav-links',
+        
+    },
 
 ];
 
