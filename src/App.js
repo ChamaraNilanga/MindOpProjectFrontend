@@ -5,7 +5,7 @@ import './App.css';
 import Navigationbar from "./components/Navbar/Navbar"; 
 import Allcourses from './components/Allcourses/Allcourses';
 import Homestudent from './pages/HomeStudent/HomeStudent';
-import Addcourseform from './components/AddCourseForm/Addcourseform';
+import Addcourseform from './pages/Addcourse/Addcourse';
 
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
       <Router>
         <Routes>
           <Route path='/home' element={<Homestudent role={role}/>}/>
+          <Route path='/course/addcourse' element={<Addcourseform/>}/>
         </Routes>
      </Router> 
     
