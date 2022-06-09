@@ -8,6 +8,10 @@
     padding-top: 20px;
     
 }
+header{
+    z-index: 0;
+
+}
 /* .box{
     display: flexbox;
     flex-direction: column;
