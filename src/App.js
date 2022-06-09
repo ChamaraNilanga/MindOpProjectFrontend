@@ -1,17 +1,45 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AddCategory from "./pages/AddCategory/AddCategory";
+import DisplayCategory from "./pages/DisplayCategory/DisplayCategory";
+//import AddQuiz from './pages/AddQuizActivity/AddQuiz';
 
-import './App.css';
-import Navigationbar from "./components/Navbar/Navbar"; 
 
 function App() {
+ 
+
   return (
     <div className="App">
-     <Router>
-     <Navigationbar/>
-     </Router>
+      <BrowserRouter>
+      <Routes>
+      <Route path="/">
+      
+
+      <Route path="AddCategory">
+      <Route path="AddCategory" element={<AddCategory />} />
+      </Route>
+
+      <Route path="DispalyCategory">
+      <Route path="DispalyCategory" element={<DisplayCategory />} />
+      </Route>
+
+      
+     
+      
+        
+        
+
+        </Route>
+      </Routes>
+      </BrowserRouter>
+      
+
     </div>
   );
 }
-
 export default App;
+
+
+
+
+

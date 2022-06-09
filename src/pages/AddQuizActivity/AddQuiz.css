@@ -1,0 +1,89 @@
+body {
+    background-image: url("../../images/Desktop\ -\ 3\ \(4\).png");
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  
+  
+    /*background-position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;*/
+   }
+  
+  
+  
+  
+  .new {
+    width: 100%;
+    display: flex;
+  }
+  .new .newContainer {
+    flex: 6;
+  }
+  .new .newContainer .top, .new .newContainer .bottom {
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+  }
+  .new .newContainer .top h1, .new .newContainer .bottom h1 {
+    color: #3FA781;;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 650;
+    font-size: 35px;
+    line-height: 53px;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    letter-spacing: -0.02em;
+  }
+  .new .newContainer .top .right, .new .newContainer .bottom .right {
+    flex: 2;
+  }
+  .new .newContainer .top .right form, .new .newContainer .bottom .right form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  .new .newContainer .top .right form .formInput, .new .newContainer .bottom .right form .formInput {
+    width: 40%;
+  }
+  .new .newContainer .top .right form .formInput label, .new .newContainer .bottom .right form .formInput label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .new .newContainer .top .right form .formInput label .icon, .new .newContainer .bottom .right form .formInput label .icon {
+    cursor: pointer;
+  }
+  .new .newContainer .top .right form .formInput input, .new .newContainer .bottom .right form .formInput input {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid gray;
+  }
+  .new .newContainer .top .right form .break, .new .newContainer .bottom .right form .break {
+    flex-basis: 100%;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+  }
+  .new .newContainer .top .right form button, .new .newContainer .bottom .right form button {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
