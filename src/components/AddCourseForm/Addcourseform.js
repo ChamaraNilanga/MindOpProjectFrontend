@@ -78,7 +78,7 @@ function CourseForm(){
                         className="form-control" id="modcode" placeholder="Enter course code"/>
                 </div>
                 <div className="buttons">
-                    <button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: '1px solid black'}} className="btn btn-primary">Cancel</button>
+                    <button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: 'px solid black'}} className="btn btn-primary">Cancel</button>
                     <button type="submit" onClick={addCourse} className="btn btn-primary">Submit</button>
                 </div>
                 
