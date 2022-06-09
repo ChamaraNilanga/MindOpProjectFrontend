@@ -1,0 +1,43 @@
+.sub-menu{
+    width: 10rem;
+    position: absolute;
+    list-style-type: style none;
+    list-style: none; 
+    text-decoration:none;
+    text-align: center;
+
+}
+.sub-menu li{
+    background: rgb(55, 61, 96);
+    cursor: pointer;
+    
+}
+/* .submenu{
+    color: aliceblue;
+    text-decoration: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}*/
+
+.sub-menu-clicked{
+    display: none;
+}
+.submenu-item{
+    display: block;
+    width: 100%;
+    height: 60%;
+    text-decoration: none;
+    color: aliceblue;
+    padding: 8px;
+}
+.submenu-item:hover{
+    background: rgba(240, 244, 247, 0.884);
+    color: rgb(55, 61, 96);
+    transition: all 0.2s ease-out;
+}
+.Dropdown-menu{
+    position: absolute;
+    justify-content: end;
+    left: 83%;
+    top:68px;
+    z-index:1;
+}

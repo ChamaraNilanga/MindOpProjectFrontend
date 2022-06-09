@@ -1,0 +1,18 @@
+.div1{
+   
+    margin-top: auto;
+}
+
+.div2{
+   
+    padding-top: 20px;
+    
+}
+header{
+    z-index: 0;
+
+}
+/* .box{
+    display: flexbox;
+    flex-direction: column;
+} */
