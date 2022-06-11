@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { format } from "date-fns";
 import "./Addcourseform.css";
 
 function CourseForm(){
@@ -16,8 +17,8 @@ function CourseForm(){
           .post('http://localhost:8070/coursedetails/', {
             modname: coursename,
             descrip: description,
-            sdate: sdate,
-            enddate: edate,
+            star: sdate,
+            end: edate,
             price: price,
             modcode: modcode,
           })
@@ -27,7 +28,7 @@ function CourseForm(){
             alert('added successed!')
           })
       }
-  
+      
       
       
     return(
@@ -39,7 +40,7 @@ function CourseForm(){
                     <input type="text" onChange={(event) => {
                         setCoursename(event.target.value)
                       }}
-                        className="form-control" id="coursename"  placeholder="Enter course name"/>
+                        className="form-control" id="coursename"  placeholder="Enter course name" required/>
                     
                 </div>
                 <div class="form-group">
@@ -47,21 +48,21 @@ function CourseForm(){
                     <input  type="text" onChange={(event) => {
                         setDescription(event.target.value)
                       }}
-                        className="form-control" id="description" placeholder="Enter the Course description"/>
+                        className="form-control" id="description" placeholder="Enter the Course description" maxLength={100}/>
                 </div>
                 <div class="form-group">
                     <label for="sdate">Start Date</label>
                     <input type="date" onChange={(event) => {
                         setSdate(event.target.value)
                       }}
-                        className="form-control" id="sdate" placeholder="Start date"/>
+                        className="form-control" id="sdate" placeholder="Start date" />
                 </div>
                 <div class="form-group">
                     <label for="edate">End Date</label>
                     <input type="date" onChange={(event) => {
                         setEdate(event.target.value)
                       }}
-                        className="form-control" id="edate" placeholder="End date"/>
+                        className="form-control" id="edate" placeholder="End date" />
                 </div>
                 <div class="form-group">
                     <label for="price">Course Price</label>
@@ -75,7 +76,7 @@ function CourseForm(){
                     <input type="modcode" onChange={(event) => {
                         setModcode(event.target.value)
                       }}
-                        className="form-control" id="modcode" placeholder="Enter course code"/>
+                        className="form-control" id="modcode" placeholder="Enter course code" required/>
                 </div>
                 <div className="buttons">
                     <button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: 'px solid black'}} className="btn btn-primary">Cancel</button>
