@@ -26,20 +26,12 @@
 
 .subject-card{
     /* margin-left: 20px; */
-    display:inline-flex;
-    overflow-x: scroll;
-    max-lines: 5;
-    grid-template-columns: repeat(5,auto);
-    grid-gap: 10px;
-    column-gap: 20px;
-    
-}
-.subject-card.active{
-    margin-left: 20px;
     display:grid;
     overflow-y: scroll;
     max-lines: 5;
-    grid-template-columns: repeat(6,auto);
-    grid-gap: 10px;
+    grid-template-columns: repeat(5,auto);
+    grid-gap: 30px;
+    padding-left: 30px;
+    
     
 }

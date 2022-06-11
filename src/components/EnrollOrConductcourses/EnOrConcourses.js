@@ -10,7 +10,7 @@ function EnrollConductcourses({id , role}){
     
     useEffect(()=>{
         function getEnrollConductcourses(id){
-            axios.get(`http://localhost:8070/coursedetails/enroll/194075X`,{
+            axios.get(`http://localhost:8070/coursedetails/enroll/${id}`,{
                 params: {
                   id: {id},
                 },

@@ -8,8 +8,9 @@ import "./Subjectcard.css";
 function Subjectcard ({courses , role , text}){
      return(
         <div className="overflow-auto">
-        <div className={role==='a' ? "subject-card active":"subject-card"}>
+        <div className="subject-card">
             {courses.map(course=>{
+                
                 return(
                     
                     <Card style={{ width: '12rem' , height:'12rem'}} >

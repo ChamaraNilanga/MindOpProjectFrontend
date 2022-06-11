@@ -10,12 +10,13 @@ import Addcourseform from './pages/Addcourse/Addcourse';
 
 function App() {
   const role = 's';
+  const id='194075X';
   return (
     <div className="App">
       
       <Router>
         <Routes>
-          <Route path='/home' element={<Homestudent role={role}/>}/>
+          <Route path='/home' element={<Homestudent role={role} id={id}/>}/>
           <Route path='/course/addcourse' element={<Addcourseform/>}/>
         </Routes>
      </Router> 
