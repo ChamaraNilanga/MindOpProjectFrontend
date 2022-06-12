@@ -1,8 +1,37 @@
 import "./write.css"
 import TopBar from "../topbar/TopBar";
+import axios from "axios";
+import React, { useState } from "react";
 
-export default function Write() {
-    
+
+function Write() {
+  
+  const [title, setTitle] = useState('')
+  const [blogbody, setBlogbody] = useState('')
+console.log(title)
+console.log(blogbody)
+
+  const addblog =async () => {
+   await axios.post('http://localhost:8052/blog/addblog/1943',
+        // params: {
+        //   uid: {id},
+        // },
+      // },
+{
+        blogtitle:title,
+        body:blogbody,
+      })
+      .then(() => {
+        console.log(title)
+console.log(blogbody)
+        console.log('Success')
+        
+        alert('added successed!')
+      }
+      )
+      
+  }
+
   return (
       
     <div className="write">
@@ -16,17 +45,33 @@ export default function Write() {
             <label htmlFor="fileInput">
             <i className="writeIcon fa-solid fa-plus"></i>
             </label>
+
+
             <input type="file" id="fileInput"/>
-            <input type="text" placeholder="Title" className="writeInput" autoFocus={true}/>
+            <input type="text" 
+            onChange={(event) => {
+              setTitle(event.target.value)
+            }}
+            placeholder="Title" 
+            className="writeInput" 
+           />
         </div>
         <div className="writeFormGroup">
             <textarea placeholder="Tell your story..." 
             type="text"
+            onChange={(event) => {
+              setBlogbody(event.target.value)
+            }}
             className="writeInput writeText">
             </textarea>
+            
         </div>
-        <div className="writeSubmit">Publish</div>
+        <div className="writeSubmit">
+        <button type="submit" onClick={addblog} className="btn btn-primary">Publish</button>
+        </div>
     </form>
     </div>
   )
 }
+
+export default  Write;

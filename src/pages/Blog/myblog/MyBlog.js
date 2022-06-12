@@ -13,7 +13,7 @@ export default function MyBlog() {
     
     useEffect(()=>{
         function getAllBlogs(){
-            axios.get(`http://localhost:8052/blog`).then((res)=>{
+            axios.get(`http://localhost:8052/blog/user/1943`).then((res)=>{
                 console.log(res);
             setBlogs(res.data);
             }).catch((err)=>{

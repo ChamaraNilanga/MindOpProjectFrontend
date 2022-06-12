@@ -1,5 +1,5 @@
 import "./post.css";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from "axios";
 import React,{ useState, useEffect } from "react";
 import TopBar from "../topbar/TopBar";
@@ -9,10 +9,11 @@ import TopBar from "../topbar/TopBar";
 export default function Post() {
 
     const [blogs,setBlogs] = useState([]);
+
     
     useEffect(()=>{
         function getAllBlogs(){
-            axios.get(`http://localhost:8052/blog/user/1943`).then((res)=>{
+            axios.get(`http://localhost:8052/blog/`).then((res)=>{
                 console.log(res);
             setBlogs(res.data);
             }).catch((err)=>{
@@ -32,8 +33,6 @@ export default function Post() {
 {blogs.map(blog => {
   return(
     <div className="postInfo">
-
-
       <div className="col-sm-2 col-md-12 v my-2" key={blog.blogid}>
 
       <img className="postImg" 
@@ -58,7 +57,7 @@ export default function Post() {
 
       
       <Link to="/singlepost/" className="nav-link">
-      <p className="postDesc" key={blog.blogid}>
+      <p className="postDesc" key={blog.blogid}> 
       {blog.body}
       </p>
       
@@ -67,8 +66,8 @@ export default function Post() {
       
       </div>
       </div>
-                     </div>
-                     </div>
+      </div>
+      </div>
                      
 
   )

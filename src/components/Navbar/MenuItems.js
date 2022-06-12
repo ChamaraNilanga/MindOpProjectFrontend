@@ -7,7 +7,7 @@ export const MenuItems=[
     },
     {
         title: '  Blogs',
-        url: '#',
+        url: '/Blogs',
         cName: 'nav-links',
         icon: 'fa-brands fa-blogger-b'
     },

@@ -23,7 +23,7 @@ function App() {
      {/* <Route exact path="/Blogs/" element={<MyBlog/>}/> */}
      <Route  path="/Blogs" element={<Post/>}/>
      <Route  path="/Blogs/Blogs" element={<Post/>}/>
-     <Route  path="Blogs/singlepost/" element={<SinglePost/>}/>
+     <Route  path="/singlepost" element={<SinglePost/>}/>
      <Route  path="/write" element={<Write/>}/>
      <Route  path="/myblogs/" element={<MyBlogs/>}/>
      <Route  path="Blogs/deleteblog/" element={<DeleteBlog/>}/>
