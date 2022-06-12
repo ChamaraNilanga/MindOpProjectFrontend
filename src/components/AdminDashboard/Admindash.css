@@ -1,0 +1,41 @@
+.dashboardadmin{
+    position: relative;
+    width: 250px;
+    height: auto;
+    
+    border-radius: 10px;
+    background-color: rgba(55, 61, 96, 0.835);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+h6{
+    color: rgb(255, 255, 255);
+    padding-top: 10px;
+}
+
+h4{
+    color: rgb(255, 255, 255);
+    padding-top: 10px;
+}
+.addfunc{
+    display:inline-flex;
+    grid-template-columns: repeat(2,auto);
+    column-gap: 20px;
+}
+.addfuncstu{
+    display:inline-flex;
+    grid-template-columns: repeat(2,auto);
+    column-gap: 10px;
+}
+
+a{
+    color: rgb(255, 234, 0);
+    font-size: smaller;
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(255, 253, 253);
+}
