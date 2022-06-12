@@ -1,7 +1,7 @@
 export const MenuItems=[
     {
         title: '  Home',
-        url: '#',
+        url: '/Home',
         cName: 'nav-links',
         icon: 'fa-solid fa-house-chimney'
     },
@@ -13,22 +13,10 @@ export const MenuItems=[
     },
     {
         title: '  Forums',
-        url: '#',
+        url: '/Forums',
         cName: 'nav-links',
         icon: 'fa-solid fa-clipboard-question'
-    },
-    {
-        
-        url: '#',
-        cName: 'nav-links',
-        icon: 'fa-solid fa-address-card'
-    },
-    {
-        title: '  Logout',
-        url: '#',
-        cName: 'nav-links',
-        
-    },
+    }
 
 ];
 

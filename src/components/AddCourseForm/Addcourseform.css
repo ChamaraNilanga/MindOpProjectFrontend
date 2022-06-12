@@ -1,0 +1,32 @@
+.form-group{
+     width: auto;
+     
+}
+.courseform{
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(55, 61, 96, 0.835);
+    width: 75%;
+    border-radius: 5px;
+}
+.head2{
+    color: rgb(255, 255, 255);
+    text-decoration: double;
+}
+.form-group{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+label{
+    color: rgb(243, 237, 237);
+    padding-top: 5px;
+}
+.buttons{
+    padding-top: 15px;
+    display: inline-flex;
+    column-gap: 20px;
+    
+}
