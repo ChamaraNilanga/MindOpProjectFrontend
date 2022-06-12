@@ -1,4 +1,4 @@
-.dashboardadmin{
+.enrollreqdash{
     position: relative;
     width: 250px;
     height: auto;
@@ -10,7 +10,6 @@
     padding-right: 20px;
     padding-left: 20px;
 }
-
 h6{
     color: rgb(0, 0, 0);
     padding-top: 10px;
@@ -20,16 +19,7 @@ h4{
     color: rgb(0, 0, 0);
     padding-top: 10px;
 }
-.addfunc{
-    display:inline-flex;
-    grid-template-columns: repeat(2,auto);
-    column-gap: 20px;
-}
-.addfuncstu{
-    display:inline-flex;
-    grid-template-columns: repeat(2,auto);
-    column-gap: 10px;
-}
+
 
 a{
     color: rgb(0, 68, 255);
@@ -37,5 +27,5 @@ a{
     text-decoration: none;
 }
 a:hover{
-    color: rgb(0, 0, 0);
+    color: rgb(6, 0, 0);
 }
