@@ -25,7 +25,7 @@ export const MenuItems=[
     },
     {
         title: '  Logout',
-        url: '#',
+        url: '/',
         cName: 'nav-links',
         
     },
