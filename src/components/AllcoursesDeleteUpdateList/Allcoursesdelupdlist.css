@@ -1,0 +1,33 @@
+/* tr.alltable{
+    
+        width: 100%;
+ 
+   
+} */
+
+tr{
+    border-radius: 4px;
+    padding-bottom: 10px;
+
+}
+h3{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: rgb(255, 255, 255);
+    text-decoration: double;
+}
+.allcourselist{
+    
+    position: relative;
+    width: 1350px;
+    height: auto;
+    left: 47px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    border-radius: 10px;
+    background-color: rgba(55, 61, 96, 0.835);
+    
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
