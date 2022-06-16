@@ -1,5 +1,6 @@
 import React , {useEffect , useState} from "react";
 import axios from "axios";
+import Searchbar from "../SearchBar/Searchbar";
 import "./Allcoursesdelupdlist.css";
 
 function AllcoursesDelUpdlist (){
@@ -14,13 +15,27 @@ function AllcoursesDelUpdlist (){
             }).catch((err)=>{
                 console.log(err);
             })
-        }
-   
-    getAllCourses();
-},[])
+         }
+        getAllCourses();
+    },[])
+    
+    // const deletemodule=(id , e)=>{
+    //     if(window.confirm('Are you sure you want to delete?')){
+    //         axios.delete(`http://localhost:8070/coursedetails/${id}`)
+    //         .then((response)=>{
+    //             console.log(response);
+    //         })
+    //     }
+    // }
+
     return(
         <div className="allcourselist">
-            <h3>All Courses In Learny</h3>
+            <div className="headoflist">
+                <h3>All Courses In Learny</h3>
+                <div className="searchbox"><Searchbar/></div>
+            </div>
+            
+
             <div className="table table-striped table-light">
             
             {courses.map(course=>{
