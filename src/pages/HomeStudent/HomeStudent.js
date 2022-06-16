@@ -17,6 +17,15 @@ function HomeStudent({role,id}){
             
            
          </div>
+        // <div className="home">
+        //     <header><Navbar/></header>
+        //     {role==='a' ? 
+        //         <div className="container-box"></div> 
+        //         : role==='c' ? 
+        //             <div className="container-box"></div> 
+        //             : 
+        //             <div className="student-container"></div>}
+        // </div>
         
     )
 }

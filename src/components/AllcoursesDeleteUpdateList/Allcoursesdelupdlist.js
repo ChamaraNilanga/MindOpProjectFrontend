@@ -27,12 +27,12 @@ function AllcoursesDelUpdlist (){
                 
                 return(
                     <tbody>
-                        <tr key={course.modid}>
+                        <tr className="dotted" key={course.modid}>
                             <td class="w-25">{course.modname}</td>
                             <td class="w-25">{course.modcode}</td>
                             <td class="w-100">{course.descrip}</td>
-                            <td class="w-10"><button className="btn btn-warning">Update</button></td>
-                            <td class="w-15"><button className="btn btn-danger">Delete</button></td>
+                            <td class="w-10"><button className="btn btn-warning" >Update</button></td>
+                            <td class="w-15"><button className="btn btn-danger" >Delete</button></td>
                         </tr>
                     </tbody>
                     

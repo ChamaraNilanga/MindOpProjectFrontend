@@ -8,6 +8,8 @@ import Homestudent from './pages/HomeStudent/HomeStudent';
 import Addcourseform from './pages/Addcourse/Addcourse';
 import Enrollmentreqdash from './components/EnrollmentRequestDashboard/Enrollmentrequestdashboard';
 import AdminDash from './components/AdminDashboard/Admindash';
+import AllcoursesDelUpdlist from './components/AllcoursesDeleteUpdateList/Allcoursesdelupdlist';
+import Courseupdatedeletelist from './pages/CoursesUpdateDeleteList/Courseupddellist';
 
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
        <Routes>
           <Route path='/home' element={<Homestudent role={role} id={id}/>}/>
           <Route path='/course/addcourse' element={<Addcourseform/>}/>
+          <Route path='/course/list' element={<Courseupdatedeletelist/>}/>
         </Routes>
      </Router> 
     

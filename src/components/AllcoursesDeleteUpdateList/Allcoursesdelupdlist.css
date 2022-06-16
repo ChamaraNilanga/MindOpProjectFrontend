@@ -4,11 +4,14 @@
  
    
 } */
-
-tr{
-    border-radius: 4px;
-    padding-bottom: 10px;
-
+tr {
+    border-radius: 4;
+    
+    margin: 5px;
+}
+.dotted {
+    border: 2px rgb(38, 71, 161) dotted;
+    border-radius: 10px;
 }
 h3{
     padding-top: 10px;
