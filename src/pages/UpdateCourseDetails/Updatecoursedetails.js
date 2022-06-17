@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
-import AddCourseForm from "../../components/AddCourseForm/Addcourseform";
+import UpdateCourse from "../../components/UpdateModule/Updatemodule";
 import AdminDash from "../../components/AdminDashboard/Admindash";
-import "./Addcourse.css";
+
 
 function Addcourse(){
     return(
@@ -10,7 +10,7 @@ function Addcourse(){
             <header><Navbar/></header>
             <div className="addcourse">
                 <div className="formadd">
-                    <AddCourseForm/>
+                    <UpdateCourse/>
                 </div>
                 <div className="sidemenu">
                     <AdminDash/>

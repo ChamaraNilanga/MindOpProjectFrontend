@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import axios from "axios";
 import { format } from "date-fns";
-import "./Addcourseform.css";
+import {Link} from "react-router-dom";
 
-function CourseForm(){
+
+function UpdateCourse(){
     
     const [coursename, setCoursename] = useState('')
     const [description, setDescription] = useState('')
@@ -11,76 +12,76 @@ function CourseForm(){
     const [edate, setEdate] = useState('')
     const [price, setPrice] = useState('')
     const [modcode, setModcode] = useState('')
+    const [id, setId] = useState('')
 
-    const addCourse = () => {
+
+    const Update = () => {
+        console.log(id);
         axios
-          .post(`http://localhost:8070/coursedetails/`, {
-            modname: coursename,
+          .put(`http://localhost:8070/coursedetails/${id}`, {
+           
             descrip: description,
-            star: sdate,
+            start: sdate,
             end: edate,
             price: price,
-            modcode: modcode,
+            
           })
           .then(() => {
             console.log('Success')
             
-            alert('added successed!')
+            alert('Update successed!')
           })
       }
-      
+      useEffect(()=>{
+        setCoursename(localStorage.getItem('coursename'));
+        setDescription(localStorage.getItem('description'));
+        setSdate(localStorage.getItem('sdate'));
+        setEdate(localStorage.getItem('edate'));
+        setPrice(localStorage.getItem('price'));
+        setModcode(localStorage.getItem('modcode'));
+        setId(localStorage.getItem('id'));
+      },[])
       
       
     return(
         
             <form className="courseform">
-                <h3 className="head2">Add New Course</h3>
+                <h3 className="head2">Update Course</h3>
                 <div class="form-group">
-                    <label for="coursename">Course Name</label>
-                    <input type="text" onChange={(event) => {
-                        setCoursename(event.target.value)
-                      }}
-                        className="form-control" id="coursename"  placeholder="Enter course name" required/>
-                    
+                    <h3>{coursename}</h3> 
+                    <h3>{modcode}</h3>
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <input  type="text" onChange={(event) => {
+                    <input  type="text" value={description} onChange={(event) => {
                         setDescription(event.target.value)
                       }}
                         className="form-control" id="description" placeholder="Enter the Course description" maxLength={100}/>
                 </div>
                 <div class="form-group">
                     <label for="sdate">Start Date</label>
-                    <input type="date" onChange={(event) => {
+                    <input type="date" value={sdate} onChange={(event) => {
                         setSdate(event.target.value)
                       }}
                         className="form-control" id="sdate" placeholder="Start date" />
                 </div>
                 <div class="form-group">
                     <label for="edate">End Date</label>
-                    <input type="date" onChange={(event) => {
+                    <input type="date" value={edate} onChange={(event) => {
                         setEdate(event.target.value)
                       }}
                         className="form-control" id="edate" placeholder="End date" />
                 </div>
                 <div class="form-group">
                     <label for="price">Course Price</label>
-                    <input  type="money" onChange={(event) => {
+                    <input  type="money" value={price} onChange={(event) => {
                         setPrice(event.target.value)
                       }}
                         className="form-control" id="price" placeholder="Enter price"/>
                 </div>
-                <div class="form-group">
-                    <label for="modcode">Module Code</label>
-                    <input type="modcode" onChange={(event) => {
-                        setModcode(event.target.value)
-                      }}
-                        className="form-control" id="modcode" placeholder="Enter course code" required/>
-                </div>
                 <div className="buttons">
-                    <button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: 'px solid black'}} className="btn btn-primary">Cancel</button>
-                    <button type="submit" onClick={addCourse} className="btn btn-primary">Submit</button>
+                    <Link to="/course/list"><button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: 'px solid black'}} className="btn btn-primary">Cancel</button></Link>
+                    <Link to="/course/list"><button type="submit" onClick={Update} className="btn btn-primary">Update</button></Link>
                 </div>
                 
             </form>
@@ -89,4 +90,4 @@ function CourseForm(){
 
 };
 
-export default CourseForm;
+export default UpdateCourse;

@@ -2,6 +2,7 @@ import React , {useEffect , useState} from "react";
 import axios from "axios";
 import "./Allcourses.css";
 import Subjectcard from "../SubjectCard/Subjectcard";
+import Subjectcardgrid from "../SubjectCardGrid/Subjectcardgrid";
 
 function Allcourses({role}){
     const [courses,setCourses] = useState([]);
@@ -25,7 +26,7 @@ function Allcourses({role}){
                 <h3 className="head3">All Courses</h3>
                 <i class="fa-solid fa-circle-right fa-xl"></i>
             </div>
-            {role==='s' ? <Subjectcard courses={courses} text={"Enroll"}/> : role==='c' ? <Subjectcard courses={courses} text={"Conduct"}/>:<Subjectcard courses={courses} text={"See>>"}/>}
+            {role==='s' ? <Subjectcard courses={courses} text={"Enroll"}/> : role==='c' ? <Subjectcard courses={courses} text={"Conduct"}/>:<Subjectcardgrid courses={courses} text={"See>>"}/>}
             
             
         </div>

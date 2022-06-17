@@ -24,12 +24,12 @@
     margin-bottom: 2px;
   }
 
-.subject-card{
+.subject-card-grid{
     /* margin-left: 20px; */
-    display:inline-flex;
+    display:grid;
     overflow-x: scroll;
     max-lines: 5;
-    grid-template-columns: repeat(5,auto);
+    grid-template-columns: repeat(6,auto);
     grid-gap: 30px;
     
     

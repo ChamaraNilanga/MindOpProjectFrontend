@@ -3,12 +3,12 @@ import { Card } from "react-bootstrap";
 import {Button} from "react-bootstrap";
 import axios from "axios";
 import Progressbar from "../Progressbar/Progressbar";
-import "./Subjectcard.css";
+import "./Subjectcardgrid.css";
 
 function Subjectcard ({courses , role , text}){
      return(
         <div className="overflow-auto">
-        <div className="subject-card">
+        <div className="subject-card-grid">
             {courses.map(course=>{
                 
                 return(

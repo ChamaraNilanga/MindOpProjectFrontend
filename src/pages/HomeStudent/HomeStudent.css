@@ -16,3 +16,6 @@ header{
     display: flexbox;
     flex-direction: column;
 } */
+.div3{
+    width: 80%;
+}
