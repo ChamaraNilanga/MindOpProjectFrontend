@@ -2,6 +2,7 @@ import React , {useEffect , useState} from "react";
 import axios from "axios";
 import Searchbar from "../SearchBar/Searchbar";
 import "./Allcoursesdelupdlist.css";
+import {Link} from "react-router-dom";
 
 function AllcoursesDelUpdlist (){
     const [courses,setCourses] = useState([]);
@@ -32,6 +33,17 @@ function AllcoursesDelUpdlist (){
         }
        
     }
+    const setID = (id,name,code,star,enddate,descrip,price) => {
+        console.log(id);
+        localStorage.setItem('id',id);
+        localStorage.setItem('coursename',name);
+        localStorage.setItem('modcode',code);
+        localStorage.setItem('sdate',star);
+        localStorage.setItem('edate',enddate);
+        localStorage.setItem('price',price);
+        localStorage.setItem('description',descrip);
+        
+    }
 
     return(
         <div className="allcourselist">
@@ -51,7 +63,7 @@ function AllcoursesDelUpdlist (){
                             <td class="w-25">{course.modname}</td>
                             <td class="w-25">{course.modcode}</td>
                             <td class="w-100">{course.descrip}</td>
-                            <td class="w-10"><button className="btn btn-warning" >Update</button></td>
+                            <td class="w-10"><Link to="/updatecourse"><button className="btn btn-warning" onClick={()=>setID(course.modid,course.modname,course.modcode,course.sdate,course.enddate,course.descrip,course.price)}>Update</button></Link></td>
                             <td class="w-15"><button className="btn btn-danger" onClick={()=>deletemodule(course.modid)}>Delete</button></td>
                         </tr>
                     </tbody>

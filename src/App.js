@@ -10,22 +10,28 @@ import Enrollmentreqdash from './components/EnrollmentRequestDashboard/Enrollmen
 import AdminDash from './components/AdminDashboard/Admindash';
 import AllcoursesDelUpdlist from './components/AllcoursesDeleteUpdateList/Allcoursesdelupdlist';
 import Courseupdatedeletelist from './pages/CoursesUpdateDeleteList/Courseupddellist';
+import Searchbar from './components/SearchBar/Searchbar';
+import Singlecoursedetails from './components/SingleCourseDetails/Singlecoursedetails';
+import Enrollreqlist from './components/EnrollmentRequests/Enrollmentreqlist';
+import Conductreqlist from './components/ConductingRequests/Conductingreqlist';
+import Footer from './components/Footer/Footer';
+import UpdateCourseDetails from './pages/UpdateCourseDetails/Updatecoursedetails';
 
 
 function App() {
-  const role = 's';
-  const id='194075X';
+  const role = 'c';
+  const id='194101A';
   return (
     <div className="App">
-      
       <Router>
        <Routes>
           <Route path='/home' element={<Homestudent role={role} id={id}/>}/>
           <Route path='/course/addcourse' element={<Addcourseform/>}/>
           <Route path='/course/list' element={<Courseupdatedeletelist/>}/>
+          <Route path='/updatecourse' element={<UpdateCourseDetails/>}/>
         </Routes>
      </Router> 
-    
+   
     </div>
 
   );
