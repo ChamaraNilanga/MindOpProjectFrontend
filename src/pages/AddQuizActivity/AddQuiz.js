@@ -10,31 +10,31 @@ const AddQuiz = () => {
   const [grade, setGrade] = useState("");
   
 
-  const submitForm = (e) => {
-    e.preventDefault();
-    axios
-      .post(
-        "http://localhost:8070/quizdetails/createquizactivity/002&1",
-        {
-            quizname:quizName,
-            quizdes:description,
-            timelimit:timelimit,
-            grade:grade,
-            navimethod:this.state.value,
-            layout:this.state.value,
-            availability:this.state.value,
+  // const submitForm = (e) => {
+  //   e.preventDefault();
+  //   axios
+  //     .post(
+  //       "http://localhost:8070/quizdetails/createquizactivity/002&1",
+  //       {
+  //           quizname:quizName,
+  //           quizdes:description,
+  //           timelimit:timelimit,
+  //           grade:grade,
+  //           navimethod:this.state.value,
+  //           layout:this.state.value,
+  //           availability:this.state.value,
            
-        },
-        {
-          withCredentials: true,
-          credentials: "include",
-        }
-      )
-      .then((res) => {
-        alert(res);
-        console.log(res);
-      });
-  };
+  //       },
+  //       {
+  //         withCredentials: true,
+  //         credentials: "include",
+  //       }
+  //     )
+  //     .then((res) => {
+  //       alert(res);
+  //       console.log(res);
+  //     });
+  // };
 
   return (
     <div className="new">
@@ -120,7 +120,7 @@ const AddQuiz = () => {
              
               
               <div className="break"></div>
-              <button onClick={submitForm}>Send</button>
+              <button >Send</button>
               <div classname="cancel-btn">
               <button >Save and return to course page</button></div>
               <div classname="cancel-btn">
