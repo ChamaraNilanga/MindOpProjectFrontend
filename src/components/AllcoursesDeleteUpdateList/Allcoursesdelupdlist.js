@@ -6,27 +6,32 @@ import "./Allcoursesdelupdlist.css";
 function AllcoursesDelUpdlist (){
     const [courses,setCourses] = useState([]);
     
+    function getAllCourses(){
+        axios.get(`http://localhost:8070/coursedetails`)
+        .then((res)=>{
+            console.log(res);
+        setCourses(res.data);
+        }).catch((err)=>{
+            console.log(err);
+        })
+     }
     useEffect(()=>{
-        function getAllCourses(){
-            axios.get(`http://localhost:8070/coursedetails`)
-            .then((res)=>{
-                console.log(res);
-            setCourses(res.data);
-            }).catch((err)=>{
-                console.log(err);
-            })
-         }
+       
         getAllCourses();
     },[])
     
-    // const deletemodule=(id , e)=>{
-    //     if(window.confirm('Are you sure you want to delete?')){
-    //         axios.delete(`http://localhost:8070/coursedetails/${id}`)
-    //         .then((response)=>{
-    //             console.log(response);
-    //         })
-    //     }
-    // }
+    const deletemodule=async (id , e)=>{
+        console.log(id);
+        if(window.confirm('Are you sure you want to delete?')){
+            await axios.delete(`http://localhost:8070/coursedetails/${id}`)
+            .then((res)=>{
+                console.log(res.data);
+                alert(res.data);
+                getAllCourses();
+            })
+        }
+       
+    }
 
     return(
         <div className="allcourselist">
@@ -47,7 +52,7 @@ function AllcoursesDelUpdlist (){
                             <td class="w-25">{course.modcode}</td>
                             <td class="w-100">{course.descrip}</td>
                             <td class="w-10"><button className="btn btn-warning" >Update</button></td>
-                            <td class="w-15"><button className="btn btn-danger" >Delete</button></td>
+                            <td class="w-15"><button className="btn btn-danger" onClick={()=>deletemodule(course.modid)}>Delete</button></td>
                         </tr>
                     </tbody>
                     
