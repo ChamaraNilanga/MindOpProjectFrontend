@@ -16,11 +16,12 @@ import Enrollreqlist from './components/EnrollmentRequests/Enrollmentreqlist';
 import Conductreqlist from './components/ConductingRequests/Conductingreqlist';
 import Footer from './components/Footer/Footer';
 import UpdateCourseDetails from './pages/UpdateCourseDetails/Updatecoursedetails';
+import SingleCoursePage from './pages/SingleCoursePage/Singlecoursepage';
 
 
 function App() {
-  const role = 'c';
-  const id='194101A';
+  const role = 's';
+  const id='194075X';
   return (
     <div className="App">
       <Router>
@@ -29,6 +30,7 @@ function App() {
           <Route path='/course/addcourse' element={<Addcourseform/>}/>
           <Route path='/course/list' element={<Courseupdatedeletelist/>}/>
           <Route path='/updatecourse' element={<UpdateCourseDetails/>}/>
+          <Route path='/singlecourse' element={<SingleCoursePage/>}/>
         </Routes>
      </Router> 
    
