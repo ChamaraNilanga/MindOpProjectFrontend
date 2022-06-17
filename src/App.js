@@ -17,6 +17,13 @@ import Conductreqlist from './components/ConductingRequests/Conductingreqlist';
 import Footer from './components/Footer/Footer';
 import UpdateCourseDetails from './pages/UpdateCourseDetails/Updatecoursedetails';
 import SingleCoursePage from './pages/SingleCoursePage/Singlecoursepage';
+import ChatStudent from './components/ChatStudent/chat';
+import MyBlogs from "./pages/Blog/myblog/MyBlog";
+import Post from "./pages/Blog/post/Post";
+import SinglePost from "./pages/Blog/singlePost/SinglePost";
+import Write from "./pages/Blog/writeblog/Write";
+import DeleteBlog from "./pages/Blog/deleteblog/DeleteBlog";
+
 
 
 function App() {
@@ -31,9 +38,21 @@ function App() {
           <Route path='/course/list' element={<Courseupdatedeletelist/>}/>
           <Route path='/updatecourse' element={<UpdateCourseDetails/>}/>
           <Route path='/singlecourse' element={<SingleCoursePage/>}/>
+         {/* <Route path="/" element={<Navigationbar/>}/>    */}
+         <Route path="/student" element={<ChatStudent/>}/>
+         {/* <Route exact path="/Blogs/" element={<MyBlog/>}/> */}
+         <Route  path="/Blogs" element={<Post/>}/>
+         <Route  path="/Blogs/Blogs" element={<Post/>}/>
+         <Route  path="/singlepost" element={<SinglePost/>}/>
+         <Route  path="/write" element={<Write/>}/>
+         <Route  path="/myblogs/" element={<MyBlogs/>}/>
+         <Route  path="Blogs/deleteblog/" element={<DeleteBlog/>}/>
+         <Route path='/home' element={<Homestudent role={role}/>}/>
+         <Route path='/course/addcourse' element={<Addcourseform/>}/>
         </Routes>
      </Router> 
    
+
     </div>
 
   );
