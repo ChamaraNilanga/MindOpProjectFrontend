@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { format } from "date-fns";
 import "./Addcourseform.css";
+import {Link} from "react-router-dom";
 
 function CourseForm(){
     
@@ -79,8 +80,8 @@ function CourseForm(){
                         className="form-control" id="modcode" placeholder="Enter course code" required/>
                 </div>
                 <div className="buttons">
-                    <button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: 'px solid black'}} className="btn btn-primary">Cancel</button>
-                    <button type="submit" onClick={addCourse} className="btn btn-primary">Submit</button>
+                    <Link to="/home" ><button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: 'px solid black'}} className="btn btn-primary">Cancel</button></Link>
+                    <Link to="/course/list" ><button type="submit" onClick={addCourse} className="btn btn-primary">Submit</button></Link>
                 </div>
                 
             </form>

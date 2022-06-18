@@ -4,6 +4,7 @@ import {Button} from "react-bootstrap";
 import axios from "axios";
 import Progressbar from "../Progressbar/Progressbar";
 import "./Subjectcardgrid.css";
+import {Link} from "react-router-dom"
 
 function Subjectcard ({courses , role , text}){
      return(
@@ -22,7 +23,7 @@ function Subjectcard ({courses , role , text}){
                     
                     </Card.Body>
                     <Card.Footer>
-                        {role==='s' ? <Progressbar progress={course.progress}/> : role==='c' ? <></>:<Button className="btn" variant="warning" key={course.modid}>{text}</Button>}
+                        {role==='s' ? <Progressbar progress={course.progress}/> : role==='c' ? <></>:<Link to="/singlecourse" state={{ id: course.modid }}><Button className="btn" variant="warning" key={course.modid}>{text}</Button></Link>}
                         {/* <Button className="btn" variant="warning" key={course.modid}>Enroll</Button> */}
                     </Card.Footer>
                     </Card>

@@ -17,6 +17,12 @@
     font-size: small;
     
 }
+.title{
+    color: black;
+}
+.title:hover{
+    color: blue;
+}
 
 .card-footer {
     background: transparent;
@@ -31,7 +37,6 @@
     max-lines: 5;
     grid-template-columns: repeat(5,auto);
     grid-gap: 30px;
-    
     
     
 }
