@@ -3,7 +3,7 @@ import axios from "axios";
 import "./Singlecoursedetails.css";
 import {Link} from "react-router-dom";
 
-function Singlecoursedetails({courses,role}){
+function Singlecoursedetails({courses,role,user}){
 //     const [courses,setCourses] = useState([]);
     
 //     useEffect(()=>{
@@ -19,6 +19,18 @@ function Singlecoursedetails({courses,role}){
    
 //     getSingleCourses(id);
 // },[])
+const reqtoenroll=(modid,sid)=>{
+    console.log(sid);
+    console.log(modid);
+    if(window.confirm('Are you sure you want to request to enroll?')){
+    axios
+    .post(`http://localhost:8070/coursedetails/studentenroll/${sid}&${modid}`,null)
+    .then(() => {
+      console.log('Success')
+      
+      alert('added successed!')
+    })
+}}
     return(
         <div className="singlecourse">
            {courses.map(course=>{
@@ -32,7 +44,7 @@ function Singlecoursedetails({courses,role}){
                         <p>End : {course.enddate}</p>
                         {/* <text>Teacher : {course.teacherid}</text> */}
                         <text>{role==='s' ? 
-                            <div><p>Price: Rs{course.price}</p><button className="btn btn-warning">Enroll</button></div> 
+                            <div><p>Price: Rs{course.price}</p><button className="btn btn-warning" onClick={()=>{reqtoenroll(course.modid,user)}}>Enroll</button></div> 
                             : 
                             role==='a' ? 
                             <div><Link to="/assignteacher" state={{ id: course.modid , name:course.modname, code:course.modcode}}><p style={{color:'#f5b042'}}>Assign Teacher</p></Link>

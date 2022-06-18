@@ -23,8 +23,8 @@ import Assignteacherformodule from './pages/AssignTeacherForModule/Assignteacher
 
 
 function App() {
-  const role = 'a';
-  const id='194075X';
+  const role = 's';
+  const id='194071F';
   const mod=40;
   return (
     <div className="App">
@@ -34,7 +34,7 @@ function App() {
           <Route path='/course/addcourse' element={<Addcourseform/>}/>
           <Route path='/course/list' element={<Courseupdatedeletelist/>}/>
           <Route path='/updatecourse' element={<UpdateCourseDetails/>}/>
-          <Route path='/singlecourse' element={<SingleCoursePage role={role} />}/>
+          <Route path='/singlecourse' element={<SingleCoursePage role={role} user={id}/>}/>
           <Route path='/enrollmentrequests' element={<Enrollmentrequestlist id={mod} userid={'194101A'} />}/>
           <Route path='/courseswithdetails' element={<Stuteacherallcourses role={role}/>}/>
           <Route path='/assignteacher' element={<Assignteacherformodule user={id}/>}/>

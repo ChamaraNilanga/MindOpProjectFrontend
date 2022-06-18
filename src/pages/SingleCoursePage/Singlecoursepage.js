@@ -5,7 +5,7 @@ import Singlecoursedetails from "../../components/SingleCourseDetails/Singlecour
 import { useLocation } from "react-router-dom";
 import Enrollmentreqdash from "../../components/EnrollmentRequestDashboard/Enrollmentrequestdashboard";
 
-function Singlecoursedetailspage({role}){
+function Singlecoursedetailspage({role,user}){
     const [courses,setCourses] = useState([]);
     const location = useLocation()
     const { id } = location.state
@@ -27,7 +27,7 @@ function Singlecoursedetailspage({role}){
         <div>
         <header><Navbar/></header>
         <div className="addcourse">
-            <Singlecoursedetails courses={courses} role={role}/>
+            <Singlecoursedetails courses={courses} role={role} user={user}/>
             {role==='a' ? <Enrollmentreqdash id={id}/> : <></>}
         </div>
         </div>
