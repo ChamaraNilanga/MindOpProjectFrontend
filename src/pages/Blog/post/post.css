@@ -5,20 +5,21 @@
    /* margin-right: 100px; */
     margin-left: 150px;
     border-radius: 10px;
-  
+   padding: 40px;
+   scroll-behavior: smooth;
 
 
    
 }
 
-.postImg{
+/* .postImg{
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
     width: 330px;
     height: 300px;
    margin-left: 25px;
-}
+} */
 
 .postInfo{
     display: flex;
@@ -26,6 +27,7 @@
     align-items: right;
     font-family: 'Varela', sans-serif;
     padding-right: 25px;
+    background-color:rgba(55,61,96,0.835);
     /* width: 45%; */
     /* padding-left: 5px; */
 }
@@ -36,7 +38,7 @@
     font-weight: 700;
     margin-top: 15px;
     cursor: pointer;
-    color:crimson;
+    color:rgb(220, 150, 20);
 }
 
 .postDate{
@@ -46,25 +48,41 @@
     color: rgb(89, 87, 87);
     margin-top: 15px;
 }
+.postBy{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: rgb(46, 37, 37);
+    margin-top: 15px;
+
+}
 
 .postDesc{
-    font-family: 'Varela Round', sans-serif;
-    font-size: 14px;
-    color:rgb(64, 64, 64);
-    line-height: 24px;
-    margin-top: 7px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 13px;
+    color:rgb(0, 0, 0);
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
-    padding-left: 10px;
+    padding-left: 5px;
     cursor: pointer;
 
 }
 .card{
-    background-color:#b1838378;
+    background-color:rgb(255, 255, 255);
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
   
     
 }
 
+/* .box{
+  background-color: azure;
+  border-radius: 5px;
+  height: 250px;
+  padding: auto;
+} */

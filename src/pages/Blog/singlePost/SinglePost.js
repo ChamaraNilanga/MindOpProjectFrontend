@@ -31,21 +31,31 @@ export default function SinglePost() {
          src="https://images.unsplash.com/photo-1598929440520-dc9f18462281?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
          alt=""/>
            <h1 className="singlePostTitle">
-         Lorem Ipsum is simply dummy
+           {
+            function getBlogById(){
+        axios.get(`http://localhost:8052/blog/getblogbody/2`).then((res)=>{
+            console.log(res);
+        setBlogs(res.data);
+        }).catch((err)=>{
+            alert(err.message);
+        })
+      }
+    }
          
-
+         </h1>
+         
          <div className="singlePostEdit">
          <i className="singlePostIcon fa-solid fa-pen-to-square"></i>
          <i className="singlePostIcon fa-solid fa-trash-can"></i>
          </div>
-         </h1>
+        
          <div className="singlePostInfo">
              <span className="singlePostAuthor">Author:<b>Shenil</b></span>
              <span className="singlepostDate">1 hour ago</span>
          </div>
          <p className="singlePostDesc">
-         getBlogById();
-         axios.getBlogById.blogtitle
+           
+    
        
          </p>
      </div>

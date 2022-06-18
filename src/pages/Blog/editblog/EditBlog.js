@@ -1,10 +1,27 @@
-import "./write.css"
+import "./editblog.css"
 import TopBar from "../topbar/TopBar";
 import axios from "axios";
-import React, { useState } from "react";
+import React,{ useState, useEffect } from "react";
+
+function Edit() {
 
 
-function Write() {
+    const [blogs,setBlogs] = useState([]);
+
+    
+    useEffect(()=>{
+        function getblogbody(){
+            axios.get(`http://localhost:8052/blog/getblogbody/27`).then((res)=>{
+                console.log(res);
+            setBlogs(res.data);
+            }).catch((err)=>{
+                alert(err.message);
+            })
+        }
+        getblogbody();
+    },[])
+
+
   
   const [title, setTitle] = useState('')
   const [blogbody, setBlogbody] = useState('')
@@ -36,10 +53,10 @@ console.log(blogbody)
       
     <div className="write">
         <TopBar/>
-      {/* <img 
+      <img 
       className="writeImg"
       src="https://images.unsplash.com/photo-1598929440520-dc9f18462281?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" 
-      alt=""/> */}
+      alt=""/>
     <form className="writeForm">
         <div className="writeFormGroup">
             <label htmlFor="fileInput">
@@ -52,27 +69,33 @@ console.log(blogbody)
             onChange={(event) => {
               setTitle(event.target.value)
             }}
-            placeholder="   Title" 
+            placeholder="Title" 
             className="writeInput" 
            />
         </div>
-        <div className="writeFormGroup">
+        {blogs.map(blog => {
+        <div className="writeFormGroup" key={blog.blogid}>
             <textarea placeholder="Tell your story..." 
             type="text"
             onChange={(event) => {
               setBlogbody(event.target.value)
             }}
             className="writeInput writeText">
+                {blog.body}
             </textarea>
             
         </div>
+        })}
         <div className="writeSubmit">
-        <button type="submit" onClick={addblog}>Publish</button>
+        <button type="submit" onClick={addblog} className="btn btn-primary"
+        >Publish</button>
        
         </div>
     </form>
     </div>
   )
+
+  
 }
 
-export default  Write;
+export default  Edit;

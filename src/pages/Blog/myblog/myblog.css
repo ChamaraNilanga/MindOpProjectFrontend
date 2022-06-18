@@ -7,16 +7,45 @@
     font-size: 18px;
  }
  
- .singlePostIcon:first-child{
+ /* .singlePostIcon fa-solid fa-pen-to-square{
      color:teal;
      margin-top: 18px;
  
  }
- 
- .singlePostIcon:last-child{
+
+
+ .singlePostIcon fa-solid fa-trash-can{
      color: tomato;
      margin-top: 11px;
- }
+ } */
  
- 
- 
+/* .deleteyes{
+    margin-right: 50px;
+    margin-left: 20px;
+    color:teal;
+    background-color: rgba(0, 0, 0, 0.142);
+    border: none;
+    padding: 10px;
+} */
+/* 
+.deleteno{
+    margin-left: 50px;
+    color: tomato;
+    background-color: rgba(0, 0, 0, 0.142);
+    border: none;
+    padding: 10px;
+}
+
+.deletebtn{
+    border: none;
+  background:none;
+  color:tomato;
+  
+}
+
+.editbtn{
+    border: none;
+    background:none;
+    color: teal;
+} */
+
