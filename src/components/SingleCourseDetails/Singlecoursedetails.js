@@ -31,7 +31,14 @@ function Singlecoursedetails({courses,role}){
                         <p>Start : {course.sdate}</p>
                         <p>End : {course.enddate}</p>
                         {/* <text>Teacher : {course.teacherid}</text> */}
-                        <text>{role==='s' ? <div><p>Price: Rs{course.price}</p><button className="btn btn-warning">Enroll</button></div> : role==='a' ? <div><Link to="/assignteacher"><p style={{color:'#f5b042'}}>Assign Teacher</p></Link></div>:<></>}</text>
+                        <text>{role==='s' ? 
+                            <div><p>Price: Rs{course.price}</p><button className="btn btn-warning">Enroll</button></div> 
+                            : 
+                            role==='a' ? 
+                            <div><Link to="/assignteacher" state={{ id: course.modid , name:course.modname, code:course.modcode}}><p style={{color:'#f5b042'}}>Assign Teacher</p></Link>
+                            
+                            </div>
+                            :<></>}</text>
                         <hr/>
                     </div>
                 )

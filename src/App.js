@@ -19,6 +19,7 @@ import UpdateCourseDetails from './pages/UpdateCourseDetails/Updatecoursedetails
 import SingleCoursePage from './pages/SingleCoursePage/Singlecoursepage';
 import Enrollmentrequestlist from './pages/EnrollmentRequestsList/Enrollmentrequestlist';
 import Stuteacherallcourses from './pages/StudentTeacherAllcourses/Stuteacherallcourses';
+import Assignteacherformodule from './pages/AssignTeacherForModule/Assignteacherformodule';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path='/singlecourse' element={<SingleCoursePage role={role} />}/>
           <Route path='/enrollmentrequests' element={<Enrollmentrequestlist id={mod} userid={'194101A'} />}/>
           <Route path='/courseswithdetails' element={<Stuteacherallcourses role={role}/>}/>
+          <Route path='/assignteacher' element={<Assignteacherformodule user={id}/>}/>
         </Routes>
      </Router> 
    

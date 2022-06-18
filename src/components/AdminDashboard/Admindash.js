@@ -1,5 +1,6 @@
 import React from "react";
 import "./Admindash.css";
+import {Link} from "react-router-dom";
 
 function AdminDash () {
     return(
@@ -7,17 +8,19 @@ function AdminDash () {
         <h4>Courses</h4>
         <div className="addfunc">
             <h6>Add New Course</h6>
-            <button className="btn btn-primary">Add</button>
+            <Link to="/course/addcourse"><button className="btn btn-primary">Add</button></Link>
             
         </div>
-       <a href="/courselist">SEE LIST</a>
+        <Link to="/course/list"><p>SEE LIST</p></Link>
+       
        <h4>Students</h4>
         <div className="addfuncstu">
             <h6>Add New Student</h6>
             <button className="btn btn-primary">Add</button>
             
         </div>
-        <a href="/studentlist">SEE LIST</a>
+        <Link to="/studentlist"><p>SEE LIST</p></Link>
+        
     </div>
     )
 }

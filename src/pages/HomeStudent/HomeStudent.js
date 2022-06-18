@@ -4,13 +4,24 @@ import Allcourses from "../../components/Allcourses/Allcourses";
 import EnrollConductcourses from "../../components/EnrollOrConductcourses/EnOrConcourses";
 import Footer from "../../components/Footer/Footer";
 import "./HomeStudent.css";
+import AdminDash from "../../components/AdminDashboard/Admindash";
+import Enrollmentreqdash from "../../components/EnrollmentRequestDashboard/Enrollmentrequestdashboard";
 
 function HomeStudent({role,id}){
     return(
         <div>
             <header><Navbar/></header>
             {role==='a' ? 
-                <div className="div3"><Allcourses role={role}/></div>
+                <div>
+                    <div className="dashboard">
+                        <AdminDash/>
+                       
+                    </div>
+                    <div>
+                    <Allcourses role={role}/>
+                    </div>
+                    
+                </div>
                     :
                     <div><div className="div1"><EnrollConductcourses id={id} role={role}/></div>
                     <div className="div2"><Allcourses role={role}/></div></div>

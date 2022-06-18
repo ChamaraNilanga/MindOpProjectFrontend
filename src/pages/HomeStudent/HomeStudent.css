@@ -19,3 +19,17 @@ header{
 .div3{
     width: 80%;
 }
+.dashboard{
+    background-color: rgba(55, 61, 96, 0.835);
+    width: 1350px;
+    height: auto;
+    align-self: start;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 7px;
+    margin-left: 47px;
+    margin-bottom: 20px;
+
+}

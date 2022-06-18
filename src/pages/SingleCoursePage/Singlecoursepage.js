@@ -3,6 +3,7 @@ import axios from "axios";
 import Navbar from "../../components/Navbar/Navbar";
 import Singlecoursedetails from "../../components/SingleCourseDetails/Singlecoursedetails";
 import { useLocation } from "react-router-dom";
+import Enrollmentreqdash from "../../components/EnrollmentRequestDashboard/Enrollmentrequestdashboard";
 
 function Singlecoursedetailspage({role}){
     const [courses,setCourses] = useState([]);
@@ -25,8 +26,9 @@ function Singlecoursedetailspage({role}){
     return(
         <div>
         <header><Navbar/></header>
-        <div>
+        <div className="addcourse">
             <Singlecoursedetails courses={courses} role={role}/>
+            {role==='a' ? <Enrollmentreqdash id={id}/> : <></>}
         </div>
         </div>
     )
