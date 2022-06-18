@@ -17,11 +17,13 @@ import Conductreqlist from './components/ConductingRequests/Conductingreqlist';
 import Footer from './components/Footer/Footer';
 import UpdateCourseDetails from './pages/UpdateCourseDetails/Updatecoursedetails';
 import SingleCoursePage from './pages/SingleCoursePage/Singlecoursepage';
+import Enrollmentrequestlist from './pages/EnrollmentRequestsList/Enrollmentrequestlist';
 
 
 function App() {
   const role = 's';
   const id='194075X';
+  const mod=2;
   return (
     <div className="App">
       <Router>
@@ -30,7 +32,8 @@ function App() {
           <Route path='/course/addcourse' element={<Addcourseform/>}/>
           <Route path='/course/list' element={<Courseupdatedeletelist/>}/>
           <Route path='/updatecourse' element={<UpdateCourseDetails/>}/>
-          <Route path='/singlecourse' element={<SingleCoursePage/>}/>
+          <Route path='/singlecourse' element={<SingleCoursePage id={mod} role={role} />}/>
+          <Route path='/enrollmentrequests' element={<Enrollmentrequestlist id={2}/>}/>
         </Routes>
      </Router> 
    

@@ -2,22 +2,22 @@ import React , {useEffect,useState} from "react";
 import axios from "axios";
 import "./Singlecoursedetails.css";
 
-function Singlecoursedetails({id,role}){
-    const [courses,setCourses] = useState([]);
+function Singlecoursedetails({courses,role}){
+//     const [courses,setCourses] = useState([]);
     
-    useEffect(()=>{
-        function getSingleCourses(id){
-            axios.get(`http://localhost:8070/coursedetails/${id}`)
-            .then((res)=>{
-                console.log(res);
-            setCourses(res.data);
-            }).catch((err)=>{
-                console.log(err);
-            })
-        }
+//     useEffect(()=>{
+//         function getSingleCourses(id){
+//             axios.get(`http://localhost:8070/coursedetails/${id}`)
+//             .then((res)=>{
+//                 console.log(res);
+//             setCourses(res.data);
+//             }).catch((err)=>{
+//                 console.log(err);
+//             })
+//         }
    
-    getSingleCourses(id);
-},[])
+//     getSingleCourses(id);
+// },[])
     return(
         <div className="singlecourse">
            {courses.map(course=>{
