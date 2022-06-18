@@ -14,7 +14,6 @@ import Searchbar from './components/SearchBar/Searchbar';
 import Singlecoursedetails from './components/SingleCourseDetails/Singlecoursedetails';
 import Enrollreqlist from './components/EnrollmentRequests/Enrollmentreqlist';
 import Conductreqlist from './components/ConductingRequests/Conductingreqlist';
-import Footer from './components/Footer/Footer';
 import UpdateCourseDetails from './pages/UpdateCourseDetails/Updatecoursedetails';
 import SingleCoursePage from './pages/SingleCoursePage/Singlecoursepage';
 import Enrollmentrequestlist from './pages/EnrollmentRequestsList/Enrollmentrequestlist';
