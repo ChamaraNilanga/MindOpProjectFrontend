@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Allcourses from "../../components/Allcourses/Allcourses";
 import EnrollConductcourses from "../../components/EnrollOrConductcourses/EnOrConcourses";
-import Footer from "../../components/Footer/Footer";
 import "./HomeStudent.css";
 import AdminDash from "../../components/AdminDashboard/Admindash";
 import Enrollmentreqdash from "../../components/EnrollmentRequestDashboard/Enrollmentrequestdashboard";
