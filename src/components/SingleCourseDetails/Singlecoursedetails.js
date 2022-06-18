@@ -30,7 +30,8 @@ function Singlecoursedetails({courses,role}){
                         <p>Start : {course.sdate}</p>
                         <p>End : {course.enddate}</p>
                         {/* <text>Teacher : {course.teacherid}</text> */}
-                        <text>{role==='s' ? <button className="btn btn-warning">Enroll</button> : <></>}</text>
+                        <text>{role==='s' ? <div><p>Price: Rs{course.price}</p><button className="btn btn-warning">Enroll</button></div> : <></>}</text>
+                        <hr/>
                     </div>
                 )
             })}
