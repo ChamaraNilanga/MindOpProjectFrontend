@@ -1,0 +1,23 @@
+.rcw-launcher{
+    background-color:#373d60;
+}
+
+.rcw-conversation-container .rcw-header{
+    background-color: #373d60;
+}
+
+.rcw-picker-btn{
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    overflow: hidden;
+    top: -10px;
+    }
+
+.rcw-messages-container .rcw-client .rcw-message-text{
+    background-color:#d0c6d0
+}
+
+/* .rcw-open-launcher{
+    background-image:url("../../images/1310025.png");
+} */

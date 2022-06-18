@@ -2,23 +2,22 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import './App.css';
-import Navigationbar from "./components/Navbar/Navbar"; 
-import Allcourses from './components/Allcourses/Allcourses';
 import Homestudent from './pages/HomeStudent/HomeStudent';
 import Addcourseform from './pages/Addcourse/Addcourse';
-import Enrollmentreqdash from './components/EnrollmentRequestDashboard/Enrollmentrequestdashboard';
-import AdminDash from './components/AdminDashboard/Admindash';
 import AllcoursesDelUpdlist from './components/AllcoursesDeleteUpdateList/Allcoursesdelupdlist';
 import Courseupdatedeletelist from './pages/CoursesUpdateDeleteList/Courseupddellist';
-import Searchbar from './components/SearchBar/Searchbar';
-import Singlecoursedetails from './components/SingleCourseDetails/Singlecoursedetails';
-import Enrollreqlist from './components/EnrollmentRequests/Enrollmentreqlist';
-import Conductreqlist from './components/ConductingRequests/Conductingreqlist';
 import UpdateCourseDetails from './pages/UpdateCourseDetails/Updatecoursedetails';
 import SingleCoursePage from './pages/SingleCoursePage/Singlecoursepage';
 import Enrollmentrequestlist from './pages/EnrollmentRequestsList/Enrollmentrequestlist';
 import Stuteacherallcourses from './pages/StudentTeacherAllcourses/Stuteacherallcourses';
 import Assignteacherformodule from './pages/AssignTeacherForModule/Assignteacherformodule';
+import ChatStudent from './components/ChatStudent/chat';
+import MyBlogs from "./pages/Blog/myblog/MyBlog";
+import Post from "./pages/Blog/post/Post";
+import SinglePost from "./pages/Blog/singlePost/SinglePost";
+import Write from "./pages/Blog/writeblog/Write";
+import DeleteBlog from "./pages/Blog/deleteblog/DeleteBlog";
+
 
 
 function App() {
@@ -37,9 +36,22 @@ function App() {
           <Route path='/enrollmentrequests' element={<Enrollmentrequestlist id={mod} userid={'194101A'} />}/>
           <Route path='/courseswithdetails' element={<Stuteacherallcourses role={role}/>}/>
           <Route path='/assignteacher' element={<Assignteacherformodule user={id}/>}/>
+          <Route path='/singlecourse' element={<SingleCoursePage/>}/>
+         {/* <Route path="/" element={<Navigationbar/>}/>    */}
+         <Route path="/student" element={<ChatStudent/>}/>
+         {/* <Route exact path="/Blogs/" element={<MyBlog/>}/> */}
+         <Route  path="/Blogs" element={<Post/>}/>
+         <Route  path="/Blogs/Blogs" element={<Post/>}/>
+         <Route  path="/singlepost" element={<SinglePost/>}/>
+         <Route  path="/write" element={<Write/>}/>
+         <Route  path="/myblogs/" element={<MyBlogs/>}/>
+         <Route  path="Blogs/deleteblog/" element={<DeleteBlog/>}/>
+         <Route path='/home' element={<Homestudent role={role}/>}/>
+         <Route path='/course/addcourse' element={<Addcourseform/>}/>
         </Routes>
      </Router> 
    
+
     </div>
 
   );
