@@ -46,6 +46,18 @@ function Enrollreqlist ({id , userid}){
         }
        
     }
+    const deleterequest=async (id ,modid, e)=>{
+        console.log(id);
+        if(window.confirm('Are you sure you want to delete?')){
+            await axios.delete(`http://localhost:8070/coursedetails/studentreqdelete/${id}`)
+            .then((res)=>{
+                console.log(res.data);
+                alert(res.data);
+                getEnrollreqlist(id);
+            })
+        }
+       
+    }
 
     return(
         <div className="allcourselist">
@@ -74,7 +86,7 @@ function Enrollreqlist ({id , userid}){
                             <td class="w-100">{course.email}</td>
                             <td class="w-100">{course.userid}</td>
                             <td class="w-10"><i class="fa-solid fa-circle-check fa-xl" onClick={()=>{acceptreq(userid,course.userid,course.modid)}}></i></td>
-                            <td class="w-15"><i class="fa-solid fa-circle-xmark fa-xl"></i></td>
+                            <td class="w-15"><i class="fa-solid fa-circle-xmark fa-xl" onClick={()=>{deleterequest(course.requestedid)}}></i></td>
                         </tr>
                     </tbody>
                     
