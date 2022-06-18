@@ -35,25 +35,27 @@ export default function Post() {
     <div className="postInfo">
       <div className="col-sm-2 col-md-12 v my-2" key={blog.blogid}>
 
-      <img className="postImg" 
+      {/* <img className="postImg" 
     src="https://images.unsplash.com/photo-1598929440520-dc9f18462281?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" 
-    alt=""/>
-      <div className="card shadow-sm w-100" style={{ maxWidth: 425, maxHeight: 305,  minHeight: 305 }}>
+    alt=""/> */}
+      <div className="card shadow-sm w-100" style={{ maxWidth: 250, maxHeight: 250,  minHeight: 250 }}>
 
  
       <div className="card-body" style={{ maxWidth: 350}}>
 
- 
+ <div className="box">
 
   <Link to="/singlepost/" className="nav-link">
       <span className="postTitle" key={blog.blogid}>
       {blog.blogtitle}
       </span>
       </Link>
-      <hr/>
-      <span className="postDate">
-          1 hour ago
-      </span>
+     
+
+      <span className="postBy" key={blog.blogid}>
+Written By: {blog.userid}
+</span>
+<br/>
 
       
       <Link to="/singlepost/" className="nav-link">
@@ -62,8 +64,13 @@ export default function Post() {
       </p>
       
        </Link>
+{/* 
+       <span className="postDate" key={blog.blogid}>
+{blog.managetime} 
+</span> */}
+
       
-      
+      </div>
       </div>
       </div>
       </div>
