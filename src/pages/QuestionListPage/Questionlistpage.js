@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import Forumquestionlist from "../../components/ForumQuestionList/Forumquestionlist";
 import Forumssidebar from "../../components/ForumsSideBar/Forumssidebar";
 
-function Questionlistpage(){
+function Questionlistpage({user}){
     const [questions,setQuestions] = useState([]);
     const location = useLocation()
     const { id , name } = location.state
@@ -31,7 +31,7 @@ function Questionlistpage(){
             <Forumquestionlist questions={questions} name={name}/>
             </div>
             <div className="sidemenu"style={{marginLeft:'10px'}}>
-            <Forumssidebar/>
+            <Forumssidebar cid={id} user={user}/>
             </div>
         </div>
         </div>

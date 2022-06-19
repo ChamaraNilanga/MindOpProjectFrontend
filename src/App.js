@@ -21,11 +21,12 @@ import Addforumcategory from './components/AddForumCategory/Addforumcategory';
 import Forumcategory from './pages/FormsCategory/Formscategory';
 import Addcategory from './pages/AddCategory/Addcategory';
 import Questionlistpage from './pages/QuestionListPage/Questionlistpage';
-
+import Singlequestionforumpage from './pages/SingleQuestionForumPage/Singlequestionforumpage';
+import Addforumquestionpage from './pages/AddForumQuestionPage/Addforumquestionpage';
 
 
 function App() {
-  const role = 'a';
+  const role = 's';
   const id='194071F';
   const mod=40;
   return (
@@ -42,9 +43,6 @@ function App() {
           <Route path='/courseswithdetails' element={<Stuteacherallcourses role={role}/>}/>
           <Route path='/assignteacher' element={<Assignteacherformodule user={id}/>}/>
           <Route path='/singlecourse' element={<SingleCoursePage/>}/>
-          {/* <Route path="/" element={<Navigationbar/>}/>    */}
-         {/* <Route path="/student" element={<ChatStudent/>}/> */}
-         {/* <Route exact path="/Blogs/" element={<MyBlog/>}/> */}
          <Route  path="/Blogs" element={<Post/>}/>
          <Route  path="/Blogs/Blogs" element={<Post/>}/>
          <Route  path="/singlepost" element={<SinglePost/>}/>
@@ -55,7 +53,9 @@ function App() {
          <Route path='/course/addcourse' element={<Addcourseform/>}/>
          <Route path='/forums/addcategory' element={<Addcategory/>}/>
          <Route path='/forums' element={<Forumcategory/>}/>
-         <Route path='/forum/questions' element={<Questionlistpage/>}/>
+         <Route path='/forum/questions' element={<Questionlistpage user={id}/>}/>
+         <Route path="/forum/single" element={<Singlequestionforumpage user={id}/>}/>
+         <Route path="/forum/addforum" element={<Addforumquestionpage/>}/>
 
         </Routes>
      </Router> 

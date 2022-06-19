@@ -1,5 +1,6 @@
 import React from "react";
 import "./Forumquestionlist.css";
+import {Link} from "react-router-dom";
 
 function Forumquestionlist({questions,name}){
     return(
@@ -10,8 +11,9 @@ function Forumquestionlist({questions,name}){
                 {questions.map(question=>{
                     return(
                         <div>
-                            <li><p key={question.fquestionid}>{question.name_}</p></li>
-                            <text className="text">Reply</text>
+                            
+                            <li><Link to="/forum/single" state={{fid : question.fquestionid,name : question.name_}}><p key={question.fquestionid} style={{color:'black'}}>{question.name_}</p></Link></li>
+                            <Link to="forum/reply" state={{ fid : question.fquestionid, name : question.name_}}><text className="textbold">Reply</text></Link>
                             <hr/>
                         </div>
                     )
