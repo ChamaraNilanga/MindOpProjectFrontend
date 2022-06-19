@@ -13,7 +13,7 @@ function Categorylistforum({categories}){
                     
                     <Card style={{ width: '12rem' , height:'12rem'}} >
                     <Card.Body>
-                    <Link to="/forum/questions" state={{id:category.fcategoryid , name:category.name_}}><Card.Title key={category.fcategoryid}>{category.name_}</Card.Title></Link>
+                    <Link to="/forum/questions" state={{id:category.fcategoryid , name:category.name_}} style={{color:'black'}}><Card.Title key={category.fcategoryid}>{category.name_}</Card.Title></Link>
                      </Card.Body>
                     
                     </Card>

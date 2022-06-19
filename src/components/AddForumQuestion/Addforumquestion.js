@@ -9,12 +9,14 @@ function Addforumquestion(){
     const { cid , user } = location.state;
     
     const [question , setQuestion] = useState('')
+    const [image , setImage] = useState('')
     
 
     const addQuestion = () => {
         axios
           .post(`http://localhost:8070/forums/question/${cid}&${user}`, {
             question: question,
+            image : image,
             
           })
           .then(() => {
@@ -39,13 +41,13 @@ function Addforumquestion(){
                     
                 </div>
                
-                {/* <div class="form-group">
-                    <label for="modcode">Module Code</label>
-                    <input type="modcode" onChange={(event) => {
-                        setModcode(event.target.value)
+                <div class="form-group">
+                    <label for="Image">Image of your problem</label>
+                    <input type="file" onChange={(event) => {
+                        setImage(event.target.value)
                       }}
-                        className="form-control" id="modcode" placeholder="Enter course code" required/>
-                </div> */}
+                        className="form-control" id="image"/>
+                </div>
                 <div className="buttons">
                     <Link to="/forum/questions" ><button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: 'px solid black'}} className="btn btn-primary">Cancel</button></Link>
                     <Link to="/forum/mylist" ><button type="submit" onClick={addQuestion} className="btn btn-primary">Submit</button></Link>

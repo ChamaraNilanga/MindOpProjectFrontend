@@ -28,8 +28,8 @@ import Addforumcomments from './pages/AddForumComment/Addforumcomment';
 
 
 function App() {
-  const role = 's';
-  const id='194071F';
+  const role = 'a';
+  const id='1941W';
   const mod=40;
   return (
     <div className="App">

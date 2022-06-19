@@ -29,7 +29,7 @@ function Forummylist({user}){
         <header><Navbar/></header>
         <div className="addcourse">
         <div className="formadd" style={{marginRight:'10px'}}>
-            <Forumquestionlist questions={questions}/>
+            <Forumquestionlist questions={questions} mylist={true} user={user}/>
             </div>
             {/* <div className="sidemenu"style={{marginLeft:'10px'}}>
             <Forumssidebar cid={id} user={user}/>
