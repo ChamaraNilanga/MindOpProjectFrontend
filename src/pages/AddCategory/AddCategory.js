@@ -2,6 +2,8 @@ import "./AddCategory.css";
 import { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 
+import { Link } from "react-router-dom";
+
 
 import axios from "axios";
 
@@ -120,8 +122,8 @@ const AddCategory = () => {
         
 
               <div className="break"></div>
-              <button type="submit" onClick={submitForm}>Add Category</button>
-              {/* <button type="button" onClick={this.doCancel}>Cancel</button> */}
+              <button className="button" type="submit" onClick={submitForm}>Add Category</button>
+               <button className="button"><Link to='/DisplayCategory'>Cancel</Link></button> 
             </form>
           </div>
         </div>
