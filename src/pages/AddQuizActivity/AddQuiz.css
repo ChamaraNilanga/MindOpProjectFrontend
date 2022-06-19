@@ -1,23 +1,4 @@
-body {
-    background-image: url("../../images/Desktop\ -\ 3\ \(4\).png");
-    height: 100%;
-    width: 100%;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-  
-  
-    /*background-position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;*/
-   }
-  
-  
-  
-  
+
   .new {
     width: 100%;
     display: flex;
@@ -33,7 +14,7 @@ body {
     display: flex;
   }
   .new .newContainer .top h1, .new .newContainer .bottom h1 {
-    color: #3FA781;;
+    color: rgb(7, 107, 125);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: normal;
     font-weight: 650;
@@ -68,8 +49,22 @@ body {
     width: 100%;
     padding: 5px;
     border: none;
-    border-bottom: 1px solid gray;
+    background-color: #fcb39bad;
+    border: 1px solid rgb(0, 0, 0);
   }
+
+  .new .newContainer .top .right form .formInput input, .new .newContainer .bottom .right form .option {
+   
+    padding: 5px;
+    border: none;
+    background-color: #fcb39bad;
+    width: 100%;
+    border: 1px solid rgb(0, 0, 0);
+    margin-left: 10px;
+    border-radius: 10px;
+
+  }
+
   .new .newContainer .top .right form .break, .new .newContainer .bottom .right form .break {
     flex-basis: 100%;
     width: 0px;
@@ -80,10 +75,27 @@ body {
     width: 150px;
     padding: 10px;
     border: none;
-    background-color: teal;
-    color: white;
+    background-color: #11a89b;
     font-weight: bold;
     cursor: pointer;
     margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    border: 2px solid rgb(7, 107, 125);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .new .newContainer .top .right form button, .new .newContainer .bottom .right form .cancelbtn {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    background-color: #c5c7c0;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    border: 2px solid rgb(187, 186, 186);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
   

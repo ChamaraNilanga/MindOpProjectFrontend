@@ -75,7 +75,7 @@ body {
   border: none;
   border-radius: 10px;
   background-color: #fcb39bad;
-  border-bottom: 1px solid #fba285;;
+  border-bottom: 1px solid #fba285;
 }
 .new .newContainer .top .right form .break, .new .newContainer .bottom .right form .break {
   flex-basis: 100%;
@@ -83,7 +83,7 @@ body {
   height: 0px;
   overflow: hidden;
 }
-.new .newContainer .top .right form button, .new .newContainer .bottom .right form button {
+.new .newContainer .top .right form button, .new .newContainer .bottom .right form .button {
   width: 150px;
   padding: 10px;
   border: none;
@@ -93,7 +93,7 @@ body {
   margin-top: 10px;
   margin-bottom: 30px;
   border-radius: 20px;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
  
 }
 /* .submit-btn{

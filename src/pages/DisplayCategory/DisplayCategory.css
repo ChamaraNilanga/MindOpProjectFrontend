@@ -1,28 +1,14 @@
-body {
-    background-image: url("../../images/Desktop\ -\ 3\ \(4\).png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-   }
+.container{
+    margin-left: 100px;
+    margin-top: 50px;
+    background-color:rgb(252, 180, 155) ; 
+    border-width: 50px;
    
-  
-  
-  .card-body{
-    background: #FFFFFF;
-  border: 2px solid #C4C4C4;
-  box-sizing: border-box;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  
-  .Qbank{
-    font-family: 'Sumana';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 82px;
-  
-  letter-spacing: 0.02em;
-  
-  color: #EC7824;
-  }
+    
+    
+}
+
+
+.break{
+    margin-top: 20px;
+}
