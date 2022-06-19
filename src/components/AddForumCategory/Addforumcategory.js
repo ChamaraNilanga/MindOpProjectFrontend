@@ -38,8 +38,8 @@ function Addforumcategory(){
                 </div>
                 
                 <div className="buttons">
-                    <Link to="/forum" ><button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: 'px solid black'}} className="btn btn-primary">Cancel</button></Link>
-                    <Link to="/forum" ><button type="submit"  className="btn btn-primary" onClick={addforumcategory}>Submit</button></Link>
+                    <Link to="/forums" ><button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: 'px solid black'}} className="btn btn-primary">Cancel</button></Link>
+                    <Link to="/forums" ><button type="submit"  className="btn btn-primary" onClick={addforumcategory}>Submit</button></Link>
                 </div>
                 
             </form>

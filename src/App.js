@@ -17,6 +17,9 @@ import Post from "./pages/Blog/post/Post";
 import SinglePost from "./pages/Blog/singlePost/SinglePost";
 import Write from "./pages/Blog/writeblog/Write";
 import DeleteBlog from "./pages/Blog/deleteblog/DeleteBlog";
+import Addforumcategory from './components/AddForumCategory/Addforumcategory';
+import Forumcategory from './pages/FormsCategory/Formscategory';
+import Addcategory from './pages/AddCategory/Addcategory';
 
 
 
@@ -26,6 +29,7 @@ function App() {
   const mod=40;
   return (
     <div className="App">
+      
       <Router>
        <Routes>
           <Route path='/home' element={<Homestudent role={role} id={id}/>}/>
@@ -37,8 +41,8 @@ function App() {
           <Route path='/courseswithdetails' element={<Stuteacherallcourses role={role}/>}/>
           <Route path='/assignteacher' element={<Assignteacherformodule user={id}/>}/>
           <Route path='/singlecourse' element={<SingleCoursePage/>}/>
-         {/* <Route path="/" element={<Navigationbar/>}/>    */}
-         <Route path="/student" element={<ChatStudent/>}/>
+          {/* <Route path="/" element={<Navigationbar/>}/>    */}
+         {/* <Route path="/student" element={<ChatStudent/>}/> */}
          {/* <Route exact path="/Blogs/" element={<MyBlog/>}/> */}
          <Route  path="/Blogs" element={<Post/>}/>
          <Route  path="/Blogs/Blogs" element={<Post/>}/>
@@ -48,6 +52,9 @@ function App() {
          <Route  path="Blogs/deleteblog/" element={<DeleteBlog/>}/>
          <Route path='/home' element={<Homestudent role={role}/>}/>
          <Route path='/course/addcourse' element={<Addcourseform/>}/>
+         <Route path='/forums/addcategory' element={<Addcategory/>}/>
+         <Route path='/forums' element={<Forumcategory/>}/>
+
         </Routes>
      </Router> 
    

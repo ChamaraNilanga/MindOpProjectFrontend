@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import axios from "axios";
 import Categorylistforum from "../../components/CategoryListForum/Categorylistforum";
 import "./Formscategory.css";
+import Addcategorydash from "../../components/AddCategoryDashboard/Addcategorydash";
 
 function Forumcategory(){
     const [categories,setCategories] = useState([]);
@@ -22,10 +23,15 @@ function Forumcategory(){
     return(
         <div>
             <header><Navbar/></header>
+            <div className="addcourse">
             <div className="Forums">
                 <h3>Select category related to your problem</h3>
                 <Categorylistforum categories={categories}/>
             </div>
+            <div className="sidemenu"><Addcategorydash/></div>
+                
+            </div>
+           
         </div>
     )
 }
