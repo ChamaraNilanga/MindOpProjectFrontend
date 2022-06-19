@@ -4,23 +4,23 @@ import { format } from "date-fns";
 import {Link} from "react-router-dom";
 import {useLocation} from "react-router-dom";
 
-function Addforumquestion(){
+function Addforumcomment({user}){
     const location = useLocation();
-    const { cid , user } = location.state;
-    
-    const [question , setQuestion] = useState('')
+    const { fid , name } = location.state;
+    console.log(fid)
+    const [comment , setComment] = useState('')
     
 
-    const addQuestion = () => {
+    const addComment = () => {
         axios
-          .post(`http://localhost:8070/forums/question/${cid}&${user}`, {
-            question: question,
+          .post(`http://localhost:8070/forums/comment/${user}&${fid}`, {
+            comment: comment,
             
           })
           .then(() => {
             console.log('Success')
             
-            alert('added successed!')
+            alert('Added successed!')
           })
       }
       
@@ -29,11 +29,12 @@ function Addforumquestion(){
     return(
         
             <form className="courseform">
-                <h3 className="head2">Add New Question</h3>
+                <h3>{name}</h3>
+                <h3 className="head2">Add New Comment</h3>
                 <div class="form-group">
-                    <label for="coursename">Question</label>
+                    <label for="coursename">Your Comment</label>
                     <input type="text" onChange={(event) => {
-                        setQuestion(event.target.value)
+                        setComment(event.target.value)
                       }}
                         className="form-control" id="question"  placeholder="Enter your question" required/>
                     
@@ -48,7 +49,7 @@ function Addforumquestion(){
                 </div> */}
                 <div className="buttons">
                     <Link to="/forum/questions" ><button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: 'px solid black'}} className="btn btn-primary">Cancel</button></Link>
-                    <Link to="/forum/mylist" ><button type="submit" onClick={addQuestion} className="btn btn-primary">Submit</button></Link>
+                    <Link to="/forum/questions" ><button type="submit" onClick={addComment} className="btn btn-primary">Submit</button></Link>
                 </div>
                 
             </form>
@@ -57,4 +58,4 @@ function Addforumquestion(){
 
 };
 
-export default Addforumquestion;
+export default Addforumcomment;

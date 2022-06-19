@@ -23,6 +23,8 @@ import Addcategory from './pages/AddCategory/Addcategory';
 import Questionlistpage from './pages/QuestionListPage/Questionlistpage';
 import Singlequestionforumpage from './pages/SingleQuestionForumPage/Singlequestionforumpage';
 import Addforumquestionpage from './pages/AddForumQuestionPage/Addforumquestionpage';
+import Forummylist from './pages/ForumMylist/Forummylist';
+import Addforumcomments from './pages/AddForumComment/Addforumcomment';
 
 
 function App() {
@@ -56,6 +58,9 @@ function App() {
          <Route path='/forum/questions' element={<Questionlistpage user={id}/>}/>
          <Route path="/forum/single" element={<Singlequestionforumpage user={id}/>}/>
          <Route path="/forum/addforum" element={<Addforumquestionpage/>}/>
+         <Route path="/forum/mylist" element={<Forummylist user={id}/>}/>
+         <Route path="/forum/reply" element={<Addforumcomments user={id}/>}/>
+
 
         </Routes>
      </Router> 

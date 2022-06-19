@@ -13,7 +13,7 @@ function Forumquestionlist({questions,name}){
                         <div>
                             
                             <li><Link to="/forum/single" state={{fid : question.fquestionid,name : question.name_}}><p key={question.fquestionid} style={{color:'black'}}>{question.name_}</p></Link></li>
-                            <Link to="forum/reply" state={{ fid : question.fquestionid, name : question.name_}}><text className="textbold">Reply</text></Link>
+                            <Link to="/forum/reply" state={{ fid : question.fquestionid, name : question.name_}}><text className="textbold">Reply</text></Link>
                             <hr/>
                         </div>
                     )

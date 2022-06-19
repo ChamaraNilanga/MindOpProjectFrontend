@@ -5,23 +5,23 @@ import { useLocation } from "react-router-dom";
 import Forumquestionlist from "../../components/ForumQuestionList/Forumquestionlist";
 import Forumssidebar from "../../components/ForumsSideBar/Forumssidebar";
 
-function Questionlistpage({user}){
+function Forummylist({user}){
     const [questions,setQuestions] = useState([]);
-    const location = useLocation()
-    const { id , name } = location.state
-    console.log(id);
-     
+    // const location = useLocation()
+    // const { id , name } = location.state
+    // console.log(id);
+    function getQuestion(user){
+        axios.get(`http://localhost:8070/forums/mylist/${user}`)
+        .then((res)=>{
+            console.log(res);
+            
+        setQuestions(res.data);
+        }).catch((err)=>{
+            console.log(err);
+        })
+    }   
     useEffect(()=>{
-        function getQuestion(id){
-            axios.get(`http://localhost:8070/forums/question/${id}`)
-            .then((res)=>{
-                console.log(res);
-            setQuestions(res.data);
-            }).catch((err)=>{
-                console.log(err);
-            })
-        }  
-        getQuestion(id);
+        getQuestion(user);
     },[])
 
     return(
@@ -29,14 +29,14 @@ function Questionlistpage({user}){
         <header><Navbar/></header>
         <div className="addcourse">
         <div className="formadd" style={{marginRight:'10px'}}>
-            <Forumquestionlist questions={questions} name={name}/>
+            <Forumquestionlist questions={questions}/>
             </div>
-            <div className="sidemenu"style={{marginLeft:'10px'}}>
+            {/* <div className="sidemenu"style={{marginLeft:'10px'}}>
             <Forumssidebar cid={id} user={user}/>
-            </div>
+            </div> */}
         </div>
         </div>
     )
 }
 
-export default Questionlistpage;
+export default Forummylist;
