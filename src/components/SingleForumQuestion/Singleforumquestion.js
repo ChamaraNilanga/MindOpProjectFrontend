@@ -17,11 +17,12 @@ function Singleforumquestion({replies,fid ,name}){
                         <br/>
                         <p>{reply.username}</p>
                         <p>{reply.postedtime}</p>
-                        
+                        <Link to="/forum/subreply" state={{ cid : reply.fcommentid , name : name , commentbody : reply.body}}><text className="textbold">Reply</text></Link>
+
                     </div>
                 )
             })}
-            <Link to="forum/reply" state={{ fid : fid, name : name}}><text className="textbold">Reply</text></Link>
+            <Link to="/forum/reply" state={{ fid : fid, name : name}}><text className="textbold" style={{color:'yellow'}}>Reply</text></Link>
         </div>
         
     )

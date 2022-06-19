@@ -25,6 +25,7 @@ import Singlequestionforumpage from './pages/SingleQuestionForumPage/Singlequest
 import Addforumquestionpage from './pages/AddForumQuestionPage/Addforumquestionpage';
 import Forummylist from './pages/ForumMylist/Forummylist';
 import Addforumcomments from './pages/AddForumComment/Addforumcomment';
+import Addforumsubcomment from './pages/AddForumSubComment/Addforumsubcomment';
 
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
          <Route path="/forum/addforum" element={<Addforumquestionpage/>}/>
          <Route path="/forum/mylist" element={<Forummylist user={id}/>}/>
          <Route path="/forum/reply" element={<Addforumcomments user={id}/>}/>
+         <Route path='/forum/subreply' element={<Addforumsubcomment user={id}/>}/>
 
 
         </Routes>
