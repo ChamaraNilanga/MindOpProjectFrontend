@@ -6,7 +6,7 @@ import "./Categorylistforum.css"
 function Categorylistforum({categories}){
     return(
         <div className="overflow-auto">
-        <div className="subject-card-grid">
+        <div className="subject-card-grid-forum">
             {categories.map(category=>{
                 
                 return(

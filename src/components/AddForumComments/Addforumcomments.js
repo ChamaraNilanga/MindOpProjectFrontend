@@ -33,20 +33,13 @@ function Addforumcomment({user}){
                 <h3 className="head2">Add New Comment</h3>
                 <div class="form-group">
                     <label for="coursename">Your Comment</label>
-                    <input type="text" onChange={(event) => {
+                    <textarea class="form-control" id="question" rows="3" onChange={(event) => {
                         setComment(event.target.value)
-                      }}
-                        className="form-control" id="question"  placeholder="Enter your question" required/>
+                      }} placeholder="Enter your question"></textarea>
                     
                 </div>
                
-                {/* <div class="form-group">
-                    <label for="modcode">Module Code</label>
-                    <input type="modcode" onChange={(event) => {
-                        setModcode(event.target.value)
-                      }}
-                        className="form-control" id="modcode" placeholder="Enter course code" required/>
-                </div> */}
+                
                 <div className="buttons">
                     <Link to="/forum/questions" ><button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: 'px solid black'}} className="btn btn-primary">Cancel</button></Link>
                     <Link to="/forum/questions" ><button type="submit" onClick={addComment} className="btn btn-primary">Submit</button></Link>

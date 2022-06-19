@@ -34,10 +34,10 @@ function Addforumquestion(){
                 <h3 className="head2">Add New Question</h3>
                 <div class="form-group">
                     <label for="coursename">Question</label>
-                    <input type="text" onChange={(event) => {
+                    <textarea class="form-control" id="question" rows="4" onChange={(event) => {
                         setQuestion(event.target.value)
-                      }}
-                        className="form-control" id="question"  placeholder="Enter your question" required/>
+                      }} placeholder="Enter your question" ></textarea>
+                   
                     
                 </div>
                

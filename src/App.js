@@ -54,7 +54,7 @@ function App() {
          <Route path='/home' element={<Homestudent role={role}/>}/>
          <Route path='/course/addcourse' element={<Addcourseform/>}/>
          <Route path='/forums/addcategory' element={<Addcategory/>}/>
-         <Route path='/forums' element={<Forumcategory/>}/>
+         <Route path='/forums' element={<Forumcategory role={role}/>}/>
          <Route path='/forum/questions' element={<Questionlistpage user={id}/>}/>
          <Route path="/forum/single" element={<Singlequestionforumpage user={id}/>}/>
          <Route path="/forum/addforum" element={<Addforumquestionpage/>}/>
