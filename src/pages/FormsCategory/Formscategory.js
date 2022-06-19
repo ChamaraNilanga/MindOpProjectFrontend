@@ -5,7 +5,7 @@ import Categorylistforum from "../../components/CategoryListForum/Categorylistfo
 import "./Formscategory.css";
 import Addcategorydash from "../../components/AddCategoryDashboard/Addcategorydash";
 
-function Forumcategory(){
+function Forumcategory({role}){
     const [categories,setCategories] = useState([]);
   
     function getCategories(){
@@ -28,7 +28,8 @@ function Forumcategory(){
                 <h3>Select category related to your problem</h3>
                 <Categorylistforum categories={categories}/>
             </div>
-            <div className="sidemenu"><Addcategorydash/></div>
+            {role==='a' ? <div className="sidemenu"><Addcategorydash/></div> : <></>}
+            
                 
             </div>
            

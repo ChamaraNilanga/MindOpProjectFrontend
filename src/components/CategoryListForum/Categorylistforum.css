@@ -1,0 +1,7 @@
+.title{
+    color: #000;
+}
+
+.title:hover{
+    color: blue;
+}

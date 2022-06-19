@@ -1,0 +1,20 @@
+.forumsquestions{
+    position: relative;
+    width: auto;
+    height: auto;
+    
+    /* justify-content: center; */
+    /* align-items: center; */
+    border-radius: 10px;
+    background-color: rgba(55, 61, 96, 0.835);
+    
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.text{
+   align-items: flex-end;
+   color: blue;
+   align-content: flex-end;
+   margin-left: 90%;
+}

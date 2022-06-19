@@ -20,6 +20,7 @@ import DeleteBlog from "./pages/Blog/deleteblog/DeleteBlog";
 import Addforumcategory from './components/AddForumCategory/Addforumcategory';
 import Forumcategory from './pages/FormsCategory/Formscategory';
 import Addcategory from './pages/AddCategory/Addcategory';
+import Questionlistpage from './pages/QuestionListPage/Questionlistpage';
 
 
 
@@ -54,6 +55,7 @@ function App() {
          <Route path='/course/addcourse' element={<Addcourseform/>}/>
          <Route path='/forums/addcategory' element={<Addcategory/>}/>
          <Route path='/forums' element={<Forumcategory/>}/>
+         <Route path='/forum/questions' element={<Questionlistpage/>}/>
 
         </Routes>
      </Router> 

@@ -1,5 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import {Link} from "react-router-dom";
+import "./Categorylistforum.css"
 
 function Categorylistforum({categories}){
     return(
@@ -11,7 +13,7 @@ function Categorylistforum({categories}){
                     
                     <Card style={{ width: '12rem' , height:'12rem'}} >
                     <Card.Body>
-                    <Card.Title key={category.fcategoryid}>{category.name_}</Card.Title>
+                    <Link to="/forum/questions" state={{id:category.fcategoryid , name:category.name_}}><Card.Title key={category.fcategoryid}>{category.name_}</Card.Title></Link>
                      </Card.Body>
                     
                     </Card>
