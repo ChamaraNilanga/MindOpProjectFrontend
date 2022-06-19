@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 function Enrollmentreqdash ({id}) {
     const [requests,setRequests] = useState([]);
-    
+    console.log(id);
     useEffect(()=>{
         function getEnrollreqcourses(){
             axios.get(`http://localhost:8070/coursedetails/studentreq/${id}`)

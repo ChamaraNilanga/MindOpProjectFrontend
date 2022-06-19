@@ -26,7 +26,7 @@ function Forumcategory({role}){
             <div className="addcourse">
             <div className="Forums">
                 <h3>Select category related to your problem</h3>
-                <Categorylistforum categories={categories}/>
+                <Categorylistforum categories={categories} role={role}/>
             </div>
             {role==='a' ? <div className="sidemenu"><Addcategorydash/></div> : <></>}
             
