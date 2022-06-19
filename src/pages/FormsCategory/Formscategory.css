@@ -1,0 +1,15 @@
+.Forums{
+    position: relative;
+    width: 1350px;
+    height: auto;
+    left: 47px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    border-radius: 10px;
+    background-color: rgba(55, 61, 96, 0.835);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    
+}
