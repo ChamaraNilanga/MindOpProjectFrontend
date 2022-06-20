@@ -5,28 +5,37 @@ import {Link} from "react-router-dom";
 import {useLocation} from "react-router-dom";
 
 function Addforumquestion(){
+
+    async function addQuestion({image, question}) {
+        const formData = new FormData();
+        formData.append("image", image)
+        formData.append("question", question)
+      
+        const result = await axios.post(`http://localhost:8070/forums/question/${cid}&${user}`, formData, { headers: {'Content-Type': 'multipart/form-data'}})
+        return result.data
+      }
+      
     const location = useLocation();
     const { cid , user } = location.state;
     
     const [question , setQuestion] = useState('')
     const [image , setImage] = useState('')
-    
 
-    const addQuestion = () => {
-        axios
-          .post(`http://localhost:8070/forums/question/${cid}&${user}`, {
-            question: question,
-            image : image,
-            
-          })
-          .then(() => {
-            console.log('Success')
-            
-            alert('added successed!')
-          })
+    const submit = async event => {
+        // event.preventDefault()
+        const result = await addQuestion({image: image, question})
+        // setImage([result.image, ...image])
+        if(result){
+            console.log(result)
+            alert(result)
+        }else{
+            alert("Couldn't accept question")
+        }
       }
-      
-      
+      const fileSelected = event => {
+        const file = event.target.files[0]
+            setImage(file);
+        }
       
     return(
         
@@ -43,14 +52,12 @@ function Addforumquestion(){
                
                 <div class="form-group">
                     <label for="Image">Image of your problem</label>
-                    <input type="file" onChange={(event) => {
-                        setImage(event.target.value)
-                      }}
-                        className="form-control" id="image"/>
+                    <input type="file" onChange={fileSelected}
+                        className="form-control"  accept="image/*"/>
                 </div>
                 <div className="buttons">
                     <Link to="/forum/questions" ><button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: 'px solid black'}} className="btn btn-primary">Cancel</button></Link>
-                    <Link to="/forum/mylist" ><button type="submit" onClick={addQuestion} className="btn btn-primary">Submit</button></Link>
+                    <Link to="/forum/mylist" ><button type="submit" onClick={submit} className="btn btn-primary">Submit</button></Link>
                 </div>
                 
             </form>
