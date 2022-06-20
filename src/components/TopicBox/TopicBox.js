@@ -25,6 +25,7 @@ export default function TopicBox() {
   return (
     <div>
         <header><Navbar/></header>
+        <div className=''>
         <Container>
             <Row className='TopicBox'>
               <Col xs={11}>
@@ -386,6 +387,7 @@ export default function TopicBox() {
 
               </Row>
             </Container>
+            </div>
  
                 </div>
   )

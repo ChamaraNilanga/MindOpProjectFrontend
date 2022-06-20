@@ -145,4 +145,12 @@
     background: #f3f800;
     cursor: pointer;
   }
-  
+  .panel{
+    background-color: rgba(213, 213, 225, 0.532);
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    border-width: 10px;
+    border-color:rgba(24, 24, 25, 0.603);
+}

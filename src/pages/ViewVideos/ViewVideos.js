@@ -8,12 +8,15 @@ export default function ViewVideos() {
     <div>
       <div>
         <Navbar></Navbar>
-      </div>
-      <div>
-        <SubjectBar/>
-      </div>
-      <div className='Video'>
-        <VideoPlayer></VideoPlayer>
+      </div >
+      <div className='panel'>
+            <div>
+            <SubjectBar/>
+            </div>
+
+            <div className='Video'>
+              <VideoPlayer></VideoPlayer>
+            </div>
       </div>
     </div>
   )
