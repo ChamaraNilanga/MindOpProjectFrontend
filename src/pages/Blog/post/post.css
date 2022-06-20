@@ -21,7 +21,7 @@
    margin-left: 25px;
 } */
 
-.postInfo{
+.postInfos{
     display: flex;
     /* flex-direction: column; */
     align-items: right;
@@ -32,13 +32,13 @@
     /* padding-left: 5px; */
 }
 
-.postTitle{
+.postTitles{
     font-family: 'Varela', sans-serif;
     font-size: 24px;
     font-weight: 700;
     margin-top: 15px;
     cursor: pointer;
-    color:rgb(220, 150, 20);
+    color:rgb(54, 50, 99);
 }
 
 .postDate{
@@ -70,7 +70,7 @@
     cursor: pointer;
 
 }
-.card{
+.cards{
     background-color:rgb(255, 255, 255);
     margin-left: 20px;
     margin-top: 20px;
@@ -86,3 +86,4 @@
   height: 250px;
   padding: auto;
 } */
+

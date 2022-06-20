@@ -15,9 +15,8 @@ import SinglePost from "./pages/Blog/singlePost/SinglePost";
 import Write from "./pages/Blog/writeblog/Write";
 import DeleteBlog from "./pages/Blog/deleteblog/DeleteBlog";
 import Payment from './pages/Payment/payment';
-import SendMsg from './components/ChatStudent/sendMsg';
 import EditBlog from "./pages/Blog/editblog/EditBlog";
-
+import ChatComponent from './components/ChatStudent/chat';
 
 
 function App() {
@@ -29,8 +28,7 @@ function App() {
        <Routes>
        {/* <Route exact path="/" element={<Home/>}/> */}
      {/* <Route path="/" element={<Navigationbar/>}/>    */}
-     <Route path="/student" element={<ChatStudent/>}/>
-     <Route path="/student" element={<SendMsg/>}/>
+     <Route path="/student" element={<ChatComponent/>}/>
      <Route path="/payment" element={<Payment/>}/>
      {/* <Route exact path="/Blogs/" element={<MyBlog/>}/> */}
      <Route  path="/Blogs" element={<Post/>}/>

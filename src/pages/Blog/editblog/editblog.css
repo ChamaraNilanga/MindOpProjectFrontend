@@ -1,19 +1,24 @@
 .write{
     padding-top: 10px;
+    margin-top: 280px;
 }
 
-.writeForm{
+.writeForms{
 position: relative;
+padding-top: 50px;
+margin-left: 250px;
+
 }
 
-.writeFormGroup{
+/* .writeFormGroup{
     margin-left: 150px;
     display: flex;
     align-items: center;
+    background-color:rgba(55,61,96,0.835);
 
-}
+} */
 
-.writeIcon{
+.writeIcon1{
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -24,13 +29,17 @@ position: relative;
     font-size: 20px;
     color: gray;
     cursor: pointer;
+    margin-left: -100px;
 }
 
-.writeInput{
+.writeInput1{
     font-size: 30px;
     border: none;
     padding: 20px;
     width: 70vw;
+    height: 70px;
+    background-color:rgba(214, 211, 205, 0.56);
+    margin-left: -100px;
 }
 
 .writeInput:focus{
@@ -47,23 +56,23 @@ position: relative;
     top:20px;
     right: 50px;
     color: white;
-    background-color: teal;
     padding: 10px;
     border:none;
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
+    margin-top: 50px;
 }
 
 #fileInput{
     display: none;
 }
 
-.writeImg{
+/* .writeImg{
     padding-top: 10px;
     margin-left: 150px;
     width: 70vw;
     height: 250px;
     border-radius: 10px;
     object-fit: cover;
-}
+} */

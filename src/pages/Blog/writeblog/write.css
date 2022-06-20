@@ -6,6 +6,7 @@
 .writeForm{
 position: relative;
 padding-top: 50px;
+margin-left: 350px;
 
 }
 
@@ -49,17 +50,18 @@ padding-top: 50px;
   height: 100vh;
 }
 
-.writeSubmit{
+.writeSubmits{
     position: absolute;
-    top:20px;
-    right: 50px;
-    color: white;
+    top:60px;
+    color: rgb(15, 14, 14);
     padding: 10px;
     border:none;
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 50px;
+    margin-left: 880px;
+    background-color: teal;
+  
 }
 
 #fileInput{

@@ -25,9 +25,10 @@ export default function TopBar() {
       </div>
       
       <div className="topRight">
-        {/* <img className="topImg"
-        src="https://images.statusfacebook.com/profile_pictures/school_girls/school_girl_images_20.jpg" 
-        alt=""/> */}
+      <textarea  className="textarea"
+            type="text"
+            >
+            </textarea>
         <i className="topSearchIcon fas fa-search"></i>
       </div>
     </div>

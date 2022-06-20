@@ -57,3 +57,8 @@
   color: #666;
     
 }
+
+.textarea{
+  border: none;
+  height: 25px;
+}

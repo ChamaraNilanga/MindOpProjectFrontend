@@ -66,10 +66,11 @@ console.log(blogbody)
             </textarea>
             
         </div>
-        <div className="writeSubmit">
-        <button type="submit" onClick={addblog}>Publish</button>
        
-        </div>
+        <button type="submit" className="writeSubmits" onClick={addblog}
+        >Publish</button>
+       
+        
     </form>
     </div>
   )

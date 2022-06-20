@@ -13,17 +13,32 @@ export default function MyBlog() {
 
     const [blogs,setBlogs] = useState([]);
     
-    useEffect(()=>{
+    
         function getAllBlogs(){
-            axios.get(`http://localhost:8052/blog/user/1943`).then((res)=>{
+            axios.get(`http://localhost:8052/blog/user/1941`).then((res)=>{
                 console.log(res);
             setBlogs(res.data);
             }).catch((err)=>{
                 alert(err.message);
             })
         }
+    useEffect(()=>{
         getAllBlogs();
     },[])
+
+
+    const deleteblog=async (id , e)=>{
+      console.log(id);
+      if(window.confirm('Are you sure you want to delete?')){
+          await axios.delete(`http://localhost:8052/blog/${id}`)
+          .then((res)=>{
+              console.log(res.data);
+              alert(res.data);
+              getAllBlogs();
+          })
+      }
+     
+  }
 
 
   return (
@@ -37,7 +52,7 @@ export default function MyBlog() {
 {blogs.map(blog => {
   return(
     
-    <div className="postInfo">
+    <div className="postInfos">
 
 
 
@@ -46,21 +61,26 @@ export default function MyBlog() {
 {/* <img className="postImg" 
 src="https://images.unsplash.com/photo-1598929440520-dc9f18462281?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" 
 alt=""/> */}
-<div className="card shadow-sm w-100" style={{ maxWidth: 250, maxHeight: 250,  minHeight: 250 }}>
+<div className="cards shadow-sm w-100" style={{maxWidth: 250, minWidth: 250, maxHeight: 250,  minHeight: 250 }}>
 
 
-<div className="card-body" style={{ maxWidth: 350}}>
-<div className="box">
-<div className="singlePostEdit">
-<i className="singlePostIcon fa-solid fa-pen-to-square" style= {{color: "tomato"}}></i>
-
-<i className="singlePostIcon fa-solid fa-trash-can" style= {{color: "teal"}}></i>
-
-</div>
+<div className="card-body" style={{ maxWidth: 350, }}>
+<div className="box" style={{ marginTop: -15, }}>
 
 
+<Link to="/editblog/" className="nav-link" state={{bid:blog.blogid,btitle:blog.blogtitle,bbody:blog.body}}>
+<button className="edit">
+<i className="singlePostIcon fa-solid fa-pen-to-square" style= {{color: "teal"}}></i>
+</button>
+  <button onClick={()=>deleteblog(blog.blogid)}>
+  <i className="singlePostIcon fa-solid fa-trash-can" style= {{color: "tomato"}}>
+</i>
+</button>
+</Link>
 
-<span className="postTitle" key={blog.blogid}>
+
+
+<span className="postTitles" key={blog.blogid}>
 {blog.blogtitle}
 </span>
 <br/>
