@@ -12,6 +12,8 @@ function Singlequestionforumpage({user}){
     const [comments,setComments] = useState([]);
     const location = useLocation();
     const { fid , name } = location.state;
+    console.log(fid);
+    console.log(name);
     console.log(location.state);
     function getAllcomments(id){
         axios.get(`http://localhost:8070/forums/comment/${id}`)

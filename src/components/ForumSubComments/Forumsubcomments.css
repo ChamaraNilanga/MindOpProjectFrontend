@@ -1,0 +1,14 @@
+.subcommentslist{
+    position: relative;
+    align-items: center;
+   
+}
+.contentsubcomment{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 30px;
+    background-color: rgba(235, 236, 243, 0.835);
+    border-radius: 5px;
+}

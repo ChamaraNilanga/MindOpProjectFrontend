@@ -1,10 +1,10 @@
 import React , {useEffect,useState} from "react";
 import axios from "axios";
 import "./Singleforumquestion.css";
-
+import Forumsubcomments from "../ForumSubComments/Forumsubcomments";
 import {Link} from "react-router-dom";
 
-function Singleforumquestion({replies,fid ,name}){
+function Singleforumquestion({replies,subreplies, fid ,name}){
 
     return(
         <div className="singleforum">
@@ -13,12 +13,12 @@ function Singleforumquestion({replies,fid ,name}){
                 
                 return(
                     <div className="singleforumdisplay">
-                        <text key={reply.fcommentid} >{reply.body}</text>
+                        <p key={reply.fcommentid} >{reply.body}</p>
                         <br/>
                         <p>{reply.username}</p>
                         <p>{reply.postedtime}</p>
-                        <Link to="/forum/subreply" state={{ cid : reply.fcommentid , name : name , commentbody : reply.body}}><text className="textbold">Reply</text></Link>
-
+                        <Link to="/forum/subreply" state={{ cid : reply.fcommentid , name : name , commentbody : reply.body ,fid:fid}}><text className="textbold">Reply</text></Link>
+                            <Forumsubcomments fid={reply.fcommentid}/>
                     </div>
                 )
             })}
@@ -26,6 +26,7 @@ function Singleforumquestion({replies,fid ,name}){
         </div>
         
     )
+
 }
 
 export default Singleforumquestion;
