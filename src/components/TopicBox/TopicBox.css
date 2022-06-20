@@ -1,0 +1,79 @@
+.TopicBox{
+        position:static;
+        width: 100%;
+        height: 50px;
+       /* display: block;*/
+        border-radius: 10px;
+        margin-left: 0px;
+        margin-right: 40px;
+        color: white;
+        Font-family: Verdana, Geneva, Tahoma, sans-serif; 
+        padding:10px;
+        font-size: large;
+        font-weight: bold;
+}
+.accordion-button {
+        height: 50px;
+        color: rgb(218, 220, 225);
+        margin-left: 0px;
+        width: 100%;
+        background-color: rgb(59, 56, 53);
+        Font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-radius: 15px; 
+        border: none;
+        outline:none;
+
+        
+ 
+      }
+      
+      .accordion-button:focus {
+        color: rgb(14, 13, 13);
+        background-color: rgb(222, 145, 94);
+        border-color:rgb(201, 100, 38) ;
+        border: width 0px;
+        font-weight:bold;
+
+      }
+      
+      .accordion-button:not(.collapsed) {
+        color: #0a0a0a;
+        font-weight:bold;
+      }
+      .accordion-body{
+        width:auto;
+        text-align:justify;
+        margin-left:5%;
+        margin-right: 5%
+      }
+      .dropdown-menu{
+        text-align: left;
+        background-color:  rgb(244, 244, 235);
+        font-weight: bold;
+      }
+      .dropdown-item{
+        font-weight: bold;
+      }
+     
+      .Button{
+        vertical-align: bottom;
+      }
+      .col{
+        font-weight: bold;
+      }
+      .dropdown-toggle{
+        background-color: rgb(59, 56, 53);
+        border: 0cm;
+      }
+      .dropdown-toggle:hover {
+        background-color: rgb(59, 56, 53);
+        border: 0cm;
+      }
+      .dropdown-toggle {
+        background-color: rgb(59, 56, 53);
+        border: 0cm;
+      }
+      .BsThreeDotsVerticals:hover{
+        color: rgb(59, 56, 53);
+        
+      }
