@@ -1,92 +1,117 @@
-import { useEffect } from "react";
-import {Widget, addResponseMessage} from "react-chat-widget";
-import "react-chat-widget/lib/styles.css";
-import { io } from "socket.io-client";
-import "./chat.css";
-import React from "react";
-// import "./sendMsg";
+import React from 'react';
+import io from 'socket.io-client';
+import "./chat.css"
 
-const socket = io("http://localhost:3000");
 
-const Coursepage = () => {
-useEffect(() => {
-    socket.on('receive-message', (message) => {
-        addResponseMessage(message);
-    });
-   
-}, []);
+class Chat extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            socket: null,
+            messageList: []
+        }
+    }
 
-    // const handleNewUserMessage = (newMessage) => {
-    //     // console.log(`New message incomming! ${newMessage}`);
-    //     socket.emit('send-message', newMessage);
-       
+    onMessageSend = (event) => {
+        if (event.key === 'Enter') {
+            this.state.socket.emit('onMessage', {message: event.target.value});
+            this.setState({[event.target.id]: ''})
+        }
+    };
 
-    // }
-    // return (
-        // <div className="container">
-        //     {/* <div className="row">
-        //         <h1 className="text-center p-5 display-1">Course page</h1>
-        //         </div> */}
+    async componentDidMount() {
+        let socket = await io.connect('http://localhost:3010');
+        socket.on('messageList', (data) => {
+            console.log('Class: Chat, Function:  ==', data);
+            this.setState({messageList: data})
+        });
+        console.log('Class: Chat, Function: componentDidMount ==', socket);
+        this.setState({socket});
 
-        //         <Widget 
-        //         title="Teacher's Name" handleNewUserMessage={handleNewUserMessage}/>
-        //     </div>
+    }
 
-              return (
-                <div>
-                  <input type="checkbox" id="check" /> 
-                  <label className="chat-btn" htmlFor="check">
+    onTextChange = (event) => {
+        this.setState({[event.target.id]: event.target.value})
+    }
+
+    messageList = () => {
+        return this.state.messageList.map(((data, key) =>
+                <div key={key} style={{
+                    color: 'black',
+                    margin: '10px',
+                    whiteSpace: 'nowrap',
+                    width: '50%',
+                    flexWrap: 'nowrap',
+                    flexDirection: 'column',
+                    float: data.senderId === this.state.socket.id ? 'right' : 'left',
+                    textAlign: data.senderId === this.state.socket.id ? 'right' : 'left',
+
+                }}>
+                    <div style={{
+                        width: '90%', padding: '10px',
+                        borderRadius: '12px',
+                        float: data.senderId === this.state.socket.id ? 'right' : 'left',
+                        backgroundColor: 'rgb(220, 150, 20)'
+                    }}>
+                        <div style={{color: 'rgb(33, 28, 88)', marginBottom: '5px',fontSize:'13px'}}>
+                            {data.senderId === this.state.socket.id ? 'You' : 'Anonymous'}
+                        </div>
+                        {data.message}
+                    </div>
+                </div>
+        ))
+    }
+
+    render() {
+        return (
+            <div>
+              <input type="checkbox" id="check" /> 
+          <label className="chat-btn" htmlFor="check">
                     <i className="fa fa-commenting-o comment" /> 
                     <i className="fa fa-close close" /> </label>
-                  <div className="wrapper">
-                    <div className="chat-container">
-                      <div className="chat-header">
-                        <p id="your-name">John Paul</p>
-                      </div>
-                      <div className="chat-section">
-                        <div className="main-wrapper">
-                          <div className="chat-content">
-                            <div className="message">
-                              <div className="message-row other-message">
-                                {/* <div class="message-title">
-                                                       <span>Dev at</span>
-                                                   </div>
-                                                   <div class="message-text">
-                                                      Hello
-                                                   </div>
-                                                   <div class="message-time">
-                                                       April 20
-                                                   </div> */}
-                              </div>
-                              <div className="message-row you-message">
-                                {/* <div class="message-title">
-                                                      <span>User 01</span>
-                                                  </div>
-                                                  <div class="message-text">
-                                                     OK
-                                                  </div>
-                                                  <div class="message-time">
-                                                      April 20
-                                                  </div> */}
-                                <div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div> <form className="msg-text">
-                            <input type="text" name="msg" id="msg" placeholder="Type Here..." autoComplete="off" />
-                            <button id="btn-send">Send</button>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                </div>
-                
-              );
-            }
-      
+          <div className='wrapper'>
+            <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: '100vh',
+                textAlign: 'center'
+            }}>
 
-export default Coursepage;
+                   
+                 
+  
+                <div style={{
+                    margin: '20px',
+                    padding: '10px',
+                    height: '80vh',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    marginTop:'50px'
+                   
+                }}>
+                    <div id='chat-list'
+                         style={{
+                             overflowY: 'auto',
+                             backgroundColor: '#2c394e40',
+                             height: '600px',
+                             width: '100%',
+                             marginTop: 'auto',
+                             borderRadius:'5px'
+                         }}>
+                        {this.messageList()}
+                    </div>
+                    <input value={this.state.messageInput} id='messageInput' onChange={this.onTextChange}
+                           onKeyPress={this.onMessageSend} type="text"
+                           placeholder="Type a message"
+                           style={{padding: '10px', outline: 'none',borderRadius:'5px',backgroundColor: '#2c394e40'}}/>
+                </div>
+            </div>
+            </div>
+            </div>
+        );
+
+    }
+
+}
+
+export default Chat;

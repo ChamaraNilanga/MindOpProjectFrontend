@@ -27,7 +27,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
-*{
+/* *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
@@ -45,21 +45,21 @@ body{
     max-width: 500px;
     width: 100%;
     border-radius: 10px;
-    box-shadow: 2px 9px 25px #6988bb;
+    box-shadow: 2px 9px 25px rgba(55,61,96,0.835);;
     overflow: hidden;
-    border: 1px solid #6988bb;
-    background: #6988bb;
+    border: 1px solid rgba(55,61,96,0.835);;
+    background: rgba(55,61,96,0.835);
 }
 
 .chat-header{
-    min-height: 50px;
+    min-height: 53px;
     overflow: hidden;
-    background: #6988bb;
+    background: rgba(55,61,96,0.835);;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border:1px solid #6988bb ;
+    border:1px solid rgba(55,61,96,0.835);;
 }
 
 .chat-header p{
@@ -166,7 +166,7 @@ body{
     cursor: pointer;
     color: rgb(26, 137, 202);   
     font-size: large;
-}
+} */
 
 ::-webkit-scrollbar{
     display: none;
@@ -218,19 +218,22 @@ body{
     right: 20px;
     bottom: 100px;
     width: 500px;
-    background-color: #fff;
+   
     border-radius: 5px;
     opacity: 0;
-    transition: all 0.4s
+    transition: all 0.4s;
+    height: 650px;
 }
 
 #check:checked~.wrapper {
     opacity: 1
+} 
+
+#check {
+    display: none !important
 }
 
-
-
-.chat-form {
+/* .chat-form {
     padding: 15px
 }
 
@@ -249,13 +252,21 @@ button {
     box-shadow: none
 }
 
-.btn,
-.btn:focus,
-.btn:hover {
-    background-color: blue;
-    border: blue
+#btn-send,
+#btn-send,
+#btn-send {
+    background-color:darkcyan;
+    border:darkcyan
 }
 
-#check {
-    display: none !important
+
+
+#btn-send {
+    background-color: rgb(220, 150, 20);
+   color: #00000068;
+
 }
+
+.form-control{
+    background-color: #09244b68;
+} */
