@@ -1,14 +1,14 @@
-.post{
-    flex: 50;
+.postssp{
+    flex: 20;
     display: flex;
     flex-wrap:wrap;
-   /* margin-right: 100px; */
-    margin-left: 150px;
+   margin-right: 700px;
+    margin-left:150px;
     border-radius: 10px;
    padding: 40px;
    scroll-behavior: smooth;
-
-
+    margin-top: 20px;
+   background-color:rgba(55,61,96,0.835);
    
 }
 
@@ -27,8 +27,7 @@
     align-items: right;
     font-family: 'Varela', sans-serif;
     padding-right: 25px;
-    background-color:rgba(55,61,96,0.835);
-    /* width: 45%; */
+    width: 45%;
     /* padding-left: 5px; */
 }
 
@@ -37,7 +36,6 @@
     font-size: 24px;
     font-weight: 700;
     margin-top: 15px;
-    cursor: pointer;
     color:rgb(220, 150, 20);
     margin-left: 350px;
     

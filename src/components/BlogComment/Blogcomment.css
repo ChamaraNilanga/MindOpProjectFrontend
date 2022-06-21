@@ -1,0 +1,42 @@
+.commentbox{
+    background-color: rgba(55,61,96,0.835);
+    width: 900px;
+    height: 600px;
+    margin-top: 56px;
+    margin-left: 140px;
+}
+
+.commentspace{
+    background-color: rgba(255, 255, 255, 0.621);
+    width: 900px;
+    height: 600px;
+    margin-top: 25px;
+}
+
+#addANote{
+    margin-top: 20px;
+    padding-top: 15px;
+}
+.index{
+    font-size: 12px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 15px;
+}
+.comment{
+    font-size: 13px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 15px;
+}
+
+
+.commentbtn{
+    background-color: teal;
+    border: none;
+    padding: 10px;
+    margin-left: 800px;
+}
+
+.cardcomment{
+    height: 55px;
+    margin-top: 15px;
+}

@@ -3,12 +3,13 @@ import { Link, useParams } from 'react-router-dom';
 import axios from "axios";
 import React,{ useState, useEffect } from "react";
 import TopBar from "../topbar/TopBar";
-
+import Navbar from "../../../components/Navbar/Navbar";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Post() {
 
     const [blogs,setBlogs] = useState([]);
+    const[comments,setComments]=useState([]);
 
     
     
@@ -42,13 +43,25 @@ export default function Post() {
   return (
  
     <div className="row m-2"> 
-    <TopBar/>
+    <Navbar/>
+  
 
 <div className="post">
+    <div className="posttopbar">
+    <TopBar/>
+    </div>
+    <input  className="searchblog"
+            type="text"
+            >
+            </input> 
+        <i className="topSearchIcon fas fa-search"></i>
+
 {blogs.map(blog => {
   return(
+    <div className="allinone">
     <div className="postInfos">
-      <div className="col-sm-2 col-md-12 v my-2" key={blog.blogid}>
+      
+      <div className="col-sm-2 col-md-12 v my-6" key={blog.blogid}>
 
       {/* <img className="postImg" 
     src="https://images.unsplash.com/photo-1598929440520-dc9f18462281?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" 
@@ -90,7 +103,7 @@ Written By: {blog.userid}
       </div>
       </div>
       </div>
-                     
+                  </div>   
 
   )
 

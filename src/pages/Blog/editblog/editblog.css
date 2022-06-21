@@ -1,6 +1,6 @@
 .write{
     padding-top: 10px;
-    margin-top: 280px;
+    margin-top: 80px;
 }
 
 .writeForms{
@@ -38,7 +38,7 @@ margin-left: 250px;
     padding: 20px;
     width: 70vw;
     height: 70px;
-    background-color:rgba(214, 211, 205, 0.56);
+    background-color:rgb(255, 255, 255);
     margin-left: -100px;
 }
 
@@ -51,17 +51,17 @@ margin-left: 250px;
   height: 100vh;
 }
 
-.writeSubmit{
+.writeUpdate{
     position: absolute;
-    top:20px;
-    right: 50px;
-    color: white;
+    top:10px;
+    color: rgb(15, 14, 14);
     padding: 10px;
     border:none;
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 50px;
+    margin-left: 880px;
+    background-color: teal;
 }
 
 #fileInput{
@@ -76,3 +76,13 @@ margin-left: 250px;
     border-radius: 10px;
     object-fit: cover;
 } */
+
+.editpostswrite{
+    border-radius: 10px;
+    scroll-behavior: smooth;
+    background-color:rgba(55,61,96,0.835);
+    width: 95%;
+    margin-left: 25px;
+    margin-top: 70px;
+ 
+}

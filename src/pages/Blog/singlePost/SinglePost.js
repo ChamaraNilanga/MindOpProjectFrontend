@@ -3,6 +3,8 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 import axios from "axios";
 import React,{ useState, useEffect } from "react";
 import TopBar from "../topbar/TopBar";
+import Blogcomment from "../../../components/BlogComment/Blogcomment";
+import Navbar from "../../../components/Navbar/Navbar"
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -28,43 +30,45 @@ const {bid} = location.state;
   return (
  
     <div className="row m-2"> 
-    <TopBar/>
+    <Navbar/>
+    
 
-<div className="post">
+<div className="postssp">
+
 {blogs.map(blog => {
   return(
     <div className="postInfo">
+      
       <div className="col-sm-2 col-md-12 v my-2" key={blog.blogid}>
-
+     
       {/* <img className="postImg" 
     src="https://images.unsplash.com/photo-1598929440520-dc9f18462281?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" 
     alt=""/> */}
-      <div className="card shadow-sm w-100" style={{ maxWidth: 1000, minWidth: 1000, maxHeight: "auto",  minHeight: 500 }}>
-
- 
+      <div className="card shadow-sm w-100" style={{ maxWidth: 1000, minWidth: 1000, maxHeight: "auto",  minHeight: 500, marginTop:50 }}>
+     <div>
+      <TopBar/>
+ </div>
       <div className="card-body" >
-
+      
  <div className="box">
 
-  <Link to="/singlepost/" className="nav-link">
+ 
       <span className="postTitlePost" key={blog.blogid}>
       {blog.blogtitle}
       </span>
-      </Link>
-     
+    
+     <br/>
 
       <span className="postBy" key={blog.blogid}>
 Written By: {blog.userid}
 </span>
 <br/>
 
-      
-      <Link to="/singlepost/" className="nav-link">
+<br/>
       <p className="postDesc" key={blog.blogid}> 
       {blog.body}
       </p>
-      
-       </Link>
+
 {/* 
        <span className="postDate" key={blog.blogid}>
 {blog.managetime} 
@@ -84,6 +88,7 @@ Written By: {blog.userid}
 })}
 
 </div>
+<Blogcomment/>
 </div>
 
   )

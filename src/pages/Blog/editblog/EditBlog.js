@@ -3,16 +3,16 @@ import TopBar from "../topbar/TopBar";
 import axios from "axios";
 import React,{ useState, useEffect } from "react";
 import { Link, useLocation, useParams } from 'react-router-dom';
+import Navbar from "../../../components/Navbar/Navbar"
 
-
-export default function Write() {
+export default function Edit() {
     const location=useLocation();
 const {bid} = location.state;
 const {btitle}=location.state;
 const {bbody}=location.state
   const [blogs, setBlogs] = useState('')
-  const [title, setTitle] = useState('')
-  const [blogbody, setBlogbody] = useState('')    
+  const [blogtitle, setBlogitle] = useState('')
+  const [body, setBody] = useState('')    
 
 
 
@@ -32,52 +32,40 @@ const {bbody}=location.state
 
 
     const updateblog =async (bid,e) => {
+        console.log(bid)
         await axios.put(`http://localhost:8052/blog/updateblog/${bid}`,
-             // params: {
-             //   uid: {id},
-             // },
-           // },
      {
-          
+        btitle:blogtitle,
+        bbody:body
+           
            })
            .then(() => {
-             console.log(title)
-             console.log(blogbody)
+             console.log(blogtitle)
+             console.log(body)
              console.log('Success')
-             
-             alert('updated successed!')
            }
            )
            
        }
 
-       const addblog =async () => {
-        await axios.post(`http://localhost:8052/blog/addblog/${bid}`,
-             // params: {
-             //   uid: {id},
-             // },
-           // },
-     {
-             blogtitle:title,
-             body:blogbody,
-           })
-           .then(() => {
-             console.log(title)
-     console.log(blogbody)
-             console.log('Success')
-             
-             alert('added successed!')
-           }
-           )
-           
-       }
+       useEffect(()=>{
+        setBody(localStorage.getItem('body'));
+        setBlogitle(localStorage.getItem('blogtitle'));
+      },[])
+
 
 
 
 
   return (
+    <div>
+    <Navbar/>
+    <div className="editpostswrite">
+    <div>
+        <TopBar/>
+        </div>
     <div className="write">
-    <TopBar/>
+   
  
 <div className="writeForm">
     <div className="writeFormGroup">
@@ -88,23 +76,34 @@ const {bbody}=location.state
        <input type="file" id="fileInput" /> 
 
 
-        <textarea  placeholder="  Title" className="writeInput1">
+        <textarea  placeholder="  Title" 
+         onChange={(event) => {
+            setBlogitle(event.target.value)
+          }}
+        className="writeInput1">
             {btitle}
             </textarea>
     </div>
     <div className="writeFormGroup">
-        <textarea placeholder="Tell your story..."  className="writeInput writeText">
+        <textarea placeholder="Tell your story..." 
+         onChange={(event) => {
+            setBody(event.target.value)
+          }}
+        className="writeInput writeText">
             {bbody}
         </textarea>
         
     </div>
     
-    <button type="submit" className="writeSubmits" onClick={updateblog}>Update</button>
-    <button type="update" className="writeSubmit" onClick={addblog}>Publish</button>
+    <Link to="/Blogs/" className="nav-link"> 
+    <button type="submit" className="writeUpdate" onClick={updateblog(bid)} >Update</button>
+    </Link>
+    {/* <button type="update" className="writeSubmit" onClick={addblog}>Publish</button> */}
    
   
 </div>
 </div>
-   
+</div>
+   </div>
   )
 }

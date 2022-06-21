@@ -6,7 +6,7 @@ import axios from "axios";
 import React,{ useState, useEffect } from "react";
 import TopBar from "../topbar/TopBar";
 import "../post/post.css"
-
+import Navbar from "../../../components/Navbar/Navbar";
 
 
 export default function MyBlog() {
@@ -45,13 +45,16 @@ export default function MyBlog() {
 
  
     <div className="row m-2"> 
-    <TopBar/>
-<div className="post">
+     <Navbar/>
+<div className="postsm">
 
+<div className="myblogtopbar">
+    <TopBar/>
+    </div>
 
 {blogs.map(blog => {
   return(
-    
+    <div className="allinoneblogs">
     <div className="postInfos">
 
 
@@ -68,15 +71,18 @@ alt=""/> */}
 <div className="box" style={{ marginTop: -15, }}>
 
 
-<Link to="/editblog/" className="nav-link" state={{bid:blog.blogid,btitle:blog.blogtitle,bbody:blog.body}}>
+
 <button className="edit">
-<i className="singlePostIcon fa-solid fa-pen-to-square" style= {{color: "teal"}}></i>
+<Link to="/editblog/" className="nav-link" state={{bid:blog.blogid,btitle:blog.blogtitle,bbody:blog.body}}>
+<i className="singlePostIcon fa-solid fa-pen-to-square" style= {{color: "teal"}}></i></Link>
 </button>
-  <button onClick={()=>deleteblog(blog.blogid)}>
+
+
+  <button onClick={()=>deleteblog(blog.blogid)} className="delete">
   <i className="singlePostIcon fa-solid fa-trash-can" style= {{color: "tomato"}}>
 </i>
 </button>
-</Link>
+<br/>
 
 
 
@@ -100,6 +106,7 @@ Written By: {blog.userid}
 {blog.managetime}
 </span> */}
 
+</div>
 </div>
 </div>
 </div>

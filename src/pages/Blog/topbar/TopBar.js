@@ -25,11 +25,11 @@ export default function TopBar() {
       </div>
       
       <div className="topRight">
-      <textarea  className="textarea"
+      {/* <textarea  className="textarea"
             type="text"
             >
-            </textarea>
-        <i className="topSearchIcon fas fa-search"></i>
+            </textarea> */}
+        {/* <i className="topSearchIcon fas fa-search"></i> */}
       </div>
     </div>
 
