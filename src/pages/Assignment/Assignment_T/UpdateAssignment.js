@@ -1,14 +1,34 @@
 import React, { useState } from 'react'
-import "../Assignment/AssignmentForm.css"
-import Upload from '../upload/Upload';
+import Upload from '../../../components/upload/Upload';
+import { useLocation } from 'react-router-dom'
+import axios from 'axios';
+import { useEffect } from 'react';
+import Navbar from '../../../components/Navbar/Navbar';
 
-function AssignmentForm() {
+
+function UpdateAssignment() {
 
     const[Assignmentname, setAssignmentname] = useState('');
     const[Introduction, setIntroduction] = useState('');
     const[ContentID, setContentID] = useState('');
     const[DueDate, setDuedate] = useState('');
     const[TimeLimit, setTimeLimit] = useState('');
+
+    const id = new URLSearchParams(useLocation().search).get('assignmentid')
+    useEffect(() => {
+      axios
+        .get(`http://localhost:8070/assignmentdetails/getassignment/${id}`)
+        .then((res) => {
+          setAssignmentname(res.data.name_)
+          setIntroduction(res.data.introduction)
+          setContentID(res.data.contentid)
+          setDuedate(res.data.duedate)
+          setTimeLimit(res.data.timelimit)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }, [])
 
     const printData = async() => {
     console.log(ContentID.value)
@@ -28,10 +48,14 @@ function AssignmentForm() {
     });
 }
   return (
-   
-    
+<div>
+  <Navbar/>
+  <p><br></br>
+  <h2>Update Assignment Details</h2>
+  </p>
     <form className='form'>
     <div class="form-group">
+
       {/* <label for="Name">Assignment Name </label><br/>
       <input onChange={(e) => {setAssignmentname(e.target.value)}} type="text" required  giuclass="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Assignment Name here" /> */}
      
@@ -60,7 +84,7 @@ function AssignmentForm() {
     </div>
     <div class="form-group">
       <label for="upload">Additional Files</label>
-      <Upload/>
+      <Upload />
     </div>
 
 
@@ -68,8 +92,9 @@ function AssignmentForm() {
     </div>
     <button onClick={printData} type="submit" class="sub_btn">Save</button>
     </form>
+    </div>
  
   )
 }
 
-export default AssignmentForm
+export default UpdateAssignment

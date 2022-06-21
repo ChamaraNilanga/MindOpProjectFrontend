@@ -5,7 +5,7 @@
     padding-right: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: rgba(55, 61, 96, 0.835);
+    background-color: rgba(130, 200, 64, 0.749);
     width: 75%;
     border-radius: 5px;
     height: auto;
@@ -13,4 +13,22 @@
 .form-group{
     padding-top: 5px;
     padding-bottom: 5px;
+}
+.sub_btn{
+    position: center;
+    width: 450.85px;
+    height: 50.88px;
+    left: 922.81px;
+    top: 724.63px;
+border-radius: 10px;
+background-color:#b0c258;
+background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+
 }

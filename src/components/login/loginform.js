@@ -14,7 +14,7 @@ function Loginform() {
     uid : Username,
     psswd : password
     }
-    await axios.post('http://localhost:8070/login',data)
+    await axios.post('http://localhost:8070/userdetails/login',data)
     .then((res)=>{
         console.log(res);
     }).catch((err)=>{
@@ -25,15 +25,14 @@ function Loginform() {
 
         <div className="text-center m-5-auto">
             <div className='contain'>
-            
             <form className = "login" action="/home">
             <h1>Sign in</h1>
                 <p>
                     <label>Sign in and start your studies!</label><br/>
-                    <input onChange={(e) => {setUsername(e.target.value)}} type="text" name="first_name" required />
+                    <input onChange={(e) => {setUsername(e.target.value)}} type="text" name="first_name" required placeholder="Username or E-mail" />
                 </p>
                 <p>
-                    <input onChange={(e) => {setPassword(e.target.value)}} type="password" name="password" required />
+                    <input onChange={(e) => {setPassword(e.target.value)}} type="password" name="password" required placeholder="Password"/>
                 </p>
                 <Link to="/forget-password"><label className="right-label">Forget password?</label></Link>
                 <p>

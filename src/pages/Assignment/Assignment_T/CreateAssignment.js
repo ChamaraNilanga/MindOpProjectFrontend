@@ -5,7 +5,7 @@ import AssignmentForm from '../../../components/Assignment/AssignmentForm'
 
 function CreateAssignment() {
   return (
-    <div>
+    <div className='bodi'>
       <Navbar/>
       <br/>
       <br/>
