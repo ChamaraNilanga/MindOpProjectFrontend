@@ -3,6 +3,7 @@ import axios from "axios";
 import Searchbar from "../SearchBar/Searchbar";
 import "./Allcoursesdelupdlist.css";
 import {Link} from "react-router-dom";
+import ReactPaginate from "react-paginate";
 
 function AllcoursesDelUpdlist (){
     const [courses,setCourses] = useState([]);
@@ -61,6 +62,26 @@ function AllcoursesDelUpdlist (){
         localStorage.setItem('description',descrip);
         
     }
+    const [currentItems, setCurrentItems] = useState([]);
+    const [pageCount, setPageCount] = useState(0);
+    const [itemOffset, setItemOffset] = useState(0);
+    const itemsPerPage=15;
+
+    useEffect(() => {
+        const endOffset = itemOffset + itemsPerPage;
+        console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+        setCurrentItems(courses.slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(courses.length / itemsPerPage));
+    }, [itemOffset, itemsPerPage ,courses]);
+
+
+    const handlePageClick = (event) => {
+        const newOffset = (event.selected * itemsPerPage) % courses.length;
+        console.log(
+        `User requested page number ${event.selected}, which is offset ${newOffset}`
+        );
+        setItemOffset(newOffset); 
+    }
 
     return(
         <div className="allcourselist">
@@ -82,7 +103,7 @@ function AllcoursesDelUpdlist (){
 
             <div className="table table-striped table-light">
             
-            {courses.map(course=>{
+            {currentItems.map(course=>{
                 
                 return(
                     <tbody>
@@ -97,6 +118,21 @@ function AllcoursesDelUpdlist (){
                     
                 )
             })}
+            <ReactPaginate
+                    breakLabel="..."
+                    nextLabel="next >"
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={3}
+                    pageCount={pageCount}
+                    previousLabel="< previous"
+                    renderOnZeroPageCount={null}
+                    containerClassName="pagination"
+                    pageLinkClassName="page-num"
+                    previousLinkClassName="page-num"
+                    nextLinkClassName="page-num"
+                    activeLinkClassName="active"
+
+                />
         </div>
         </div>
     )

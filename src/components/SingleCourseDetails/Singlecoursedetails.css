@@ -12,3 +12,27 @@
     color: aliceblue;
     padding-top: 10px;
 }
+
+.paginationcourse{
+    list-style: none;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    gap: 5px;
+    padding-top: 10px;
+
+}
+
+.paginationcourse .page-number{
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: 400;
+    color: rgb(255, 253, 253);
+}
+.paginationcourse .page-number:hover{
+    background-color: #d9a20b;
+    color: #000;
+}

@@ -2,23 +2,10 @@ import React , {useEffect,useState} from "react";
 import axios from "axios";
 import "./Singlecoursedetails.css";
 import {Link} from "react-router-dom";
+import ReactPaginate from "react-paginate";
 
 function Singlecoursedetails({courses,role,user}){
-//     const [courses,setCourses] = useState([]);
-    
-//     useEffect(()=>{
-//         function getSingleCourses(id){
-//             axios.get(`http://localhost:8070/coursedetails/${id}`)
-//             .then((res)=>{
-//                 console.log(res);
-//             setCourses(res.data);
-//             }).catch((err)=>{
-//                 console.log(err);
-//             })
-//         }
-   
-//     getSingleCourses(id);
-// },[])
+
 const reqtoenroll=(modid,sid)=>{
     console.log(sid);
     console.log(modid);
@@ -31,13 +18,34 @@ const reqtoenroll=(modid,sid)=>{
       alert('added successed!')
     })
 }}
+    const [currentItems, setCurrentItems] = useState([]);
+    const [pageCount, setPageCount] = useState(0);
+    const [itemOffset, setItemOffset] = useState(0);
+    const itemsPerPage=8;
+
+    useEffect(() => {
+        const endOffset = itemOffset + itemsPerPage;
+        console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+        setCurrentItems(courses.slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(courses.length / itemsPerPage));
+    }, [itemOffset, itemsPerPage ,courses]);
+
+
+    const handlePageClick = (event) => {
+        const newOffset = (event.selected * itemsPerPage) % courses.length;
+        console.log(
+        `User requested page number ${event.selected}, which is offset ${newOffset}`
+        );
+        setItemOffset(newOffset); 
+    }
+    
     return(
         <div className="singlecourse">
-           {courses.map(course=>{
+           {currentItems.map(course=>{
                 
                 return(
                     <div>
-                        <h3 key={course.modid} >{course.modname}</h3>
+                        <h3 >{course.modname}</h3>
                         <h3 key={course.modid}>{course.modcode}</h3>
                         <p>{course.descrip}</p>
                         <p>Start : {course.sdate}</p>
@@ -55,6 +63,21 @@ const reqtoenroll=(modid,sid)=>{
                     </div>
                 )
             })}
+            <ReactPaginate
+                    breakLabel="..."
+                    nextLabel="next >"
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={3}
+                    pageCount={pageCount}
+                    previousLabel="< previous"
+                    renderOnZeroPageCount={null}
+                    containerClassName="paginationcourse"
+                    pageLinkClassName="page-number"
+                    previousLinkClassName="page-number"
+                    nextLinkClassName="page-number"
+                    activeLinkClassName="active"
+
+                />
         </div>
         
     )
