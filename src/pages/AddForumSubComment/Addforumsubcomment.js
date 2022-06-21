@@ -32,7 +32,6 @@ function Addforumsubcomment({user}){
             <form className="courseform">
                 <h3>{name}</h3>
                 <p style={{color:'white'}}>{commentbody}</p>
-                <h3 className="head2">Add New Comment</h3>
                 <div class="form-group">
                     <label for="coursename">Your Comment</label>
                     <textarea class="form-control" id="comment" rows="3" onChange={(event) => {

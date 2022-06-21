@@ -31,7 +31,6 @@ function Addforumcomment({user}){
         
             <form className="courseform">
                 <h3>{name}</h3>
-                <h3 className="head2">Add New Comment</h3>
                 <div class="form-group">
                     <label for="coursename">Your Comment</label>
                     <textarea class="form-control" id="question" rows="3" onChange={(event) => {

@@ -4,11 +4,21 @@ import "./Singleforumquestion.css";
 import Forumsubcomments from "../ForumSubComments/Forumsubcomments";
 import {Link} from "react-router-dom";
 
-function Singleforumquestion({replies,subreplies, fid ,name}){
+function Singleforumquestion({replies,subreplies, fid ,name , keyimage}){
+    console.log(keyimage);
+    const getimage=(key)=>{
+        axios.get(`http://localhost:8070/forums/image/${key}`)
+        .then((res)=>{
+            console.log(res);
+        }).catch((err)=>{
+            console.log(err);
+        })
+    }
 
     return(
         <div className="singleforum">
             <h3>{name}</h3>
+            <image src={getimage(keyimage)}/>
            {replies.map(reply=>{
                 
                 return(

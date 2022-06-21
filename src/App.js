@@ -30,8 +30,8 @@ import Addforumsubcomment from './pages/AddForumSubComment/Addforumsubcomment';
 
 function App() {
   const role = 'a';
-  const id='1941W';
-  const mod=40;
+  const id='194075X';
+  // const mod=40;
   return (
     <div className="App">
       
@@ -42,7 +42,7 @@ function App() {
           <Route path='/course/list' element={<Courseupdatedeletelist/>}/>
           <Route path='/updatecourse' element={<UpdateCourseDetails/>}/>
           <Route path='/singlecourse' element={<SingleCoursePage role={role} user={id}/>}/>
-          <Route path='/enrollmentrequests' element={<Enrollmentrequestlist id={mod} userid={'194101A'} />}/>
+          <Route path='/enrollmentrequests' element={<Enrollmentrequestlist  userid={'194101A'} />}/>
           <Route path='/courseswithdetails' element={<Stuteacherallcourses role={role}/>}/>
           <Route path='/assignteacher' element={<Assignteacherformodule user={id}/>}/>
           <Route path='/singlecourse' element={<SingleCoursePage/>}/>
