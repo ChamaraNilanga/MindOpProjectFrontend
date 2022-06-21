@@ -11,7 +11,6 @@ import SingleCoursePage from './pages/SingleCoursePage/Singlecoursepage';
 import Enrollmentrequestlist from './pages/EnrollmentRequestsList/Enrollmentrequestlist';
 import Stuteacherallcourses from './pages/StudentTeacherAllcourses/Stuteacherallcourses';
 import Assignteacherformodule from './pages/AssignTeacherForModule/Assignteacherformodule';
-import ChatStudent from './components/ChatStudent/chat';
 import MyBlogs from "./pages/Blog/myblog/MyBlog";
 import Post from "./pages/Blog/post/Post";
 import SinglePost from "./pages/Blog/singlePost/SinglePost";
