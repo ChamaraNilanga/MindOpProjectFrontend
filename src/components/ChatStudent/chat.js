@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import io from 'socket.io-client';
 import "./chat.css"
@@ -15,7 +16,10 @@ class Chat extends React.Component {
     onMessageSend = (event) => {
         if (event.key === 'Enter') {
             this.state.socket.emit('onMessage', {message: event.target.value});
+            // console.log({message: event.target.value})
             this.setState({[event.target.id]: ''})
+            console.log(this.state)
+            this.sendData(4,3,event.target.value);
         }
     };
 
@@ -30,8 +34,22 @@ class Chat extends React.Component {
 
     }
 
+    async sendData(senderId,receiverId,body) {
+        const data ={
+            messagebody:body
+        }
+        await axios.post(`http://localhost:8052/message/${senderId}&${receiverId}`,data)
+        .then((response)=>{
+            console.log(response.data);
+        })
+        .catch((error)=>{
+            console.log(error);
+        })
+    }
+
     onTextChange = (event) => {
         this.setState({[event.target.id]: event.target.value})
+        // console.log({[event.target.id]: event.target.value});
     }
 
     messageList = () => {
@@ -56,7 +74,9 @@ class Chat extends React.Component {
                         <div style={{color: 'rgb(33, 28, 88)', marginBottom: '5px',fontSize:'13px'}}>
                             {data.senderId === this.state.socket.id ? 'You' : 'Anonymous'}
                         </div>
+                        <div className='msgchat'>
                         {data.message}
+                        </div>
                     </div>
                 </div>
         ))
