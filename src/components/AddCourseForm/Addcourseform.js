@@ -12,7 +12,6 @@ function CourseForm(){
     const [edate, setEdate] = useState('')
     const [price, setPrice] = useState('')
     const [modcode, setModcode] = useState('')
-
     const addCourse = () => {
         axios
           .post(`http://localhost:8070/coursedetails/`, {

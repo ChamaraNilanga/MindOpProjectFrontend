@@ -3,7 +3,7 @@
     width: 100%;
     height: auto;
     
-    border-radius: 10px;
+    border-radius: 4px;
     background-color: rgba(235, 236, 243, 0.835);
     padding-top: 20px;
     padding-bottom: 20px;
@@ -28,7 +28,7 @@ h4{
 .addfuncstu{
     display:inline-flex;
     grid-template-columns: repeat(2,auto);
-    column-gap: 10px;
+    column-gap: 40px;
 }
 
 a{

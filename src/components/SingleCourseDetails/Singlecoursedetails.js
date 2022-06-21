@@ -42,7 +42,7 @@ const reqtoenroll=(modid,sid)=>{
                         <p>{course.descrip}</p>
                         <p>Start : {course.sdate}</p>
                         <p>End : {course.enddate}</p>
-                        {/* <text>Teacher : {course.teacherid}</text> */}
+                        <p>Teacher : {course.teacherid}</p>
                         <text>{role==='s' ? 
                             <div><p>Price: Rs{course.price}</p><button className="btn btn-warning" onClick={()=>{reqtoenroll(course.modid,user)}}>Enroll</button></div> 
                             : 

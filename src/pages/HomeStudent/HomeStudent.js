@@ -21,23 +21,16 @@ function HomeStudent({role,id}){
                     </div>
                     
                 </div>
-                    :
+                    : role==='s'?
+                    
                     <div><div className="div1"><EnrollConductcourses id={id} role={role}/></div>
-                    <div className="div2"><Allcourses role={role}/></div></div>
+                    <div className="div2"><Allcourses role={role}/></div></div>:
+                    <div className="div1"><EnrollConductcourses id={id} role={role}/></div>
                 }
            
             
            
          </div>
-        // <div className="home">
-        //     <header><Navbar/></header>
-        //     {role==='a' ? 
-        //         <div className="container-box"></div> 
-        //         : role==='c' ? 
-        //             <div className="container-box"></div> 
-        //             : 
-        //             <div className="student-container"></div>}
-        // </div>
         
     )
 }

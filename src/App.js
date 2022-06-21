@@ -52,8 +52,6 @@ function App() {
          <Route  path="/write" element={<Write/>}/>
          <Route  path="/myblogs/" element={<MyBlogs/>}/>
          <Route  path="Blogs/deleteblog/" element={<DeleteBlog/>}/>
-         <Route path='/home' element={<Homestudent role={role}/>}/>
-         <Route path='/course/addcourse' element={<Addcourseform/>}/>
          <Route path='/forums/addcategory' element={<Addcategory/>}/>
          <Route path='/forums' element={<Forumcategory role={role}/>}/>
          <Route path='/forum/questions' element={<Questionlistpage user={id}/>}/>
