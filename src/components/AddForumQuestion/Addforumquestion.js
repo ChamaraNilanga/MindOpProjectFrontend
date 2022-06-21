@@ -45,7 +45,7 @@ function Addforumquestion(){
                     <label for="coursename">Question</label>
                     <textarea class="form-control" id="question" rows="4" onChange={(event) => {
                         setQuestion(event.target.value)
-                      }} placeholder="Enter your question" ></textarea>
+                      }} placeholder="Enter your question" required></textarea>
                    
                     
                 </div>

@@ -35,7 +35,7 @@ function Addforumcomment({user}){
                     <label for="coursename">Your Comment</label>
                     <textarea class="form-control" id="question" rows="3" onChange={(event) => {
                         setComment(event.target.value)
-                      }} placeholder="Enter your question"></textarea>
+                      }} placeholder="Enter your question" required></textarea>
                     
                 </div>
                

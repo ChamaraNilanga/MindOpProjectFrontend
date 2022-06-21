@@ -33,7 +33,7 @@ function Addforumcategory(){
                     <input type="text" onChange={(event) => {
                         setCatname(event.target.value)
                       }}
-                        className="form-control" id="catname"  placeholder="Enter category name" required/>
+                        className="form-control" id="catname"  placeholder="Enter category name" maxLength={50} required/>
                     
                 </div>
                 
