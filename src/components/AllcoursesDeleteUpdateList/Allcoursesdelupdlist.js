@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 
 function AllcoursesDelUpdlist (){
     const [courses,setCourses] = useState([]);
+    const [word,setWord] = useState([]);
     
     function getAllCourses(){
         axios.get(`http://localhost:8070/coursedetails`)
@@ -33,6 +34,22 @@ function AllcoursesDelUpdlist (){
         }
        
     }
+    
+        const Search=(word)=>{
+            if(!word){
+                getAllCourses();
+            }else{
+            try{
+            axios.get(`http://localhost:8070/coursedetails/searchcourse/${word}`)
+            .then((res)=>{
+                console.log(res);
+            setCourses(res.data);
+            }).catch((err)=>{
+                console.log(err);
+            })}catch{
+                alert("no course")
+            }}
+        }
     const setID = (id,name,code,star,enddate,descrip,price) => {
         console.log(id);
         localStorage.setItem('id',id);
@@ -49,7 +66,17 @@ function AllcoursesDelUpdlist (){
         <div className="allcourselist">
             <div className="headoflist">
                 <h3>All Courses In Learny</h3>
-                <div className="searchbox"><Searchbar/></div>
+                <div className="searchbox">
+                <div className="input-group">
+                    <div className="form-outline">
+                        <input id="search-input" type="search" onChange={(event)=>{Search(event.target.value)}} class="form-control" placeholder="Search"/>
+                        
+                        </div>
+                        <button id="search-button" type="button"  class="btn btn-warning">
+                        <i className="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
             
 
