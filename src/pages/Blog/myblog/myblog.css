@@ -1,0 +1,22 @@
+
+.singlePostIcon{
+    float: right;
+    cursor: pointer; 
+ 
+    padding: 10px;
+    font-size: 18px;
+ }
+ 
+ .singlePostIcon:first-child{
+     color:teal;
+     margin-top: 18px;
+ 
+ }
+ 
+ .singlePostIcon:last-child{
+     color: tomato;
+     margin-top: 11px;
+ }
+ 
+ 
+ 

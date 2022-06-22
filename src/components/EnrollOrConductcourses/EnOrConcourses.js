@@ -2,6 +2,7 @@ import React , {useEffect , useState} from "react";
 import axios from "axios";
 import "./EnOrConcourses.css";
 import Subjectcard from "../SubjectCard/Subjectcard";
+import Subjectcardgrid from "../SubjectCardGrid/Subjectcardgrid";
 import { useParams } from "react-router-dom";
 
 
@@ -10,7 +11,7 @@ function EnrollConductcourses({id , role}){
     
     useEffect(()=>{
         function getEnrollConductcourses(id){
-            axios.get(`http://localhost:8070/coursedetails/enroll/194075X`,{
+            axios.get(`http://localhost:8070/coursedetails/enroll/${id}`,{
                 params: {
                   id: {id},
                 },
@@ -33,7 +34,7 @@ function EnrollConductcourses({id , role}){
                 <i class="fa-solid fa-circle-right fa-xl"></i>
             </div>
             
-            <Subjectcard courses={courses} role={role}/>
+            <Subjectcardgrid courses={courses} role={role}/>
             
         </div>
     )
