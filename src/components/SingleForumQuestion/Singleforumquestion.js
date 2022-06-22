@@ -14,11 +14,13 @@ function Singleforumquestion({replies,subreplies, fid ,name , keyimage}){
             console.log(err);
         })
     }
+    
 
     return(
         <div className="singleforum">
             <h3>{name}</h3>
-            <image src={getimage(keyimage)}/>
+            {!keyimage ? <></>: <img src={'http://localhost:8070/images/' + keyimage} className="imagedisplay"></img>}
+            
            {replies.map(reply=>{
                 
                 return(
@@ -27,12 +29,12 @@ function Singleforumquestion({replies,subreplies, fid ,name , keyimage}){
                         <br/>
                         <p>{reply.username}</p>
                         <p>{reply.postedtime}</p>
-                        <Link to="/forum/subreply" state={{ cid : reply.fcommentid , name : name , commentbody : reply.body ,fid:fid}}><text className="textbold">Reply</text></Link>
+                        <Link to="/forum/subreply" state={{ cid : reply.fcommentid , name : name , commentbody : reply.body ,fid:fid,keyimage:keyimage}}><text className="textbold">Reply</text></Link>
                             <Forumsubcomments fid={reply.fcommentid}/>
                     </div>
                 )
             })}
-            <Link to="/forum/reply" state={{ fid : fid, name : name}}><text className="textbold" style={{color:'yellow'}}>Reply</text></Link>
+            <Link to="/forum/reply" state={{ fid : fid, name : name,keyimage:keyimage}}><text className="textbold" style={{color:'yellow'}}>Reply</text></Link>
         </div>
         
     )

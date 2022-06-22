@@ -60,7 +60,7 @@ function Forumquestionlist({questions,name,mylist,user}){
                         <div>
                              
                             <li><Link to="/forum/single" state={{fid : question.fquestionid,name : question.name_, keyimage:question.image}}><p key={question.fquestionid} style={{color:'black',fontSize:'15px'}}>{question.name_}</p></Link></li>
-                            <div className="deletereplybox"><Link to="/forum/reply" state={{ fid : question.fquestionid, name : question.name_}}><text className="textbold">Reply</text></Link>
+                            <div className="deletereplybox"><Link to="/forum/reply" state={{ fid : question.fquestionid, name : question.name_,keyimage:question.image}}><text className="textbold">Reply</text></Link>
                             {mylist==true ? <i class="fa-solid fa-trash-can" style={{color:'red', marginLeft:'85%'}} onClick={()=>{deleteQuestion(question.fquestionid)}}></i> : <></>}
                             </div>
                             <hr/>

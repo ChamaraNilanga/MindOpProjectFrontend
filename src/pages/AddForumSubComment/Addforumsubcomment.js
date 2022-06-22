@@ -5,7 +5,7 @@ import {Link,useLocation} from "react-router-dom";
 
 function Addforumsubcomment({user}){
     const location = useLocation();
-    const { cid , name , commentbody , fid} = location.state;
+    const { cid , name , commentbody , fid,keyimage} = location.state;
     console.log(cid)
     const [subcomment , setSubcomment] = useState('')
     
@@ -42,8 +42,8 @@ function Addforumsubcomment({user}){
                
                 
                 <div className="buttons">
-                    <Link to="/forum/single" state={{cid:cid,name:name , fid:fid}}><button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: 'px solid black'}} className="btn btn-primary">Cancel</button></Link>
-                    <Link to="/forum/single" state={{cid:cid,name:name ,fid:fid}}><button type="submit" onClick={()=>{addSubcomment(cid,user)}} className="btn btn-primary">Submit</button></Link>
+                    <Link to="/forum/single" state={{cid:cid,name:name , fid:fid,keyimage:keyimage}}><button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: 'px solid black'}} className="btn btn-primary">Cancel</button></Link>
+                    <Link to="/forum/single" state={{cid:cid,name:name ,fid:fid,keyimage:keyimage}}><button type="submit" onClick={()=>{addSubcomment(cid,user)}} className="btn btn-primary">Submit</button></Link>
                 </div>
                 
             </form>

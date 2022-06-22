@@ -23,3 +23,10 @@
     padding-right: 10px;
     margin-bottom: 10px;
 }
+
+.imagedisplay{
+    width:500px;
+    height: 500px;
+    align-items: center;
+    align-content: center;
+}

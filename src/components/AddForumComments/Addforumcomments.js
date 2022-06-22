@@ -6,7 +6,7 @@ import {useLocation} from "react-router-dom";
 
 function Addforumcomment({user}){
     const location = useLocation();
-    const { fid , name } = location.state;
+    const { fid , name ,keyimage} = location.state;
     console.log(fid)
     console.log(name)
     const [comment , setComment] = useState('')
@@ -41,8 +41,8 @@ function Addforumcomment({user}){
                
                 
                 <div className="buttons">
-                    <Link to="/forum/single" state={{fid:fid,name:name}}><button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: 'px solid black'}} className="btn btn-primary">Cancel</button></Link>
-                    <Link to="/forum/single" state={{fid:fid,name:name}}><button type="submit" onClick={addComment} className="btn btn-primary">Submit</button></Link>
+                    <Link to="/forum/single" state={{fid:fid,name:name,keyimage:keyimage}}><button type="submit"  style={{backgroundColor: 'white', color: 'black' , border: 'px solid black'}} className="btn btn-primary">Cancel</button></Link>
+                    <Link to="/forum/single" state={{fid:fid,name:name,keyimage:keyimage}}><button type="submit" onClick={addComment} className="btn btn-primary">Submit</button></Link>
                 </div>
                 
             </form>
