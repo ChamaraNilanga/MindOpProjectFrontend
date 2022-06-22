@@ -16,7 +16,7 @@
    align-items: flex-end;
    color: blue;
    align-content: flex-end;
-   margin-left: 90%;
+   margin-left: 850px;
 }
 .pagination{
     list-style: none;
@@ -39,4 +39,10 @@
 .pagination .page-num:hover{
     background-color: #d9a20b;
     color: #000;
+}
+
+.deletereplybox{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    gap: 10px;
 }

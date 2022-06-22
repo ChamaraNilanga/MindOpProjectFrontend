@@ -18,6 +18,7 @@ function Forumquestionlist({questions,name,mylist,user}){
         }
        
     }
+    console.log(mylist)
     function getQuestion(user){
         axios.get(`http://localhost:8070/forums/mylist/${user}`)
         .then((res)=>{
@@ -57,10 +58,11 @@ function Forumquestionlist({questions,name,mylist,user}){
                 {currentItems.map(question=>{
                     return(
                         <div>
-                            
-                            <li><Link to="/forum/single" state={{fid : question.fquestionid,name : question.name_, keyimage:question.image}}><p key={question.fquestionid} style={{color:'black'}}>{question.name_}</p></Link></li>
+                             
+                            <li><Link to="/forum/single" state={{fid : question.fquestionid,name : question.name_, keyimage:question.image}}><p key={question.fquestionid} style={{color:'black',fontSize:'15px'}}>{question.name_}</p></Link></li>
+                            <div className="deletereplybox"><Link to="/forum/reply" state={{ fid : question.fquestionid, name : question.name_}}><text className="textbold">Reply</text></Link>
                             {mylist==true ? <i class="fa-solid fa-trash-can" style={{color:'red', marginLeft:'85%'}} onClick={()=>{deleteQuestion(question.fquestionid)}}></i> : <></>}
-                            <Link to="/forum/reply" state={{ fid : question.fquestionid, name : question.name_}}><text className="textbold">Reply</text></Link>
+                            </div>
                             <hr/>
                         </div>
                     )
