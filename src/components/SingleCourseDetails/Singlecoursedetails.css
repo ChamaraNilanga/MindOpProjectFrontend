@@ -36,3 +36,6 @@
     background-color: #d9a20b;
     color: #000;
 }
+.paginationcourse .active{
+    background-color: rgb(221, 169, 85);
+}

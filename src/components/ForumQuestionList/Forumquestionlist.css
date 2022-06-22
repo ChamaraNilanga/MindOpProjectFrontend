@@ -46,3 +46,7 @@
     grid-template-columns: repeat(2,auto);
     gap: 10px;
 }
+
+.pagination .active{
+    background-color: rgb(221, 169, 85);
+}

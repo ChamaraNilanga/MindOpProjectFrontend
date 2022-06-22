@@ -27,8 +27,9 @@ import Addforumcomments from './pages/AddForumComment/Addforumcomment';
 import Addforumsubcomment from './pages/AddForumSubComment/Addforumsubcomment';
 
 
+
 function App() {
-  const role = 's';
+  const role = 'a';
   const id='194075X';
   // const mod=40;
   return (
@@ -59,7 +60,7 @@ function App() {
          <Route path="/forum/mylist" element={<Forummylist user={id}/>}/>
          <Route path="/forum/reply" element={<Addforumcomments user={id}/>}/>
          <Route path='/forum/subreply' element={<Addforumsubcomment user={id}/>}/>
-
+         
 
         </Routes>
      </Router> 

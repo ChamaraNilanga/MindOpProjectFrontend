@@ -2,6 +2,8 @@ import React , {useState,useEffect} from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Singlecoursedetails from "../../components/SingleCourseDetails/Singlecoursedetails";
 import axios from "axios";
+import  Sidestyleicon  from "../../components/SideStyleIcon/Sidestyleicon";
+import "./Studentteacher.css";
 
 
 function Stuteacherallcourses({role}){
@@ -23,8 +25,9 @@ function Stuteacherallcourses({role}){
     return(
         <div>
             <header><Navbar/></header>
-            <div>
+            <div className="alliconwithlist">
                 <Singlecoursedetails courses={courses} role={role}/>
+                <Sidestyleicon/>
             </div>
         </div>
     )
