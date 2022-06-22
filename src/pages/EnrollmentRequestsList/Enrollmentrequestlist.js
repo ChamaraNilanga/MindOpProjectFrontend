@@ -1,8 +1,11 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Enrollreqlist from "../../components/EnrollmentRequests/Enrollmentreqlist";
+import {useLocation} from "react-router-dom";
 
-function Enrollmentrequestlist({id , userid }){
+function Enrollmentrequestlist({ userid }){
+    const location = useLocation()
+    const { id } = location.state
     return(
         <div>
             <header><Navbar/></header>

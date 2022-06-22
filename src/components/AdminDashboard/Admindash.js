@@ -13,9 +13,9 @@ function AdminDash () {
         </div>
         <Link to="/course/list"><p>SEE LIST</p></Link>
        
-       <h4>Students</h4>
+       <h4>Users</h4>
         <div className="addfuncstu">
-            <h6>Add New Student</h6>
+            <h6>Add New User</h6>
             <button className="btn btn-primary">Add</button>
             
         </div>

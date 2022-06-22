@@ -1,10 +1,11 @@
 import React , {useEffect , useState} from "react";
 import axios from "axios";
 import "./Enrollmentrequestdashboard.css";
+import {Link} from "react-router-dom";
 
 function Enrollmentreqdash ({id}) {
     const [requests,setRequests] = useState([]);
-    
+    console.log(id);
     useEffect(()=>{
         function getEnrollreqcourses(){
             axios.get(`http://localhost:8070/coursedetails/studentreq/${id}`)
@@ -32,7 +33,7 @@ function Enrollmentreqdash ({id}) {
            
             
         </div>
-       <a href="/courselist">SEE LIST</a>
+       <Link to="/enrollmentrequests" state={{id:id}}><p>SEE LIST</p></Link>
       
     </div>
     )

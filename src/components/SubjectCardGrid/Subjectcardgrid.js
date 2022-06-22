@@ -18,7 +18,7 @@ function Subjectcard ({courses , role , text}){
                     <Card.Body>
                     <Card.Title key={course.modid}>{course.modname}</Card.Title>
                     <Card.Text className="text" key={course.modid}>
-                    {course.descrip}
+                    {`${course.descrip.substring(0, 30)}...`}
                     </Card.Text>
                     
                     </Card.Body>

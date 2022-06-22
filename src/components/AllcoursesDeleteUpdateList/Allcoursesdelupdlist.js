@@ -3,9 +3,11 @@ import axios from "axios";
 import Searchbar from "../SearchBar/Searchbar";
 import "./Allcoursesdelupdlist.css";
 import {Link} from "react-router-dom";
+import ReactPaginate from "react-paginate";
 
 function AllcoursesDelUpdlist (){
     const [courses,setCourses] = useState([]);
+    const [word,setWord] = useState([]);
     
     function getAllCourses(){
         axios.get(`http://localhost:8070/coursedetails`)
@@ -33,6 +35,22 @@ function AllcoursesDelUpdlist (){
         }
        
     }
+    
+        const Search=(word)=>{
+            if(!word){
+                getAllCourses();
+            }else{
+            try{
+            axios.get(`http://localhost:8070/coursedetails/searchcourse/${word}`)
+            .then((res)=>{
+                console.log(res);
+            setCourses(res.data);
+            }).catch((err)=>{
+                console.log(err);
+            })}catch{
+                alert("no course")
+            }}
+        }
     const setID = (id,name,code,star,enddate,descrip,price) => {
         console.log(id);
         localStorage.setItem('id',id);
@@ -44,18 +62,48 @@ function AllcoursesDelUpdlist (){
         localStorage.setItem('description',descrip);
         
     }
+    const [currentItems, setCurrentItems] = useState([]);
+    const [pageCount, setPageCount] = useState(0);
+    const [itemOffset, setItemOffset] = useState(0);
+    const itemsPerPage=15;
+
+    useEffect(() => {
+        const endOffset = itemOffset + itemsPerPage;
+        console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+        setCurrentItems(courses.slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(courses.length / itemsPerPage));
+    }, [itemOffset, itemsPerPage ,courses]);
+
+
+    const handlePageClick = (event) => {
+        const newOffset = (event.selected * itemsPerPage) % courses.length;
+        console.log(
+        `User requested page number ${event.selected}, which is offset ${newOffset}`
+        );
+        setItemOffset(newOffset); 
+    }
 
     return(
         <div className="allcourselist">
             <div className="headoflist">
                 <h3>All Courses In Learny</h3>
-                <div className="searchbox"><Searchbar/></div>
+                <div className="searchbox">
+                <div className="input-group">
+                    <div className="form-outline">
+                        <input id="search-input" type="search" onChange={(event)=>{Search(event.target.value)}} class="form-control" placeholder="Search"/>
+                        
+                        </div>
+                        <button id="search-button" type="button"  class="btn btn-warning">
+                        <i className="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
             
 
             <div className="table table-striped table-light">
             
-            {courses.map(course=>{
+            {currentItems.map(course=>{
                 
                 return(
                     <tbody>
@@ -70,6 +118,21 @@ function AllcoursesDelUpdlist (){
                     
                 )
             })}
+            <ReactPaginate
+                    breakLabel="..."
+                    nextLabel="next >"
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={3}
+                    pageCount={pageCount}
+                    previousLabel="< previous"
+                    renderOnZeroPageCount={null}
+                    containerClassName="pagination"
+                    pageLinkClassName="page-num"
+                    previousLinkClassName="page-num"
+                    nextLinkClassName="page-num"
+                    activeLinkClassName="active"
+
+                />
         </div>
         </div>
     )

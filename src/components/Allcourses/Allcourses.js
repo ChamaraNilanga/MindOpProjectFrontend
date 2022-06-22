@@ -27,7 +27,7 @@ function Allcourses({role}){
                 <h3 className="head3">All Courses</h3>
                 <Link to="/courseswithdetails"><i class="fa-solid fa-circle-right fa-xl"></i></Link>
             </div>
-            {role==='s' ? <Subjectcard courses={courses} text={"Enroll"}/> : role==='c' ? <Subjectcard courses={courses} text={"Conduct"}/>:<Subjectcardgrid courses={courses} text={"See>>"}/>}
+            {role==='s' ? <Subjectcard courses={courses} text={"Enroll"}/> : role==='c' ? <Subjectcard courses={courses} text={"See>>"}/>:<Subjectcardgrid courses={courses} text={"See>>"}/>}
             
             
         </div>

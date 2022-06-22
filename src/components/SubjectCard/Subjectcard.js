@@ -23,7 +23,7 @@ function Subjectcard ({courses , role , text}){
                     <Card.Body>
                     <Link to="/singlecourse" state={{ id: course.modid }}><Card.Title className="title" key={course.modid} onClick={()=>{setModid(course.modid)}}>{course.modname}</Card.Title></Link>
                     <Card.Text className="text" key={course.modid}>
-                    {course.descrip}
+                    {`${course.descrip.substring(0, 20)}...`}
                     </Card.Text>
                     
                     <Card.Text className="text" key={course.modid}>
@@ -32,7 +32,7 @@ function Subjectcard ({courses , role , text}){
                     
                     </Card.Body>
                     <Card.Footer>
-                        {role==='s' ? <div><Progressbar progress={course.progress}/></div> : role==='c' ? <></>:<Button className="btn" variant="warning" key={course.modid}>{text}</Button>}
+                        {role==='s' ? <div><Progressbar progress={course.progress}/></div> : role==='c' ? <></>:<Link to="/singlecourse" state={{ id: course.modid }}><Button className="btn" variant="warning" key={course.modid}>{text}</Button></Link>}
                         {/* <Button className="btn" variant="warning" key={course.modid}>Enroll</Button> */}
                     </Card.Footer>
                     </Card>
