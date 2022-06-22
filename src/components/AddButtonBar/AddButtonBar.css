@@ -1,0 +1,14 @@
+.category{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color: rgb(15, 14, 14);
+    font-weight: bold;
+    font-size: medium;
+    height: 18mm;
+    padding: 10px;
+    width: 100%;
+    border-radius: 20px;
+}
+.bar{
+    width: 100%;
+}

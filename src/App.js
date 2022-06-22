@@ -4,6 +4,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Homestudent from './pages/HomeStudent/HomeStudent';
 import Addcourseform from './pages/Addcourse/Addcourse';
+
+import CourseContent from './pages/CourseContent/CourseContent';
+import TopicBox from './components/TopicBox/TopicBox';
+import ViewVideos from './pages/ViewVideos/ViewVideos';
+import AddActivtyResoureses from './pages/AddActivity&Resoureses/AddActivtyResoureses';
+
 import AllcoursesDelUpdlist from './components/AllcoursesDeleteUpdateList/Allcoursesdelupdlist';
 import Courseupdatedeletelist from './pages/CoursesUpdateDeleteList/Courseupddellist';
 
@@ -34,6 +40,7 @@ import Addforumsubcomment from './pages/AddForumSubComment/Addforumsubcomment';
 
 
 
+
 function App() {
   const role = 'a';
   const id='194075X';
@@ -45,6 +52,11 @@ function App() {
        <Routes>
           <Route path='/home' element={<Homestudent role={role} id={id}/>}/>
           <Route path='/course/addcourse' element={<Addcourseform/>}/>
+
+          <Route path='/coursecontent'element={<CourseContent/>}/>
+          <Route path='/viewvideos'element={<ViewVideos/>}/>
+          <Route path='/addactivityresourses'element={<AddActivtyResoureses/>}/>
+
           <Route path='/course/list' element={<Courseupdatedeletelist/>}/>
           <Route path='/updatecourse' element={<UpdateCourseDetails/>}/>
           <Route path='/singlecourse' element={<SingleCoursePage role={role} user={id}/>}/>
@@ -67,6 +79,7 @@ function App() {
          <Route path="/forum/reply" element={<Addforumcomments user={id}/>}/>
          <Route path='/forum/subreply' element={<Addforumsubcomment user={id}/>}/>
          
+
 
         </Routes>
      </Router> 
