@@ -6,6 +6,12 @@ import Homestudent from './pages/HomeStudent/HomeStudent';
 import Addcourseform from './pages/Addcourse/Addcourse';
 import AllcoursesDelUpdlist from './components/AllcoursesDeleteUpdateList/Allcoursesdelupdlist';
 import Courseupdatedeletelist from './pages/CoursesUpdateDeleteList/Courseupddellist';
+
+import Searchbar from './components/SearchBar/Searchbar';
+import Singlecoursedetails from './components/SingleCourseDetails/Singlecoursedetails';
+import Enrollreqlist from './components/EnrollmentRequests/Enrollmentreqlist';
+import Conductreqlist from './components/ConductingRequests/Conductingreqlist';
+
 import UpdateCourseDetails from './pages/UpdateCourseDetails/Updatecoursedetails';
 import SingleCoursePage from './pages/SingleCoursePage/Singlecoursepage';
 import Enrollmentrequestlist from './pages/EnrollmentRequestsList/Enrollmentrequestlist';
