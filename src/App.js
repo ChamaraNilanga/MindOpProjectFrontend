@@ -54,7 +54,7 @@ import StripePaymentSuccess from './pages/Payment/StripePaymentSuccess';
 
 // import Addforumcategory from './components/AddForumCategory/Addforumcategory';
 import Forumcategory from './pages/FormsCategory/Formscategory';
-import Addcategory from './pages/AddCategory/Addcategory';
+import Addcategory from './pages/AddCategory/AddCategory';
 import Questionlistpage from './pages/QuestionListPage/Questionlistpage';
 import Singlequestionforumpage from './pages/SingleQuestionForumPage/Singlequestionforumpage';
 import Addforumquestionpage from './pages/AddForumQuestionPage/Addforumquestionpage';
