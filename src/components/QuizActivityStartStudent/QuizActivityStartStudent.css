@@ -1,0 +1,62 @@
+.cardcontainer{
+    width: 200px;
+    height: 250px;
+    border: 2px solid #ffffff;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.658);
+    border-radius: 20px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.crdimgtop{
+    width: 150px;
+    height: 150px;
+}
+.crdtitle{
+    color: #000000;
+    margin-bottom: -10px;
+    margin-top: -20px;
+  
+}
+.crdtxt{
+    color: #000000;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    
+}
+.quizcontainer{
+    background-color: rgba(55, 61, 96);
+    margin-left: 80px;
+   padding: -10px;
+   padding-left: 60px;
+    width: 90%;
+    margin-top: -30px;
+    border-radius: 20px;
+}
+
+
+.bactocrc{
+    width: 200px;
+    padding: 10px;
+    border: none;
+    background-color: #c7c4bc;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 1200px;
+    border-radius: 20px;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.attemptquizbtn{
+    width: 150px;
+    padding: 5px;
+    border: none;
+    background-color: rgb(255, 183, 0);
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: -8px;
+  margin-left: -8px;
+    border-radius: 20px;
+   
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
+}

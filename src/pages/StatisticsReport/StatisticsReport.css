@@ -1,0 +1,21 @@
+.statisticsreportcontainer{
+    width: 50%;
+    height: 350px;
+    background-color: rgba(188, 185, 180, 0.496);
+    margin-left: 350px;
+    border-radius: 20px;
+    padding: 30px;
+   
+}
+.exportbtnstat{
+    margin-left: 950px;
+    background-color: #d45854;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.2);
+    width: 140px;
+    height: 35px;
+    margin-top: 30px;
+    
+  
+}

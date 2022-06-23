@@ -1,0 +1,88 @@
+.Accordioncontainer{
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 20px;
+    background-color:rgba(55, 61, 96) ; 
+    border-width: 50px;
+    padding: 30px;
+    border-radius: 20px;
+  
+   
+}
+.form-check-input{
+    border-width: 2px;
+    border-color: black;
+}
+.btn-btn-success{
+    color: beige;
+}
+
+.input-group{
+    margin-top: 25px;
+    margin-left: 570px;
+
+}
+.search-button{
+    height: 200px;
+}
+.createquestionbtn{
+    width: 200px;
+    height: 45px;
+  padding-top: -20px;
+  border: none;
+  background-color: #fc9c52;
+  /* font-weight: bold; */
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 1050px;
+  margin-bottom: -20px;
+ 
+  border-radius: 20px;
+  border: 2px solid rgb(255, 255, 255);
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
+ 
+}
+.createquestionlink{
+    color: rgb(255, 255, 255);
+    font-size: 18px; 
+}
+.subcatdeletebtn{
+    width: 100px;
+    height: 45px;
+  padding-top: -20px;
+  border: none;
+  background-color: #fc5852;
+  /* font-weight: bold; */
+  cursor: pointer;
+  margin-top: -20px;
+  margin-left: 1150px;
+  margin-bottom: 10px;
+ 
+  border-radius: 20px;
+  
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.previewlink{
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+}
+.addsubcatbtn{
+    width: 200px;
+    height: 40px;
+ 
+  border: none;
+  background-color: rgba(55, 61, 96);
+  /* font-weight: bold; */
+  cursor: pointer;
+  margin-top: -20px;
+  margin-left: 1200px;
+  
+ 
+  border-radius: 20px;
+  
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.addsubcatlink{
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+}

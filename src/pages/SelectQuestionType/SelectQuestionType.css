@@ -1,0 +1,59 @@
+.Qtypeontainer {
+   margin-top: 200px;
+   width: 600px;
+   height: 250px;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+     background-color: rgba(55, 61, 96);
+    box-shadow: 2px 4px 10px 1px rgba(99, 76, 76, 0.47);
+    
+    margin-left: 150px;
+    border-radius: 20px;
+   
+  }
+  .radiobtncontainer {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 30px;
+   
+  }
+  
+  .radio {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    background: rgb(234, 201, 51);
+  }
+  .radio:hover {
+    margin: 11px;
+    padding: 10px;
+    border-radius: 15px;
+    background: rgb(234, 236, 133);
+  }
+  .Qtypeontainer.h1{
+    color: aliceblue;
+  }
+  .typetext{
+    color: aliceblue;
+    font-size: 25px;
+    padding-top: 20px;
+    padding-left: 30px;
+  }
+
+  .gobtn{
+    width: 100px;
+    height: 40px;
+  padding-bottom: 7px;
+  border: none;
+  background-color: #32a7e2;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  margin-left: 450px;
+  border: 2px solid rgb(43, 13, 112);
+  
+  
+  }

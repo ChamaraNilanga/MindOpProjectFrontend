@@ -1,17 +1,21 @@
-.write{
+.writes{
     padding-top: 10px;
+    margin-top: 80px;
 }
 
 .writeForm{
 position: relative;
+margin-left: 300px;
+
 }
 
-.writeFormGroup{
+/* .writeFormGroup{
     margin-left: 150px;
     display: flex;
     align-items: center;
+    background-color:rgba(55,61,96,0.835);
 
-}
+} */
 
 .writeIcon{
     width: 25px;
@@ -24,6 +28,7 @@ position: relative;
     font-size: 20px;
     color: gray;
     cursor: pointer;
+    margin-left: -100px;
 }
 
 .writeInput{
@@ -31,6 +36,8 @@ position: relative;
     border: none;
     padding: 20px;
     width: 70vw;
+    background-color:rgb(255, 255, 255);
+    margin-left: -100px;
 }
 
 .writeInput:focus{
@@ -42,28 +49,46 @@ position: relative;
   height: 100vh;
 }
 
-.writeSubmit{
+.writeSubmits{
     position: absolute;
-    top:20px;
-    right: 50px;
-    color: white;
-    background-color: teal;
+    top:60px;
+    color: rgb(15, 14, 14);
     padding: 10px;
     border:none;
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
+    margin-left: 880px;
+    background-color: teal;
+  
 }
 
 #fileInput{
     display: none;
 }
 
-.writeImg{
+/* .writeImg{
     padding-top: 10px;
     margin-left: 150px;
     width: 70vw;
     height: 250px;
     border-radius: 10px;
     object-fit: cover;
+} */
+
+.postswrite{
+    /* flex: 50;
+    display: flex;
+    flex-wrap:wrap; */
+   /* margin-right: 100px; */
+    border-radius: 10px;
+   scroll-behavior: smooth;
+   background-color:rgba(55,61,96,0.835);
+   width: 95%;
+   margin-left: 25px;
+   margin-top: 70px;
+
+
+
+   
 }

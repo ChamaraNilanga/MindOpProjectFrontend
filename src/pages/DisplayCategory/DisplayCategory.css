@@ -1,0 +1,47 @@
+.container{
+    margin-left: 100px;
+    margin-top: 20px;
+    background-color:rgba(55, 61, 96, 0.835) ; 
+    border-width: 50px;
+   
+    
+    
+}
+
+
+.break{
+    margin-top: 20px;
+}
+
+
+.top {
+    color: #16206c;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 650;
+    font-size: 35px;
+    line-height: 53px;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    margin-left: 550px;
+    letter-spacing: -0.02em;
+  }
+  .addcategorybtn{
+    width: 150px;
+  padding: 10px;
+  border: none;
+  background-color: #38b68a;
+  font-weight: bold;
+  cursor: pointer;
+ 
+  margin-bottom: -40px;
+  border-radius: 20px;
+
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 1260px;
+  
+  }
+  .addcategorylink{
+    color: rgb(255, 255, 255);
+  }

@@ -1,24 +1,26 @@
 .top{
-    width: 100;
+    width: 150;
     height: 50px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0);
     position: sticky;
     top: 0;
-    display: flex;
     align-items: center;
     font-family:  'Josefin Sans', sans-serif;
     z-index:999 ;
+    margin-top: -40px;
+    
+
 }
 
 .topLeft,.topRight{
-    flex: 3;
+    flex: 6;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .topCenter{
-    flex: 6;   
+    flex: 8;   
 }
 
 .topImg{
@@ -43,16 +45,21 @@
     cursor: pointer;
 }
 
-.topSearchIcon{
+/* .topSearchIcon{
     font-size: 18px;
-    color: #666;
+    color: rgb(28, 27, 27);
     cursor: pointer;
     margin-left: 5px;
-}
+} */
 
 .nav-link{
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-decoration: none;
-  color: #666;
+  color: rgb(255, 255, 255);
     
+}
+
+.textarea{
+  border: none;
+  height: 25px;
 }

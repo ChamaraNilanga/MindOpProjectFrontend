@@ -1,0 +1,68 @@
+
+.container{
+    margin-left: 5px;
+    background-color: rgba(55, 61, 96);
+    width: 80%;
+    margin-left: 150px;
+    border-radius: 20px;
+    margin-top: 100px;
+  }
+  
+  .inputs{
+    padding-top: 20px;
+    margin-top: 20px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  }
+  
+  .inputfields{
+    
+    margin-left: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    height: 35px;
+    width: 40%;
+   padding-top: 5px;
+  }
+  .addmorebtn{
+    width: 150px;
+    padding: 10px;
+    border: none;
+    background-color: #ffdc15;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    margin-left: 60px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+  }
+  .submitbtn{
+    width: 150px;
+  padding: 10px;
+  border: none;
+  background-color: #d4d3cf;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  margin-left: 30px;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
+  }
+  .removebtn{
+    width: 150px;
+    padding: 10px;
+    border: none;
+    background-color: #eb6c11;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    margin-left: 10px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }

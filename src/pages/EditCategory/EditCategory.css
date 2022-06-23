@@ -1,0 +1,114 @@
+
+  
+  
+  
+  .new {
+    width: 100%;
+    display: flex;
+  }
+  .new .newContainer {
+    flex: 6;
+  }
+  .new .newContainer .top, .new .newContainer .bottom {
+    
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+  }
+  /* .new .newContainer.top h1 {
+    color: rgb(7, 107, 125);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 650;
+    font-size: 35px;
+    line-height: 53px;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    letter-spacing: -0.02em;
+  } */
+  
+  /* .new .newContainer .top h1, .new .newContainer .bottom h1 {
+    color: rgb(7, 107, 125);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 650;
+    font-size: 35px;
+    line-height: 53px;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    letter-spacing: -0.02em;
+  } */
+  
+  .new .newContainer .top .right, .new .newContainer .bottom .right {
+    flex: 2;
+  }
+  .new .newContainer .top .right form, .new .newContainer .bottom .right form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+     background-color: rgba(55, 61, 96);
+    box-shadow: 2px 4px 10px 1px rgba(99, 76, 76, 0.47);
+    width: 80%;
+    margin-left: 150px;
+    border-radius: 20px;
+  }
+  .new .newContainer .top .right form .formInput, .new .newContainer .bottom .right form .formInput {
+    width: 40%;
+  }
+  .new .newContainer .top .right form .formInput label, .new .newContainer .bottom .right form .formInput label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    
+    color: rgb(251, 247, 247);
+  }
+  .new .newContainer .top .right form .formInput label .icon, .new .newContainer .bottom .right form .formInput label .icon {
+    cursor: pointer;
+  }
+  .new .newContainer .top .right form .formInput input, .new .newContainer .bottom .right form .formInput input {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    
+  }
+  .new .newContainer .top .right form .break, .new .newContainer .bottom .right form .break {
+    flex-basis: 100%;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+  }
+  .new .newContainer .top .right form button, .new .newContainer .bottom .right form .button {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    background-color: #ffdc15;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    
+   
+  }
+  .new .newContainer .top .right form button, .new .newContainer .bottom .right form .cancelbtn {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    background-color: #c5c7c0;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    border: 2px solid rgb(187, 186, 186);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+   
+  }
