@@ -23,9 +23,6 @@ function getAllAssignments(){
  })
  }
 
-
-
-
  const deleteAssignment = (id) => {
   alert('Are you sure to delete this record!')
   axios.delete(`http://localhost:8070/assignmentdetails/${id}`).
@@ -38,16 +35,6 @@ function getAllAssignments(){
   window.location.reload(false)
 }
 
-
-
-
-
-
-
-
-
-
-
   return (
     <div>
       <Navbar/>
@@ -56,7 +43,6 @@ function getAllAssignments(){
 <table class="table">
   <thead class="thead-light">
     <tr>
-      <th scope="col">Assignment NO</th>
       <th scope="col">Assignment Name</th>
       <th scope="col">Due Date</th>
       <th scope="col">Time Limit</th>
@@ -73,7 +59,7 @@ function getAllAssignments(){
       <td>{Assign.duedate}</td>
       <td>{Assign.timelimit}</td>
       <td>{Assign.introduction}</td>
-      <Link to={`/updateassignment?assignmentid=${Assign.assignmentid}`}>
+      <Link to="/updateassignment" state={{id:Assign.assignmentid,name:Assign.name_,due:Assign.duedate,tlimit:Assign.timelimit,intro:Assign.introduction}}>
       <td><button>Update</button></td>
       </Link>
       <td><button onClick={() => {deleteAssignment(Assign.assignmentid)}}>Delete</button></td>

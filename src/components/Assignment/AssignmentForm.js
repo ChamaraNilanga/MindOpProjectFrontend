@@ -9,6 +9,12 @@ function AssignmentForm() {
     const[ContentID, setContentID] = useState('');
     const[DueDate, setDuedate] = useState('');
     const[TimeLimit, setTimeLimit] = useState('');
+    const [image , setImage] = useState('')
+
+    const fileSelected = event => {
+      const file = event.target.files[0]
+          setImage(file);
+      }
 
     const printData = async() => {
     console.log(ContentID.value)
@@ -18,7 +24,7 @@ function AssignmentForm() {
     duedat : DueDate,
     intro : Introduction,
     timelimit : TimeLimit,
-    contid : ContentID
+    contid : '001'
     }
     await axios.post('http://localhost:8070/assignmentdetails/',data)
     .then((res)=>{
@@ -50,17 +56,18 @@ function AssignmentForm() {
       <input onChange={(e) => {setTimeLimit(e.target.value)}} type="text" class="form-control" id="Content" aria-describedby="Contenthh" placeholder="Enter Time limit in minutes" />
     </div>
 
-    <div class="form-group">
+    {/* <div class="form-group">
       <label for="Content">ContentID</label>
       <input onChange={(e) => {setContentID(e.target.value)}} type="text" class="form-control" id="Content" aria-describedby="Contenthh" placeholder="Enter Contentid here" />
-    </div>
+    </div> */}
     <div class="form-group">
       <label for="Date">DueDate</label>
       <input onChange={(e) => {setDuedate(e.target.value)}} type="date" class="form-control" id="Date" aria-describedby="DueDate" placeholder="Enter Due Date" />
     </div>
     <div class="form-group">
       <label for="upload">Additional Files</label>
-      <Upload/>
+      <input type="file" onChange={fileSelected}
+                        className="form-control"  accept="image/*"/>
     </div>
 
 

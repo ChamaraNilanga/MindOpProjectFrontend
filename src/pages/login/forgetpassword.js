@@ -1,9 +1,31 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import "../login/login.css"
 import BackgroundImage from '../../images/image01.jpg';
+import { useState } from 'react';
+import axios from 'axios';
 
 const  ForgetPasswordPage =()=> {
+    const[email, setemail] = useState('');
+    const navigate = useNavigate();
+
+    function sendmail(id) {
+        axios.get(`http://localhost:8070/userdetails/emailconfirm/${id}`).
+        then((res)=>{
+         console.log(res);
+         let vlid=res.data
+         if (vlid=='Email valid') {
+            navigate(`/sendemail`)
+        }else{
+            navigate(`/sendmailw`)
+            // window.location.reload()
+        }
+      }).catch((err)=>{
+       console.log(err);
+       })
+       }
+
+
     return (
         <header style={ HeaderStyle }>
         <div className="text-center m-5-auto">
@@ -13,11 +35,10 @@ const  ForgetPasswordPage =()=> {
             
                 <p>
                     <label id="reset_pass_lbl">Email address</label><br/>
-                    <input type="email" name="email" required />
+                    <input onChange={(e) => {setemail(e.target.value)}} type="email" name="email" required />
                 </p>
-                <br/><Link to="/sendemail">
-                    <button id="sub_btn" type="submit">Send password reset email</button>
-                    </Link>
+                <br/>
+                    <button onClick={() => {sendmail(email)}} id="sub_btn" >Send password reset email</button>    
                 <br/>
                 <Link to="/">Back to Login</Link>
             </form>

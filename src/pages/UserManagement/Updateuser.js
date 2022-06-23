@@ -39,9 +39,8 @@ function Updateuser() {
     <form className='form'>
       <div class="form-group">
         <h1>Update User deatils</h1>
-      <label for="Roll">User Roll</label>
-      <input onChange={(e) => {setUserroll(e.target.value)}} type="text" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Select user roll here" />
     </div>
+    
     <div class="form-group">
       <label for="name">User name</label>
       <input onChange={(e) => {setUsername(e.target.value)}} type="text" required class="form-control" id="Intro" aria-describedby="Intro" placeholder="Enter User name here" />

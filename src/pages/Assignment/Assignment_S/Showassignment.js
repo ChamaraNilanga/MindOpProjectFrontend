@@ -2,7 +2,12 @@ import React from 'react'
 
 function Showassignment() {
   return (
-    <div>Showassignment</div>
+    <div>
+      
+
+
+      
+    </div>
   )
 }
 

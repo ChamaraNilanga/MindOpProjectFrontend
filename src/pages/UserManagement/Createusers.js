@@ -10,9 +10,24 @@ function Createusers() {
     const[Phone_no, setPhone_no] = useState('');
     const[City, setCity] = useState('');
     const[Gender, setGender] = useState('');
+    const[Admin, setAdmin] = useState(false);
+    const[teacher, setteacher] = useState(false);
+    const[student, setstudent] = useState(false);    
+
+
+   
+
 
     const printData = async() => {
     var axios = require('axios');
+
+    {Userroll=='admin'?
+    setAdmin(true)
+    :Userroll=='teacher'?
+    setteacher(true)
+    :Userroll=='student'?
+    setstudent(true):alert('invalid useer role') } 
+
     var data = {
     
         uid : Uid,
@@ -21,12 +36,15 @@ function Createusers() {
         email : Email,
         psswd : Password,
         city : City,
-        contactno : Phone_no
+        contactno : Phone_no,
+        admin : Admin,
+        tcher : teacher,
+        stdnt : student
     }
-
-
-
-    await axios.post('http://localhost:8070/userdetails/',data)
+    console.log(data.admin)
+    console.log(data.tcher)
+    console.log(data.stdnt)
+    await axios.post("http://localhost:8070/userdetails/",data)
     .then((res)=>{
         console.log(res);
     }).catch((err)=>{
@@ -57,7 +75,7 @@ function Createusers() {
     </div>
     <div class="form-group">
       <label for="Email">Email</label>
-      <input onChange={(e) => {setEmail(e.target.value)}} type="text" class="form-control" id="Content" aria-describedby="Contenthh" placeholder="Enter Email here" />
+      <input onChange={(e) => {setEmail(e.target.value)}} type="email" class="form-control" id="Content" aria-describedby="Contenthh" placeholder="Enter Email here" />
     </div>
     <div class="form-group">
       <label for="Phone">Phone number</label>
@@ -73,7 +91,7 @@ function Createusers() {
     </div>
     <div class="form-check">
     </div>
-    <button onClick={printData} type="submit" class="btn btn-primary">Save</button>
+    <button onClick={printData} class="btn btn-primary">Save</button>
     </form>
  
   )

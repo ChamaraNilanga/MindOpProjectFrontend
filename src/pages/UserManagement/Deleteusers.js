@@ -9,14 +9,21 @@ function Deleteusers() {
   
 
     const deleteUser = (id) => {
+      console.log(id)
       alert('Are you sure to delete this record!')
+
       axios.delete(`http://localhost:8070/userdetails/${id}`).
       then((res) => {
         console.log(res);
+        let vlid=res.data
+        if (vlid=='No any user') {
+          alert('No any user')
+       }else{
+        alert('User deleted')
+       }
      }).catch((err)=>{
       console.log(err);
       })
-      window.location.reload(false)
     }
 
   return (
@@ -32,6 +39,10 @@ function Deleteusers() {
       <input onChange={(e) => {setReason(e.target.value)}} type="text" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Reason for delete" />
     </div>
     <button onClick={() => {deleteUser(Userid)}}>Delete</button>
+    <br/>
+    <p>
+    <button >Go to back</button>
+    </p>
     </form>
 
 
