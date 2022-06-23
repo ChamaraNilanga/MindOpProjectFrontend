@@ -1,11 +1,12 @@
-.writes{
+.write{
     padding-top: 10px;
     margin-top: 80px;
 }
 
-.writeForm{
+.writeForms{
 position: relative;
-margin-left: 300px;
+padding-top: 50px;
+margin-left: 250px;
 
 }
 
@@ -17,7 +18,7 @@ margin-left: 300px;
 
 } */
 
-.writeIcon{
+.writeIcon1{
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -31,11 +32,12 @@ margin-left: 300px;
     margin-left: -100px;
 }
 
-.writeInput{
+.writeInput1{
     font-size: 30px;
     border: none;
     padding: 20px;
     width: 70vw;
+    height: 70px;
     background-color:rgb(255, 255, 255);
     margin-left: -100px;
 }
@@ -49,9 +51,9 @@ margin-left: 300px;
   height: 100vh;
 }
 
-.writeSubmits{
+.writeUpdate{
     position: absolute;
-    top:60px;
+    top:10px;
     color: rgb(15, 14, 14);
     padding: 10px;
     border:none;
@@ -60,7 +62,6 @@ margin-left: 300px;
     font-size: 16px;
     margin-left: 880px;
     background-color: teal;
-  
 }
 
 #fileInput{
@@ -76,19 +77,12 @@ margin-left: 300px;
     object-fit: cover;
 } */
 
-.postswrite{
-    /* flex: 50;
-    display: flex;
-    flex-wrap:wrap; */
-   /* margin-right: 100px; */
+.editpostswrite{
     border-radius: 10px;
-   scroll-behavior: smooth;
-   background-color:rgba(55,61,96,0.835);
-   width: 95%;
-   margin-left: 25px;
-   margin-top: 70px;
-
-
-
-   
+    scroll-behavior: smooth;
+    background-color:rgba(55,61,96,0.835);
+    width: 95%;
+    margin-left: 25px;
+    margin-top: 70px;
+ 
 }

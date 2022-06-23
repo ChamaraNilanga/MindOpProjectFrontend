@@ -2,6 +2,7 @@ import "./write.css"
 import TopBar from "../topbar/TopBar";
 import axios from "axios";
 import React, { useState } from "react";
+import Navbar from "../../../components/Navbar/Navbar"
 
 
 function Write() {
@@ -12,7 +13,7 @@ console.log(title)
 console.log(blogbody)
 
   const addblog =async () => {
-   await axios.post('http://localhost:8052/blog/addblog/1943',
+   await axios.post('http://localhost:8052/blog/addblog/1941',
         // params: {
         //   uid: {id},
         // },
@@ -33,13 +34,20 @@ console.log(blogbody)
   }
 
   return (
-      
-    <div className="write">
+    <div>
+    <Navbar/>
+      <div className="postswrite">
+        
+        <div>
         <TopBar/>
-      <img 
+        </div>
+         
+    <div className="writes">
+       
+      {/* <img 
       className="writeImg"
       src="https://images.unsplash.com/photo-1598929440520-dc9f18462281?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" 
-      alt=""/>
+      alt=""/> */}
     <form className="writeForm">
         <div className="writeFormGroup">
             <label htmlFor="fileInput">
@@ -52,7 +60,7 @@ console.log(blogbody)
             onChange={(event) => {
               setTitle(event.target.value)
             }}
-            placeholder="Title" 
+            placeholder="   Title" 
             className="writeInput" 
            />
         </div>
@@ -66,10 +74,14 @@ console.log(blogbody)
             </textarea>
             
         </div>
-        <div className="writeSubmit">
-        <button type="submit" onClick={addblog} className="btn btn-primary">Publish</button>
-        </div>
+       
+        <button type="submit" className="writeSubmits" onClick={addblog}
+        >Publish</button>
+       
+        
     </form>
+    </div>
+    </div>
     </div>
   )
 }

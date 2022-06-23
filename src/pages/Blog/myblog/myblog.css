@@ -7,16 +7,154 @@
     font-size: 18px;
  }
  
- .singlePostIcon:first-child{
+.edit{
+   background-color:white ;
+    border: none;
+}
+
+.delete{
+    border:none;
+     background-color:white ;
+}
+
+ /* .singlePostIcon fa-solid fa-pen-to-square{
      color:teal;
      margin-top: 18px;
  
  }
- 
- .singlePostIcon:last-child{
+
+
+ .singlePostIcon fa-solid fa-trash-can{
      color: tomato;
      margin-top: 11px;
- }
+ } */
  
- 
- 
+/* .deleteyes{
+    margin-right: 50px;
+    margin-left: 20px;
+    color:teal;
+    background-color: rgba(0, 0, 0, 0.142);
+    border: none;
+    padding: 10px;
+} */
+/* 
+.deleteno{
+    margin-left: 50px;
+    color: tomato;
+    background-color: rgba(0, 0, 0, 0.142);
+    border: none;
+    padding: 10px;
+}
+
+.deletebtn{
+    border: none;
+  background:none;
+  color:tomato;
+  
+}
+
+.editbtn{
+    border: none;
+    background:none;
+    color: teal;
+} */
+
+.postsm{
+    flex: 50;
+    display: flex;
+    flex-wrap:wrap;
+   margin-right: 100px;
+    margin-left: 150px;
+    border-radius: 10px;
+   scroll-behavior: smooth;
+   background-color:rgba(55,61,96,0.835);
+
+   
+}
+
+/* .postImg{
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    width: 330px;
+    height: 300px;
+   margin-left: 25px;
+} */
+
+.postInfom{
+    /* display: flex; */
+    /* flex-direction: column; */
+    align-items: center;
+    font-family: 'Varela', sans-serif;
+    /* padding-right: 5px; */
+    margin-left: 35px;
+    /* width: 45%; */
+    /* padding-left: 5px; */
+}
+
+.postTitles{
+    font-family: 'Varela', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 15px;
+    cursor: pointer;
+    color:rgb(54, 50, 99);
+}
+
+.postDate{
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: rgb(89, 87, 87);
+    margin-top: 15px;
+}
+.postBy{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: rgb(46, 37, 37);
+    margin-top: 15px;
+
+}
+
+.postDesc{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 13px;
+    color:rgb(0, 0, 0);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    padding-left: 5px;
+    cursor: pointer;
+
+}
+.cards{
+    background-color:rgb(255, 255, 255);
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  
+    
+}
+
+.myblogtopbar{
+    position:fixed;
+    margin-left: 450px;
+    margin-top: 50px;
+}
+
+/* .box{
+  background-color: azure;
+  border-radius: 5px;
+  height: 250px;
+  padding: auto;
+} */
+
+.allinoneblogs{
+    background-color: rgba(255, 255, 255, 0);
+    margin-top: 55px;
+    margin-left: 60px;
+}

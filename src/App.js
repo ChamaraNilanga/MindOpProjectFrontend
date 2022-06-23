@@ -28,6 +28,14 @@ import Post from "./pages/Blog/post/Post";
 import SinglePost from "./pages/Blog/singlePost/SinglePost";
 import Write from "./pages/Blog/writeblog/Write";
 import DeleteBlog from "./pages/Blog/deleteblog/DeleteBlog";
+
+import StripeCheckoutComponent from './pages/Payment/StripeCheckoutComponent';
+import EditBlog from "./pages/Blog/editblog/EditBlog";
+import ChatComponent from './components/ChatStudent/chat';
+import ChatTeacher from "./components/ChatTeacher/chatTeacher";
+import StripePaymentSuccess from './pages/Payment/StripePaymentSuccess';
+
+
 import Addforumcategory from './components/AddForumCategory/Addforumcategory';
 import Forumcategory from './pages/FormsCategory/Formscategory';
 import Addcategory from './pages/AddCategory/Addcategory';
@@ -45,11 +53,27 @@ function App() {
   const role = 'a';
   const id='194075X';
   // const mod=40;
+
   return (
     <div className="App">
       
       <Router>
        <Routes>
+
+       {/* <Route exact path="/" element={<Home/>}/> */}
+     {/* <Route path="/" element={<Navigationbar/>}/>    */}
+     <Route path="/student" element={<ChatComponent/>}/>
+     <Route path="/teacher" element={<ChatTeacher/>}/>
+     <Route path="/payment" element={<StripeCheckoutComponent />}/>
+     <Route path="/stripepaymentsuccess" element={<StripePaymentSuccess/>}/>
+     
+     {/* <Route exact path="/Blogs/" element={<MyBlog/>}/> */}
+     
+     
+     <Route path="/editblog/" element={<EditBlog/>}/>
+     <Route path='/home' element={<Homestudent role={role}/>}/>
+     <Route path='/course/addcourse' element={<Addcourseform/>}/>
+
           <Route path='/home' element={<Homestudent role={role} id={id}/>}/>
           <Route path='/course/addcourse' element={<Addcourseform/>}/>
 
@@ -83,6 +107,7 @@ function App() {
 
         </Routes>
      </Router> 
+
    
 
     </div>
