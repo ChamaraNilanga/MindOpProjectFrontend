@@ -14,7 +14,7 @@ function StripeCheckoutComponent() {
         // Call your backend to create the Checkout Session
 
 
-        const response = await fetch(`http://localhost:8052/payment/create-checkout-session/1943&1`,
+        const response = await fetch(`http://localhost:8070/payment/create-checkout-session/1943&1`,
             {
                 method: "POST",
                 amount: "123",

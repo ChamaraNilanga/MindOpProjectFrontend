@@ -13,7 +13,7 @@ console.log(title)
 console.log(blogbody)
 
   const addblog =async () => {
-   await axios.post('http://localhost:8052/blog/addblog/1941',
+   await axios.post('http://localhost:8070/blog/addblog/1941',
         // params: {
         //   uid: {id},
         // },

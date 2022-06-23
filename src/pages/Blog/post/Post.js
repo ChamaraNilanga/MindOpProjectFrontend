@@ -14,7 +14,7 @@ export default function Post() {
     
     
         function getAllBlogs(){
-            axios.get(`http://localhost:8052/blog/`).then((res)=>{
+            axios.get(`http://localhost:8070/blog/`).then((res)=>{
                 console.log(res);
             setBlogs(res.data);
             }).catch((err)=>{

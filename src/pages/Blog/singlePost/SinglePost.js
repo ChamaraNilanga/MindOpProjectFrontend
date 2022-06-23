@@ -16,7 +16,7 @@ const {bid} = location.state;
     useEffect(()=>{
         const getblog=async(bid,e)=>{
           // console.log(id);
-          await axios.get(`http://localhost:8052/blog/byblogid/${bid}`).then((res)=>{
+          await axios.get(`http://localhost:8070/blog/byblogid/${bid}`).then((res)=>{
                 console.log(res);
             setBlogs(res.data);
             }).catch((err)=>{

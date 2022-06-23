@@ -3,7 +3,7 @@
 
 
 
-.new {
+/* .new {
   width: 100%;
   display: flex;
 }
@@ -15,7 +15,7 @@
   padding: 10px;
   margin: 20px;
   display: flex;
-}
+} */
 /* .new .newContainer.top h1 {
   color: rgb(7, 107, 125);
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -42,7 +42,7 @@
   letter-spacing: -0.02em;
 } */
 
-.new .newContainer .top .right, .new .newContainer .bottom .right {
+/* .new .newContainer .top .right, .new .newContainer .bottom .right {
   flex: 2;
 }
 .new .newContainer .top .right form, .new .newContainer .bottom .right form {
@@ -97,8 +97,8 @@
   border-radius: 20px;
   
  
-}
-.new .newContainer .top .right form button, .new .newContainer .bottom .right form .cancelbtn {
+} */
+/* .new .newContainer .top .right form button, .new .newContainer .bottom .right form .cancelbtn {
   width: 150px;
   padding: 10px;
   border: none;
@@ -112,4 +112,4 @@
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   
  
-}
+} */
