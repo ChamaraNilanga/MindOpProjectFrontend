@@ -4,24 +4,35 @@ import {Button} from "react-bootstrap";
 import axios from "axios";
 import Progressbar from "../Progressbar/Progressbar";
 import "./Subjectcard.css";
+import {Link} from "react-router-dom";
 
 function Subjectcard ({courses , role , text}){
+    const setModid = (id) => {
+        console.log(id);
+        localStorage.setItem('id',id);
+        
+    }
      return(
         <div className="overflow-auto">
-        <div className={role==='a' ? "subject-card active":"subject-card"}>
+        <div className="subject-card">
             {courses.map(course=>{
+                
                 return(
                     
                     <Card style={{ width: '12rem' , height:'12rem'}} >
                     <Card.Body>
-                    <Card.Title key={course.modid}>{course.modname}</Card.Title>
+                    <Link to="/singlecourse" state={{ id: course.modid }}><Card.Title className="title" key={course.modid} onClick={()=>{setModid(course.modid)}}>{course.modname}</Card.Title></Link>
                     <Card.Text className="text" key={course.modid}>
-                    {course.descrip}
+                    {`${course.descrip.substring(0, 20)}...`}
+                    </Card.Text>
+                    
+                    <Card.Text className="text" key={course.modid}>
+                    Rs:{course.price}
                     </Card.Text>
                     
                     </Card.Body>
                     <Card.Footer>
-                        {role==='s' ? <Progressbar progress={course.progress}/> : role==='c' ? <></>:<Button className="btn" variant="warning" key={course.modid}>{text}</Button>}
+                        {role==='s' ? <div><Progressbar progress={course.progress}/></div> : role==='c' ? <></>:<Link to="/singlecourse" state={{ id: course.modid }}><Button className="btn" variant="warning" key={course.modid}>{text}</Button></Link>}
                         {/* <Button className="btn" variant="warning" key={course.modid}>Enroll</Button> */}
                     </Card.Footer>
                     </Card>

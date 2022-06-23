@@ -1,0 +1,14 @@
+.feild{
+    color: rgba(0, 0, 0, 0.721);
+}
+.button{
+    justify-content: center;
+    padding: 0;
+    width: 150px;
+    height: 10mm;
+    font-weight: bold;
+    font-size: large;
+}
+.spacer{
+    justify-content: center;
+}

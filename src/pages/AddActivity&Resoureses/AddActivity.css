@@ -1,0 +1,69 @@
+.Panel{
+    background-color: rgba(205, 203, 202, 0.84);
+    width: 100%;
+    margin-left: 0px;
+    font-weight: bold;
+    color: black;
+    outline-width: 100px;
+    border-radius: 10px;
+    height: 15mm;
+    padding: 6px;
+
+    
+    
+}
+.dragdrop{
+    background-color: rgba(255, 255, 255, 0.699);
+    width: 100%;
+    margin-left: 0px;
+    font-weight: bold;
+    color: black;
+    outline-width: 100px;
+    border-radius: 10px;
+    height: 10mm;
+    padding: 5px;
+    height: 550px;
+
+}
+.spacer{
+    background-color: rgba(205, 203, 202, 0);
+    width: 100%;
+    margin-left: 0px;
+    font-weight: bold;
+    color: black;
+    outline-width: 100px;
+    border-radius: 10px;
+    height: 10mm;
+    padding: 5px;
+}
+.category:hover{
+    background-color: rgb(156, 243, 213);
+    border-radius: 20px;
+    color: #000;
+    outline: none;
+    
+}
+.category::selection{
+    border: none;
+}
+.category{
+        background-color: rgb(255, 255, 255);
+        border: none;
+        color: #000;
+        font-weight: bold;
+        height: 15mm;
+        padding: 10px;
+        width: 100%;
+}
+.cardbox{
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(55, 61, 96);
+    width: 95%;
+    border-radius: 5px;
+    margin-left: 37px;
+
+}

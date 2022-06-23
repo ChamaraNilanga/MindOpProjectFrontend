@@ -16,19 +16,9 @@ export const MenuItems=[
         url: '#',
         cName: 'nav-links',
         icon: 'fa-solid fa-clipboard-question'
-    },
-    {
-        
-        url: '#',
-        cName: 'nav-links',
-        icon: 'fa-solid fa-address-card'
-    },
-    {
-        title: '  Logout',
-        url: '#',
-        cName: 'nav-links',
-        
-    },
+
+    }
+
 
 ];
 
