@@ -1,80 +1,115 @@
-import React from 'react'
+import React from "react";
 import { Modal, Button } from "react-bootstrap";
-import { useState } from 'react';
-import './chatteacher.css';
-import axios from 'axios';
-import { logDOM } from '@testing-library/react';
+import { useState } from "react";
+// import './chatteacher.css';
+import axios from "axios";
+import { logDOM } from "@testing-library/react";
 
 export default function Model(props) {
+  const status = props.status;
+  const [show, setShow] = useState(false);
+  const [messagedata, setMessagedata] = useState();
 
-    const [show, setShow] = useState(false);
-    const [messagedata, setMessagedata] = useState();
+  const handleClose = () => {
+    setShow(false);
+  };
+  const handleShow = () => {
+    setShow(true);
+  };
 
+  function handleMessage(event) {
+    setMessagedata(event.target.value);
+  }
 
-    const handleClose = () => {
-        setShow(false);
-      };
-      const handleShow = () => {
-        setShow(true);
-      };
-  
-      function handleMessage(event){
-        setMessagedata(event.target.value)
-      }
-  
-    async function sendMessage(){
+  async function sendMessage() {
     // console.log(messagedata);
     // console.log(props.senderid);
     // console.log(props.receiverid);
 
-        const data={
-            messagebody:messagedata
-        }
-        await axios.post(`http://localhost:8052/message/${props.receiverid}&${props.senderid}`,data)
-        .then((response)=>{
-            console.log(response.data);
-            handleClose();
-        }
-        )
-        .catch((error)=>{
-              console.log(error);
-        })
-      }
+    const data = {
+      messagebody: messagedata,
+    };
+    await axios
+      .post(
+        `http://localhost:8070/message/${props.receiverid}&${props.senderid}`,
+        data
+      )
+      .then((response) => {
+        console.log(response.data);
+        handleClose();
+        props.onfresh();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
-
-      const deletemsg=async ()=>{
-        // console.log(id);
-        if(window.confirm('Are you sure you want to delete?')){
-            await axios.delete(`http://localhost:8052/message/${props.chatid}`)
-            .then((res)=>{
-                console.log(res.data);
-                alert(res.data);
-                props.onfresh();
-            })
-        }
-       
-      }
+  const deletemsg = async () => {
+    // console.log(id);
+    if (window.confirm("Are you sure you want to delete?")) {
+      await axios
+        .delete(`http://localhost:8070/message/${props.chatid}`)
+        .then((res) => {
+          console.log(res.data);
+          alert(res.data);
+          props.onfresh();
+        });
+    }
+  };
 
   return (
     <>
-     <table className="table">
+      {/* <table class="table">
+    
        
-   
-          <td scope="col">{props.senderid}</td>
-          <td scope="col">{props.messagebody}</td>
-          <td scope="col">{props.chattime}</td>
-          <td className='chatbtn'>
+     <tbody>
+        <tr>
+          <td className="col-1">{props.senderid}</td>
+          <td className="col-6">{props.messagebody}</td>
+          <td className="col-2">{props.chattime}</td>
+          <td className='chatbtn col-2'>
           <button type="button" className="btndelete" onClick={()=>{deletemsg()}} >
           Delete
           </button>
           <button type="button" className="btnreply" onClick={()=>{handleShow()}}>Reply</button>
           </td>
-        
+        </tr>
+        </tbody>
       
 
 
-    </table>
-    <Modal
+    </table> */}
+      <div className="container">
+        <div className="row g-3 rounded-3 shadow border border-success mt-2 mb-2">
+          <div className="col-1">{props.senderid}</div>
+          <div className="col-6">{props.messagebody}</div>
+          <div className="col-2 d-flex justify-content-center">
+            {props.chattime}
+          </div>
+          <div className="col-2 d-flex justify-content-center my-auto">
+            <button
+              type="button"
+              class="btn btn-outline-danger mx-2"
+              onClick={deletemsg}
+            >
+              Delete
+            </button>
+            {status === "outbox" ? (
+              <></>
+            ) : (
+              <button
+                type="button"
+                class="btn btn-outline-success mx-2"
+                onClick={handleShow}
+              >
+                Reply
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <Modal
         show={show}
         onHide={() => {
           handleClose();
@@ -84,7 +119,6 @@ export default function Model(props) {
           <Modal.Title>Write your message</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-         
           <div>
             <div className="row mt-1">
               <label for="floatingTextarea2">Description:</label>
@@ -121,6 +155,5 @@ export default function Model(props) {
         </Modal.Footer>
       </Modal>
     </>
-   
-  )
+  );
 }

@@ -1,86 +1,123 @@
-import React, { Component, useState, useEffect } from 'react'
-import ReactPaginate from 'react-paginate'
-import { Link, useSearchParams } from 'react-router-dom'
+import React, { Component, useState, useEffect } from "react";
+import ReactPaginate from "react-paginate";
+import { Link, useSearchParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import './chatteacher.css'
+import "./chatteacher.css";
 import axios from "axios";
-import Model from './model';
+import Model from "./model";
+import { Tabs, Tab } from "react-bootstrap";
+import { Collapse } from "react-bootstrap";
 
+function ChatTeacher() {
+  const [message, setMessage] = useState([]);
+  const [outbox, setOutbox] = useState([]);
 
-
-
-export default function ChatTeacher() {
-
-    const [message,setMessage] = useState([]);
-   
-
-    
-
-    function getMessages(){
-      axios.get(`http://localhost:8052/message/chat/2`).then((res)=>{
-          console.log(res);
-          setMessage(res.data);
-      }).catch((err)=>{
-          alert(err.message);
+  function getReceivedMessages() {
+    const teacherid = 4;
+    axios
+      .get(`http://localhost:8070/message/chat/${teacherid}`)
+      .then((res) => {
+        // console.log(res);
+        setMessage(res.data);
       })
+      .catch((err) => {
+        alert(err.message);
+      });
   }
-  useEffect(()=>{
-    getMessages();
-},[])
+  useEffect(() => {
+    getReceivedMessages();
+    getSendMessages();
+  }, []);
 
-
-
-
-const sendreply=async ()=>{
-  if(window.prompt('Send a reply')){
-      await axios.post(`http://localhost:8052/message/4`)
-      .then((res)=>{
-          console.log(res.data);
-          alert(res.data);
-          getMessages();
+  const getSendMessages = () => {
+    const teacherid = 4;
+    axios
+      .get(`http://localhost:8070/message/chat/send/${teacherid}`)
+      .then((res) => {
+        console.log(res.data);
+        setOutbox(res.data);
       })
-  }
- 
-}
+      .catch((err) => {
+        alert(err.message);
+      });
+  };
 
   return (
-    <div>
-        <Navbar/>
+    <>
+      <Navbar />
+      <div class="container">
+        <div className="d-flex justify-content-center m-4">
+          <h1>Messages</h1>
+        </div>
+        <Tabs
+          defaultActiveKey="Inbox"
+          transition={Collapse}
+          id="noanim-tab-example"
+          className="mb-3 mt-4 row-g-2 d-flex justify-content-center"
+        >
+          <Tab eventKey="Inbox" title="Inbox">
+            <div className="container">
+              <div>
+                <div className="teacherchatbox">
+                  <div className="container">
+                    <div className="row g-3 rounded-3 shadow pb-3 pl-2 border border-light mt-4 mb-2 bg-primary">
+                      <div className="col-1">Sender</div>
+                      <div className="col-6">Message</div>
+                      <div className="col-2 d-flex justify-content-center">
+                        Time
+                      </div>
+                      <div className="col-2 d-flex justify-content-center">
+                        Handle
+                      </div>
+                    </div>
+                  </div>
+                  {message.map((chat) => {
+                    return (
+                      <Model
+                        chatid={chat.chatid}
+                        senderid={chat.senderid}
+                        messagebody={chat.messagebody}
+                        chattime={chat.chattime}
+                        receiverid={chat.receiverid}
+                        onfresh={() => {
+                          getReceivedMessages(); getSendMessages();
+                        }}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </Tab>
 
-        <div className='teacherchatbox'>
-
-   
-      <table className="table">
-               <thead>
-                 <tr>
-                   <th>Sender</th>
-                   <th scope="col">Message</th>
-                   <th scope="col">Time</th>
-                   <th scope="col"> </th>
-                  </tr>
-               </thead> 
-               
-      <tbody>
-        {message.map(chat=>{
-          return(
-            <Model
-              chatid={chat.chatid}
-              senderid={chat.senderid}
-              messagebody={chat.messagebody}
-              chattime={chat.chattime}
-              receiverid={chat.receiverid}
-              onfresh={getMessages}
-              />
-          )
-
-        })}
-              
-      </tbody>
-    </table>
-  </div>
- 
-  </div>
-
-  )
- 
+          <Tab eventKey="SendMSessage" title="Send messages">
+            <div className="container">
+              <div className="row g-3 rounded-3 shadow pb-3 pl-2 border border-light mt-4 mb-2 bg-primary">
+                <div className="col-1">Sender</div>
+                <div className="col-6">Message</div>
+                <div className="col-2 d-flex justify-content-center">Time</div>
+                <div className="col-2 d-flex justify-content-center">
+                  Handle
+                </div>
+              </div>
+              {outbox.map((chat) => {
+                return (
+                  <Model
+                    chatid={chat.chatid}
+                    senderid={chat.receiverid}
+                    messagebody={chat.messagebody}
+                    chattime={chat.chattime}
+                    receiverid={chat.receiverid}
+                    onfresh={getSendMessages}
+                    status="outbox"
+                  />
+                );
+              })}
+            </div>
+          </Tab>
+        </Tabs>
+      </div>
+    </>
+  );
 }
+export default ChatTeacher;
