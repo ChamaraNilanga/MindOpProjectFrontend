@@ -34,7 +34,6 @@ function App() {
      <Route path="/teacher" element={<ChatTeacher/>}/>
      <Route path="/payment" element={<StripeCheckoutComponent />}/>
      <Route path="/stripepaymentsuccess" element={<StripePaymentSuccess/>}/>
-     
      {/* <Route exact path="/Blogs/" element={<MyBlog/>}/> */}
      <Route  path="/Blogs" element={<Post/>}/>
      <Route  path="/Blogs/Blogs" element={<Post/>}/>

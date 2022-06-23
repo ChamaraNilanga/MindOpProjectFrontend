@@ -26,19 +26,21 @@ export default function Post() {
     },[])
     
 
-  //   const searchblog=async (id , e)=>{
-      
-  //         await axios.get(`http://localhost:8052/blog/${id}`)
-  //         .then((res)=>{
-  //             console.log(res.data);
-  //             alert(res.data);
-  //             getAllBlogs();
-  //         })
-      
-     
-  // }
-
-
+    const Search=(word,id)=>{
+      if(!word){
+        getAllBlogs(id);
+      }else{
+      try{
+      axios.get(`http://localhost:8052/blog/${word}`)
+      .then((res)=>{
+          console.log(res);
+          setBlogs(res.data);
+      }).catch((err)=>{
+          console.log(err);
+      })}catch{
+          alert("no question")
+      }}
+  }
 
   return (
  
@@ -47,13 +49,14 @@ export default function Post() {
   
 
 <div className="post">
-    <div className="posttopbar">
+<div className="posttopbar">
     <TopBar/>
     </div>
     <input  className="searchblog"
-            type="text"
+            type="text" onChange={(event)=>{Search(event.target.value)}}
             >
             </input> 
+            
         <i className="topSearchIcon fas fa-search"></i>
 
 {blogs.map(blog => {

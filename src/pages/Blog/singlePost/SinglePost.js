@@ -8,7 +8,7 @@ import Navbar from "../../../components/Navbar/Navbar"
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function Post() {
+export default function Post({user}) {
 const location=useLocation();
 const {bid} = location.state;
     const [blogs,setBlogs] = useState([]);
@@ -56,7 +56,11 @@ const {bid} = location.state;
       <span className="postTitlePost" key={blog.blogid}>
       {blog.blogtitle}
       </span>
-    
+
+  
+
+     {!blog.image ? <></>: <img src={'http://localhost:8052/images/'+ blog.image} className="imagedisplayblog"></img>}
+
      <br/>
 
       <span className="postBy" key={blog.blogid}>
@@ -88,7 +92,7 @@ Written By: {blog.userid}
 })}
 
 </div>
-<Blogcomment/>
+<Blogcomment user={user}/>
 </div>
 
   )

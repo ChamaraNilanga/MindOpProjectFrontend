@@ -88,7 +88,7 @@
 } */
 
 .posttopbar{
-   position:fixed;
+   position:sticky;
    margin-left: 450px;
    margin-top: 50px;
   
@@ -103,14 +103,16 @@
 .searchblog{
     margin-left: 1000px;
     height: 30px;
-    margin-top: 10px;
+    margin-top: -45px;
+    border-radius: 5px;
 }
 
 .topSearchIcon{
         font-size: 18px;
-        color: rgb(28, 27, 27);
+        color: rgb(225, 171, 33);
         cursor: pointer;
         margin-left: 5px;
-        margin-top: 18px;
+        margin-top: -40px;
 
 }
+

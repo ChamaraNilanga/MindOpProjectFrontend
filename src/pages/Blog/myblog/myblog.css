@@ -141,7 +141,7 @@
 }
 
 .myblogtopbar{
-    position:fixed;
+    position:absolute;
     margin-left: 450px;
     margin-top: 50px;
 }

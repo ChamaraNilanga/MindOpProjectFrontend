@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useParams } from 'react-router-dom';
 import "./Blogcomment.css"
 
-export default function Blogcomment() {
+export default function Blogcomment({user}) {
     const location=useLocation();
 const {bid} = location.state;
 console.log(bid)
@@ -12,7 +12,7 @@ console.log(bid)
 const [comments,setComments]=useState([])
 const [cbody, setCbody] = useState('')
 
-useEffect(()=>{
+
 const getcomments=async(bid,e)=>{
   await axios.get(`http://localhost:8052/blog/comment/${bid}`).then((res)=>{
       console.log(res);
@@ -21,13 +21,16 @@ const getcomments=async(bid,e)=>{
       alert(err.message);
   })
 }
-
+useEffect(()=>{
   getcomments(bid);
 },[])
 
 
-const addblogcomment =async (bid,e) => {
-  await axios.post(`http://localhost:8052/blog/comment/1943&84`,
+const addblogcomment =async (bid,studentid) => {
+  console.log(cbody)
+  console.log(bid);
+  console.log(studentid);
+  await axios.post(`http://localhost:8052/blog/comment/${studentid}&${bid}`,
        // params: {
        //   uid: {id},
        // },
@@ -37,9 +40,10 @@ const addblogcomment =async (bid,e) => {
      })
      .then(() => {
 console.log(cbody)
+getcomments(bid);
        console.log('Success')
        
-       alert('added successed!')
+      //  alert('added successed!')
      }
      )
      
@@ -60,10 +64,10 @@ console.log(cbody)
           placeholder="Type comment..." />
           
         </div>
-        <button type="submit" onClick={addblogcomment}
+        <button type="submit" onClick={()=>addblogcomment(bid,user)} 
             className="commentbtn">Submit</button>
 
-        <div class="card mb-4">
+        <div className="cardblogcomment">
          
             
             {comments.map(blog_comment=>{

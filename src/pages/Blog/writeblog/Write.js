@@ -5,33 +5,70 @@ import React, { useState } from "react";
 import Navbar from "../../../components/Navbar/Navbar"
 
 
-function Write() {
+function Write({user}) {
   
-  const [title, setTitle] = useState('')
-  const [blogbody, setBlogbody] = useState('')
-console.log(title)
-console.log(blogbody)
+  const [blogtitle, setTitle] = useState('')
+  const [body, setBlogbody] = useState('')
+console.log(blogtitle)
+console.log(body)
 
-  const addblog =async () => {
-   await axios.post('http://localhost:8052/blog/addblog/1941',
-        // params: {
-        //   uid: {id},
-        // },
-      // },
-{
-        blogtitle:title,
-        body:blogbody,
-      })
-      .then(() => {
-        console.log(title)
-console.log(blogbody)
-        console.log('Success')
+
+//   const addblog =async ({user}) => {
+//    await axios.post(`http://localhost:8052/blog/addblog/${user}`,
+       
+// {
+//         blogtitle:title,
+//         body:blogbody,
+//       })
+//       .then(() => {
+//         console.log(title)
+// console.log(blogbody)
+//         console.log('Success')
         
-        alert('added successed!')
-      }
-      )
+//         alert('added successed!')
+//       }
+//       )
       
+//   }
+
+
+
+async function addQuestion({image, blogtitle,body,user}) {
+  const formData = new FormData();
+  formData.append("image", image)
+  formData.append("blogtitle", blogtitle)
+  formData.append("body", body)
+
+console.log(user);
+  const result = await axios.post(`http://localhost:8052/blog/addblog/${user}`, formData, { headers: {'Content-Type': 'multipart/form-data'}})
+
+  return result.data
+}
+
+
+
+
+const [image , setImage] = useState('')
+
+const submit = async event => {
+  // event.preventDefault()
+  const result = await addQuestion({image: image, blogtitle,body,user})
+  setImage([result.image, ...image])
+  if(result){
+      console.log(result)
+      alert(result)
+  }else{
+      alert("Couldn't accept question")
   }
+}
+const fileSelected = event => {
+  const file = event.target.files[0]
+      setImage(file);
+  }
+
+
+
+
 
   return (
     <div>
@@ -51,11 +88,15 @@ console.log(blogbody)
     <form className="writeForm">
         <div className="writeFormGroup">
             <label htmlFor="fileInput">
-            <i className="writeIcon fa-solid fa-plus"></i>
+           
             </label>
 
+            <div class="form-group">
+                    <input type="file" onChange={fileSelected}
+                        className="formcontrolblog"  accept="image/*"/>
+                </div>
 
-            <input type="file" id="fileInput"/>
+            
             <input type="text" 
             onChange={(event) => {
               setTitle(event.target.value)
@@ -75,7 +116,7 @@ console.log(blogbody)
             
         </div>
        
-        <button type="submit" className="writeSubmits" onClick={addblog}
+        <button type="submit" className="writeSubmits" onClick={submit}
         >Publish</button>
        
         

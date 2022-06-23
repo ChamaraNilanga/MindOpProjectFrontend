@@ -1,137 +1,87 @@
-import axios from 'axios';
-import React from 'react';
-import io from 'socket.io-client';
-import "./chat.css"
+import React, { Component, useState, useEffect } from 'react'
+import ReactPaginate from 'react-paginate'
+import { Link, useSearchParams } from 'react-router-dom'
+import Navbar from "../Navbar/Navbar";
+import axios from "axios";
+import Model from '../ChatTeacher/model';
 
 
-class Chat extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            socket: null,
-            messageList: []
-        }
-    }
 
-    onMessageSend = (event) => {
-        if (event.key === 'Enter') {
-            this.state.socket.emit('onMessage', {message: event.target.value});
-            // console.log({message: event.target.value})
-            this.setState({[event.target.id]: ''})
-            console.log(this.state)
-            this.sendData(4,3,event.target.value);
-        }
-    };
 
-    async componentDidMount() {
-        let socket = await io.connect('http://localhost:3010');
-        socket.on('messageList', (data) => {
-            console.log('Class: Chat, Function:  ==', data);
-            this.setState({messageList: data})
-        });
-        console.log('Class: Chat, Function: componentDidMount ==', socket);
-        this.setState({socket});
+export default function ChatStudent() {
 
-    }
+    const [message,setMessage] = useState([]);
+   
 
-    async sendData(senderId,receiverId,body) {
-        const data ={
-            messagebody:body
-        }
-        await axios.post(`http://localhost:8052/message/${senderId}&${receiverId}`,data)
-        .then((response)=>{
-            console.log(response.data);
-        })
-        .catch((error)=>{
-            console.log(error);
-        })
-    }
+    
 
-    onTextChange = (event) => {
-        this.setState({[event.target.id]: event.target.value})
-        // console.log({[event.target.id]: event.target.value});
-    }
+    function getMessages(){
+      axios.get(`http://localhost:8052/message/chat/2`).then((res)=>{
+          console.log(res);
+          setMessage(res.data);
+      }).catch((err)=>{
+          alert(err.message);
+      })
+  }
+  useEffect(()=>{
+    getMessages();
+},[])
 
-    messageList = () => {
-        return this.state.messageList.map(((data, key) =>
-                <div key={key} style={{
-                    color: 'black',
-                    margin: '10px',
-                    whiteSpace: 'nowrap',
-                    width: '50%',
-                    flexWrap: 'nowrap',
-                    flexDirection: 'column',
-                    float: data.senderId === this.state.socket.id ? 'right' : 'left',
-                    textAlign: data.senderId === this.state.socket.id ? 'right' : 'left',
 
-                }}>
-                    <div style={{
-                        width: '90%', padding: '10px',
-                        borderRadius: '12px',
-                        float: data.senderId === this.state.socket.id ? 'right' : 'left',
-                        backgroundColor: 'rgb(220, 150, 20)'
-                    }}>
-                        <div style={{color: 'rgb(33, 28, 88)', marginBottom: '5px',fontSize:'13px'}}>
-                            {data.senderId === this.state.socket.id ? 'You' : 'Anonymous'}
-                        </div>
-                        <div className='msgchat'>
-                        {data.message}
-                        </div>
-                    </div>
-                </div>
-        ))
-    }
 
-    render() {
-        return (
-            <div>
-              <input type="checkbox" id="check" /> 
-          <label className="chat-btn" htmlFor="check">
-                    <i className="fa fa-commenting-o comment" /> 
-                    <i className="fa fa-close close" /> </label>
-          <div className='wrapper'>
-            <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                minHeight: '100vh',
-                textAlign: 'center'
-            }}>
 
-                   
-                 
-  
-                <div style={{
-                    margin: '20px',
-                    padding: '10px',
-                    height: '80vh',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    marginTop:'50px'
-                   
-                }}>
-                    <div id='chat-list'
-                         style={{
-                             overflowY: 'auto',
-                             backgroundColor: '#2c394e40',
-                             height: '600px',
-                             width: '100%',
-                             marginTop: 'auto',
-                             borderRadius:'5px'
-                         }}>
-                        {this.messageList()}
-                    </div>
-                    <input value={this.state.messageInput} id='messageInput' onChange={this.onTextChange}
-                           onKeyPress={this.onMessageSend} type="text"
-                           placeholder="Type a message"
-                           style={{padding: '10px', outline: 'none',borderRadius:'5px',backgroundColor: '#2c394e40'}}/>
-                </div>
-            </div>
-            </div>
-            </div>
-        );
-
-    }
-
+const sendreply=async ()=>{
+  if(window.prompt('Send a reply')){
+      await axios.post(`http://localhost:8052/message/4`)
+      .then((res)=>{
+          console.log(res.data);
+          alert(res.data);
+          getMessages();
+      })
+  }
+ 
 }
 
-export default Chat;
+  return (
+    <div>
+        <Navbar/>
+
+        <div className='teacherchatbox'>
+
+      <div className="gh">
+      <table className="table">
+              <thead>
+                 <tr>
+                   <th scope="col">Sender ID</th>
+                   <th scope="col">Message</th>
+                   <th scope="col">Time</th>
+                  </tr>
+               </thead>
+               
+      <tbody>
+        {message.map(chat=>{
+          return(
+            <Model
+              chatid={chat.chatid}
+              senderid={chat.senderid}
+              messagebody={chat.messagebody}
+              chattime={chat.chattime}
+              receiverid={chat.receiverid}
+              onfresh={getMessages}
+              />
+          )
+
+        })}
+              
+      </tbody>
+    </table>
+  </div>
+ 
+  </div>
+
+  
+
+   </div> 
+  )
+ 
+}

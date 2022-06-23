@@ -37,7 +37,7 @@
     font-weight: 700;
     margin-top: 15px;
     color:rgb(220, 150, 20);
-    margin-left: 350px;
+    margin-left: 370px;
     
 }
 
@@ -80,3 +80,7 @@
   padding: auto;
 } */
 
+.imagedisplayblog{
+    width:700px;
+    margin-left: 130px;
+}
