@@ -4,7 +4,7 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 import ReactPaginate from "react-paginate";
 
-function Forumquestionlist({questions,name,mylist,user}){
+function Forumquestionlist({questions,name,mylist,user,role}){
     const [myquestions,setMyquestions] = useState([]);
     const deleteQuestion=async (id , e)=>{
         console.log(id);
@@ -29,6 +29,17 @@ function Forumquestionlist({questions,name,mylist,user}){
             console.log(err);
         })
     }  
+    function pinQuestion(fid){
+        axios.put(`http://localhost:8070/forums/pinquestion/${fid}`)
+        .then((res)=>{
+            console.log(res);
+            
+        setMyquestions(res.data);
+        alert(res.data)
+        }).catch((err)=>{
+            console.log(err);
+        })
+    }  
     const [currentItems, setCurrentItems] = useState([]);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
@@ -41,7 +52,7 @@ function Forumquestionlist({questions,name,mylist,user}){
         setPageCount(Math.ceil(questions.length / itemsPerPage));
     }, [itemOffset, itemsPerPage ,questions]);
 
-
+    console.log(user)
     const handlePageClick = (event) => {
         const newOffset = (event.selected * itemsPerPage) % questions.length;
         console.log(
@@ -53,6 +64,7 @@ function Forumquestionlist({questions,name,mylist,user}){
     return(
         <div className="forumsquestions">
             <h3>{name}</h3>
+            
             <div className="dashboardadmin">
                 <ul>
                 {currentItems.map(question=>{
@@ -62,7 +74,9 @@ function Forumquestionlist({questions,name,mylist,user}){
                             <li><Link to="/forum/single" state={{fid : question.fquestionid,name : question.name_, keyimage:question.image}}><p key={question.fquestionid} style={{color:'black',fontSize:'15px'}}>{question.name_}</p></Link></li>
                             <div className="deletereplybox"><Link to="/forum/reply" state={{ fid : question.fquestionid, name : question.name_,keyimage:question.image}}><text className="textbold">Reply</text></Link>
                             {mylist==true ? <i class="fa-solid fa-trash-can" style={{color:'red', marginLeft:'85%'}} onClick={()=>{deleteQuestion(question.fquestionid)}}></i> : <></>}
+                            {role==='a' ? <i class="fa-solid fa-tags" style={{color:'#d9a20b'}} onClick={()=>{pinQuestion(question.fquestionid)}}></i> : <></>}
                             </div>
+                            
                             <hr/>
                         </div>
                     )
