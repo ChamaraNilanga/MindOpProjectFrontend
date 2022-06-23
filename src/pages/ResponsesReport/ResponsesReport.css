@@ -1,0 +1,56 @@
+.responsesreportcontainer{
+    width: 90%;
+    height: 700px;
+    background-color: rgba(188, 185, 180, 0.496);
+    margin-left: 80px;
+    border-radius: 20px;
+   
+   
+}
+.option{
+    padding: 5px;
+    border: none;
+    background-color: #90bebf;
+    width: 40%;
+    border: 1px solid rgb(0, 0, 0);
+    margin-left: 800px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.dotted{
+    background-color:#B6EA75;
+    ;
+    
+}
+.exportbtn{
+    background-color: #d45854;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.2);
+    width: 140px;
+    height: 35px;
+    margin-left: 1100px;
+  
+}
+.gridcontainer{
+   background-color: #B6EA75;
+   margin-left: 80px;
+   width: 90%;
+   margin-bottom: 30px;
+   padding-top: 6px;
+   padding-bottom: 6px;
+   padding-left: 10px;
+   border-radius: 10px;
+   
+}
+.gridcontainer2{
+    background-color: #B6EA75;
+    margin-left: 80px;
+    width: 90%;
+    margin-bottom: 30px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    border-radius: 10px;
+    
+}

@@ -1,24 +1,30 @@
-import "./AddCategory.css";
+import "./EditCategory.css";
 import { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
-
-import { Link } from "react-router-dom";
+import { Link , useLocation } from "react-router-dom";
+import React, {  useEffect } from "react";
 
 
 import axios from "axios";
 
-const AddCategory = () => {
+const EditCategory = () => {
+
+    const location=useLocation();
+    const {catname,catID}=location.state;
+    // const {catID}=location.state;
+
   const [categoryname, setCategoryName] = useState("");
   const [categoryid, setCategoryID] = useState("");
  
-  const submitForm = (e) => {
-    
+  const Update = (id) => {
+  
     axios
-      .post(
-        "http://localhost:8070/categorydetails/addcategory",
+      .put(
+        `http://localhost:8070/categorydetails/editcategory/${id}`,
         {
           catname:categoryname,
-          catID:categoryid,
+        
+          
            
         }
         
@@ -26,10 +32,11 @@ const AddCategory = () => {
       .then(() => {
         console.log('Success')
         
-        alert('added successed!')
+        alert('Category updated!')
       })
 
-  };
+  }
+ 
 
   return (
     <div className="new">
@@ -41,9 +48,10 @@ const AddCategory = () => {
         </div>
         <div className="bottom">
           <div className="right">
-            <form>
+            <form >
+              <p>{catID}</p>
               <div className="formInput">
-                <label>Category Name</label>
+                <label>Type new name</label>
                 <input
                   type="text"
                   value={categoryname}
@@ -53,23 +61,13 @@ const AddCategory = () => {
                 />
               </div>
               <div className="break"></div>
-              <div className="formInput">
-                <label for="catid" >Category ID</label>
-                <input
-                  type="text" 
-                  value={categoryid}
-                  onChange={(e) => {
-                    setCategoryID(e.target.value);
-                  }}
-                />
-              </div>
-
+              
              
               
               
 
               <div className="break"></div>
-              <button className="button" type="submit" onClick={submitForm}>Add Category</button>
+              <button className="button" type="submit" onClick={()=>{Update(catID)}}>Update</button>
                <button className="cancelbtn"><Link to='/DisplayCategory'>Cancel</Link></button> 
             </form>
           </div>
@@ -80,4 +78,4 @@ const AddCategory = () => {
 };
 
 
-export default AddCategory;
+export default EditCategory;

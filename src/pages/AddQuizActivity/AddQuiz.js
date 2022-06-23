@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const AddQuiz = () => {
+const AddQuiz = ({cid}) => {
   const [quizID, setQuizID] = useState("");
   const [quizName, setQuizName] = useState("");
   const [description, setDescription] = useState("");
@@ -18,11 +18,11 @@ const AddQuiz = () => {
     e.preventDefault();
     axios
       .post(
-        "http://localhost:8070/quizdetails/createquizactivity/002&1",
+        `http://localhost:8070/quizdetails/createquizactivity/${cid}`,
         {
-            quizid:quizID,
+            quizID:quizID,
             quizname:quizName,
-            description_:description,
+            quizdes:description,
             timelimit:timelimit,
             grade:grade,
             navimethod:navimethod,
@@ -86,7 +86,7 @@ const AddQuiz = () => {
                     </label>
                   </div> */}
               <div className="formInput">
-                <label>Time Limit (minitues)</label>
+                <label>Time Limit (00:00:00)</label>
                 <input
                   type="text"
                   value={timelimit}
@@ -145,6 +145,8 @@ const AddQuiz = () => {
               <div className="break"></div>
               <button onClick={submitForm} >Add Quiz</button>
               <button className="cancelbtn"><Link to='/DisplayCategory'>Cancel</Link></button> 
+              {/* <button className="cancelbtn"><Link to='/DisplayCategory'>Cancel</Link></button> 
+              <button className="cancelbtn"><Link to='/DisplayCategory'>Cancel</Link></button>  */}
             </form>
           </div>
         </div>

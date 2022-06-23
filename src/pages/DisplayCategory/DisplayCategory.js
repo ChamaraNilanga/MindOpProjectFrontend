@@ -8,8 +8,25 @@ import "../../pages/DisplayCategory/DisplayCategory.css";
 function DisplayCategory(){
 
     const [categories,setCategories] = useState([]);
+
+
+    const Search=(word,id)=>{
+        if(!word){
+            getDisplayCategory(id);
+        }else{
+        try{
+        axios.get(`http://localhost:8070/categorydetails/searchcategory/${word}`)
+        .then((res)=>{
+            console.log(res);
+            setCategories(res.data);
+        }).catch((err)=>{
+            console.log(err);
+        })}catch{
+            alert("no question")
+        }}
+    }  
     
-    useEffect(()=>{
+   
         function getDisplayCategory(){
             axios.get("http://localhost:8070/categorydetails/displaycategory").then((res)=>{
                 console.log(res);
@@ -17,14 +34,14 @@ function DisplayCategory(){
             }).catch((err)=>{
                 alert(err.message);
             })
-        }
+        } useEffect(()=>{
         getDisplayCategory();
     },[])
     
-    const deletecategory=async (id , e)=>{
+    const deletecategory=async (id,e)=>{
         console.log(id);
         if(window.confirm('Are you sure you want to delete?')){
-            await axios.delete(`http://localhost:8070/coursedetails/${id}`)
+            await axios.delete(`http://localhost:8070/categorydetails/deletecategory/${id}`)
             .then((res)=>{
                 console.log(res.data);
                 alert(res.data);
@@ -34,21 +51,32 @@ function DisplayCategory(){
        
     }
 
-    const updatecategory = (id,name,) => {
-        console.log(id);
-        localStorage.setItem('catID',id);
-        localStorage.setItem('catname',name);
-       
-        
-    }
-    
+   
     return(
         <div >
             <Navbar />
+            <div className="top">
+          <h1>Question categories</h1>
+        </div>
+
+        <div className="input-group">
+        <div className="form-outline">
+          <input id="search-input" type="search" onChange={(event)=>{Search(event.target.value)}} class="form-control" placeholder="Search"/>
+          
+        </div>
+        <button id="search-button" type="button" class="btn btn-warning">
+          <i className="fa fa-search"></i>
+        </button>
+      </div>
+      <button className="addcategorybtn"><Link to='/AddCategory' className="addcategorylink">Add Category</Link></button> 
+
         <div className="container">
         
           <div className="break"></div>
           <div className="break"></div>
+
+          
+
         <div className="row m-2">
         
        
@@ -61,12 +89,14 @@ function DisplayCategory(){
                     <h4 key={category.categoryid}>{category.categoryname}</h4>
                     
                      <p key={category.categoryid}>{category.categoryid}</p>
-                     <div className="Qbank">Question bank</div>
+                     <div className="Qbank"><Link to='/DisplayQuestion'>Question bank</Link></div>
                      <div class="card-footer bg-transparent border-success" ></div>
-                    <button className="btn btn-warning" onClick={()=>updatecategory(category.catID,category.catname)} style={{backgroundColor:'##3FA781'}}><Link to='/AddCategory'>Edit</Link></button>
+                    <button className="btn btn-warning"  style={{backgroundColor:'##3FA781'}}><Link to="/EditCategory" state={{catname:category.categoryname,catID:category.categoryid}}>Edit</Link></button>
                     <div className="break"></div>
                    
-                    <button className="btn btn-danger" onClick={()=>deletecategory(category.catID)}>Delete</button>
+                    <button className="btn btn-danger" onClick={(e)=>{ 
+                        deletecategory(category.categoryid)
+             }}>Delete</button>
                      
                     </div>
                     </div>
@@ -76,11 +106,9 @@ function DisplayCategory(){
              </div>
              </div></div>
     )};
-             
+    
 
 export default DisplayCategory;
-//https://getbootstrap.com/docs/4.0/components/card/
-
 
 
 

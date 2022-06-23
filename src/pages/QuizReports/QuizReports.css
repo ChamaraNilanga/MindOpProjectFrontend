@@ -1,0 +1,118 @@
+.tophead {
+    color: #16206c;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 650;
+    font-size: 35px;
+    line-height: 53px;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    margin-left: 550px;
+    letter-spacing: -0.02em;
+    margin-top: 30px;
+    
+  }
+  .card01{
+    margin-left: 110px;
+    margin-top: 20px;
+    width:200px;
+    height: 210px;
+    margin-bottom: 20px;
+    border-style: solid;
+    border: 1px solid #C4C4C4;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.35);
+  background-color: #7CB1BD;
+  
+  
+  }
+
+  .card02{
+    margin-left: 100px;
+    margin-top: 20px;
+    width:200px;
+    margin-bottom: 20px;
+    height: 210px;
+    margin-bottom: 20px;
+    border-style: solid;
+    border: 1px solid #C4C4C4;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.35);
+    background-color: #B6EA75;
+  
+  }
+
+  .card03{
+    margin-left: 100px;
+    margin-top: 20px;
+    width:200px;
+    height: 210px;
+    margin-bottom: 20px;
+    border-style: solid;
+    border: 1px solid #C4C4C4;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.35);
+    background-color: #DF728C;
+  
+  }
+
+  .card04{
+    margin-left: 100px;
+    margin-top: 20px;
+    margin-right: 100px;
+    width:200px;
+    height: 210px;
+    margin-bottom: 20px;
+    border-style: solid;
+    border: 1px solid #C4C4C4;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.35);
+    background-color: 
+    #837CAD;
+  }
+
+  .card-img-top{
+    height:100px ;
+    width: 100px;
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-color: rgb(190, 190, 178) ;
+  }
+  
+.reportcontainer{
+    background-color: #D2DCFF;
+    width: 90%;
+    margin-left: 100px;
+    border-radius: 20px;
+}
+.break{
+    margin-top: 50px;
+}
+.reportcardtitle{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.reportcardtitle2{
+    margin-top: 10px;
+    margin-left: 7px;
+}
+.viewlink{
+    margin-left: 40px;
+    color: rgb(3, 3, 29);
+    
+   
+}
+.cancelbtn2{
+  width: 150px;
+  padding: 10px;
+  border: none;
+  background-color: #7adce3;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  border: 2px solid rgb(255, 255, 255);
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 630px;
+  
+}

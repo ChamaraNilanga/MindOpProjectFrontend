@@ -1,4 +1,4 @@
-import "./AddCategory.css";
+//import "./AddSubCategory.css";
 import { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 
@@ -7,18 +7,18 @@ import { Link } from "react-router-dom";
 
 import axios from "axios";
 
-const AddCategory = () => {
-  const [categoryname, setCategoryName] = useState("");
-  const [categoryid, setCategoryID] = useState("");
+const AddSubCategory = ({id}) => {
+  const [subcategoryname, setSubCategoryName] = useState("");
+  const [subcategoryid, setSubCategoryID] = useState("");
  
   const submitForm = (e) => {
-    
+    e.preventDefault();
     axios
       .post(
-        "http://localhost:8070/categorydetails/addcategory",
+        `http://localhost:8070/categorydetails/addsubcategory/${id}`,
         {
-          catname:categoryname,
-          catID:categoryid,
+          subcatID:subcategoryname,
+          subcatname:subcategoryid,
            
         }
         
@@ -26,7 +26,7 @@ const AddCategory = () => {
       .then(() => {
         console.log('Success')
         
-        alert('added successed!')
+        alert('Sub category added!')
       })
 
   };
@@ -37,18 +37,18 @@ const AddCategory = () => {
       <div className="newContainer">
       <Navbar />
         <div className="top">
-          <h1>Add Category</h1>
+          <h1>Add Sub Category</h1>
         </div>
         <div className="bottom">
           <div className="right">
             <form>
               <div className="formInput">
-                <label>Category Name</label>
+                <label>Sub Category Name</label>
                 <input
                   type="text"
-                  value={categoryname}
+                  value={subcategoryname}
                   onChange={(e) => {
-                    setCategoryName(e.target.value);
+                    setSubCategoryName(e.target.value);
                   }}
                 />
               </div>
@@ -57,20 +57,17 @@ const AddCategory = () => {
                 <label for="catid" >Category ID</label>
                 <input
                   type="text" 
-                  value={categoryid}
+                  value={subcategoryid}
                   onChange={(e) => {
-                    setCategoryID(e.target.value);
+                    setSubCategoryID(e.target.value);
                   }}
                 />
               </div>
 
-             
-              
-              
-
-              <div className="break"></div>
-              <button className="button" type="submit" onClick={submitForm}>Add Category</button>
-               <button className="cancelbtn"><Link to='/DisplayCategory'>Cancel</Link></button> 
+            <div className="break"></div>
+              <button className="button" type="submit" onClick={submitForm}>Add </button>
+               <button className="cancelbtn"><Link to='/DisplayQuestion'>Cancel</Link></button> 
+               
             </form>
           </div>
         </div>
@@ -80,4 +77,4 @@ const AddCategory = () => {
 };
 
 
-export default AddCategory;
+export default AddSubCategory;
