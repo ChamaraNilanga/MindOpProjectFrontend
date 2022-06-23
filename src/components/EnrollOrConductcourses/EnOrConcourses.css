@@ -1,0 +1,38 @@
+.Container{
+    position: relative;
+    width: 1350px;
+    height: auto;
+    left: 47px;
+    display: block;
+    /* justify-content: center; */
+    /* align-items: center; */
+    border-radius: 10px;
+    background-color: rgba(55, 61, 96, 0.835);
+    /* margin-right: 40px; */
+    
+}
+.head3{
+    color: azure;
+    margin-top: 5px;
+    margin-left: 10px;
+    /* padding-left: 10px; */
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+}
+.fa-circle-right{
+    color: rgb(251, 251, 255);
+    margin-top: 25px;
+    margin-right: 40px;
+    
+    
+
+}
+.head1{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    column-gap: 1045px;
+    justify-content:center;
+    
+}

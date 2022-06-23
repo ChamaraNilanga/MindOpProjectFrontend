@@ -1,0 +1,21 @@
+.addcourse{
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: 1100px 300px; 
+    
+    
+}
+
+.sidemenu{
+    background-color: rgba(55, 61, 96, 0.835);
+    width: 280px;
+    height: auto;
+    align-self: start;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 7px;
+
+}
+

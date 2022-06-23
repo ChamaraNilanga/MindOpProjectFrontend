@@ -1,0 +1,49 @@
+.contain{
+    justify-content: center;
+
+    
+}
+.login{
+    position: absolute;
+    width: 580px;
+    height: 661px;
+    left: 754px;
+top: 116px;
+
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgba(255, 255, 255, 0.5);;
+    
+    border-radius: 20px;
+    height: auto;
+    /* background-image: url("../../images/image01.jpg"); */
+    height: 50%;
+    width: 40%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#sub_btn{
+    /* position: absolute;
+width: 443.85px;
+height: 56.88px;
+left: 822.81px;
+top: 624.63px;
+
+background: #A40E32;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+border-radius: 10px; */
+    position: center;
+    width: 250.85px;
+    height: 50.88px;
+    left: 922.81px;
+    top: 724.63px;
+border-radius: 10px;
+background:#A40E32;
+
+}

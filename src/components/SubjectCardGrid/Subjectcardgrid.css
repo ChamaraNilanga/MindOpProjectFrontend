@@ -1,0 +1,37 @@
+/* .card{
+    justify-content: center;
+    position: relative;
+    width: 12rem;
+    height: 12rem;
+    color: rgba(0, 0, 0, 0.898);
+    opacity:inherit;
+}*/
+
+.text{
+    font-size: small;
+}
+
+.btn{
+    height: 30px;
+    margin-top: auto;
+    font-size: small;
+    
+}
+
+.card-footer {
+    background: transparent;
+    border-top: 0px;
+    margin-bottom: 2px;
+  }
+
+.subject-card-grid{
+    /* margin-left: 20px; */
+    display:grid;
+    overflow-x: scroll;
+    max-lines: 5;
+    grid-template-columns: repeat(6,auto);
+    grid-gap: 30px;
+    
+    
+    
+}

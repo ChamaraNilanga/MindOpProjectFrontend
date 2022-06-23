@@ -1,0 +1,8 @@
+.subject-card-grid-forum{
+    display:grid;
+    overflow-x: scroll;
+    max-lines: 5;
+    grid-template-columns: repeat(4,auto);
+    grid-gap: 30px;
+    padding-left: 25px;
+}
