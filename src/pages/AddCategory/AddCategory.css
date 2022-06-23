@@ -92,8 +92,8 @@ body {
   padding: 5px;
   border: none;
   border-radius: 10px;
-  background-color: #ffffff;
-  
+  background-color: #fcb39bad;
+  border-bottom: 1px solid #fba285;
 }
 .new .newContainer .top .right form .break, .new .newContainer .bottom .right form .break {
   flex-basis: 100%;
