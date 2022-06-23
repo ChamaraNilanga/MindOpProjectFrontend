@@ -62,15 +62,29 @@ import Forummylist from './pages/ForumMylist/Forummylist';
 import Addforumcomments from './pages/AddForumComment/Addforumcomment';
 import Addforumsubcomment from './pages/AddForumSubComment/Addforumsubcomment';
 
- const [role,setRole]=useState('')
+
+
+
+function App() {
+  // const role = 'a';
+  // const id='194075X';
+  // const mod=40;
+  const [role,setRole]=useState('')
   const [admin,setAdmin]=useState('')
   const [student,setStudent]=useState('')
   const [teacher,setTeacher]=useState('')
+  const [id,setId]=useState('')
 
  const roleassign =() =>{
-  {admin == true ? (
+  if (localStorage.getItem('teacher') == true ) {
+    console.log("user")
+  }else{
+    console.log("net user");
+  }
+   console.log(localStorage.getItem('admin'));
+  {localStorage.getItem('admin') == true ? (
     setRole('a')
-   ) : teacher == true ? (
+   ) : localStorage.getItem('teacher') == true ? (
      setRole('c')
    ) : (
      setRole('s')
@@ -81,14 +95,15 @@ useEffect(()=>{
   setAdmin(localStorage.getItem('admin'));
   setStudent(localStorage.getItem('student'));
   setTeacher(localStorage.getItem('teacher'));
-roleassign()
+  setId(localStorage.getItem('userid'));
+  if(localStorage.getItem('admin') == true ){
+    setRole('a')
+  }else if(localStorage.getItem('teacher') == true){
+    setRole('c')
+  }else{
+    setRole('s')
+  }
 },[])
-
-
-function App() {
-  const role = 'a';
-  const id='194075X';
-  // const mod=40;
 
   return (
     <div className="App">

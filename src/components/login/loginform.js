@@ -39,6 +39,7 @@ function Loginform() {
             localStorage.setItem('student',student)
             localStorage.setItem('userid',userid)
             // localStorage.setItem('status',test)
+            
             navigate(`/home`)
             window.location.reload()
         }

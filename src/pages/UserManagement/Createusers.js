@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import axios from 'axios';
 function Createusers() {
 
     const[Userroll, setUserroll] = useState('');
@@ -18,15 +18,17 @@ function Createusers() {
    
 
 
-    const printData = async() => {
-    var axios = require('axios');
-
-    {Userroll=='admin'?
-    setAdmin(true)
-    :Userroll=='teacher'?
-    setteacher(true)
-    :Userroll=='student'?
-    setstudent(true):alert('invalid useer role') } 
+    const printData = async(event) => {
+   
+     event.preventDefault()
+     
+     
+    // {Userroll=='admin'?
+    // setAdmin(true)
+    // :Userroll=='teacher'?
+    // setteacher(true)
+    // :Userroll=='student'?
+    // setstudent(true):alert('invalid useer role') } 
 
     var data = {
     
@@ -37,10 +39,12 @@ function Createusers() {
         psswd : Password,
         city : City,
         contactno : Phone_no,
-        admin : Admin,
-        tcher : teacher,
-        stdnt : student
+        admin : Userroll=='admin'?('1'):('0'),
+        tcher : Userroll=='teacher'?('1'):('0'),
+        stdnt : Userroll=='student'?('1'):('0')
     }
+    console.log(data);
+    
     console.log(data.admin)
     console.log(data.tcher)
     console.log(data.stdnt)
@@ -52,7 +56,7 @@ function Createusers() {
     });
 }
   return (  
-    <form className='form'>
+    <form className='form' onSubmit={printData}>
       <div class="form-group">
       <label for="Roll">User Roll</label>
       <input onChange={(e) => {setUserroll(e.target.value)}} type="text" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Select user roll here" />
@@ -91,7 +95,7 @@ function Createusers() {
     </div>
     <div class="form-check">
     </div>
-    <button onClick={printData} class="btn btn-primary">Save</button>
+    <button type='submit' class="btn btn-primary">Save</button>
     </form>
  
   )
