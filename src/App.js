@@ -52,7 +52,7 @@ import ChatTeacher from "./components/ChatTeacher/chatTeacher";
 import StripePaymentSuccess from './pages/Payment/StripePaymentSuccess';
 
 
-import Addforumcategory from './components/AddForumCategory/Addforumcategory';
+// import Addforumcategory from './components/AddForumCategory/Addforumcategory';
 import Forumcategory from './pages/FormsCategory/Formscategory';
 import Addcategory from './pages/AddCategory/Addcategory';
 import Questionlistpage from './pages/QuestionListPage/Questionlistpage';
@@ -61,7 +61,7 @@ import Addforumquestionpage from './pages/AddForumQuestionPage/Addforumquestionp
 import Forummylist from './pages/ForumMylist/Forummylist';
 import Addforumcomments from './pages/AddForumComment/Addforumcomment';
 import Addforumsubcomment from './pages/AddForumSubComment/Addforumsubcomment';
-import AddCategory from "./pages/AddCategory/AddCategory";
+// import AddCategory from "./pages/AddCategory/AddCategory";
 import AddQuiz from './pages/AddQuizActivity/AddQuiz';
 import DisplayCategory from './pages/DisplayCategory/DisplayCategory'
 import AddSubCategory from './pages/AddSubCategory/AddSubCategory';
@@ -79,6 +79,7 @@ import StatisticsReport from './pages/StatisticsReport/StatisticsReport';
 import AttemptReport from './pages/AttemptReport/AttemptReport';
 import QuizActivityStartTeacher from './components/QuizActivityStartTeacher/QuizActivityStartTeacher';
 import QuizActivityStartStudent from './components/QuizActivityStartStudent/QuizActivityStartStudent';
+import AddCategoryQuiz from './pages/AddCategoryNew/AddCategoryQuiz';
 
 
 
@@ -93,6 +94,7 @@ function App() {
   const [admin, setAdmin] = useState('')
   const [student, setStudent] = useState('')
   const [teacher, setTeacher] = useState('')
+  const [id,setId]=useState('')
 
   const roleassign = () => {
     {
@@ -106,13 +108,20 @@ function App() {
     }
   }
 
-  useEffect(() => {
+  useEffect(()=>{
     setAdmin(localStorage.getItem('admin'));
     setStudent(localStorage.getItem('student'));
     setTeacher(localStorage.getItem('teacher'));
-    roleassign()
-  }, [])
-
+    setId(localStorage.getItem('userid'));
+    if(localStorage.getItem('admin') == true ){
+      setRole('a')
+    }else if(localStorage.getItem('teacher') == true){
+      setRole('c')
+    }else{
+      setRole('s')
+    }
+  },[])
+  
 
 
     return (
@@ -135,7 +144,8 @@ function App() {
             <Route path="/deleteuser" element={<Deleteusers />} />
             <Route path="/attemptassignment" element={<AttemptAssignment />} />
             <Route path="/addsubmission" element={<AddSubmission />} />
-            <Route path="/AddCategory" element={<AddCategory />} />
+            {/* <Route path="/AddCategory" element={<AddCategory />} /> */}
+            <Route path="/AddCategoryQuiz" element={<AddCategoryQuiz />} />
             <Route path="/AddQuiz" element={<AddQuiz cid={1} />} />
             <Route path="/DisplayCategory" element={<DisplayCategory />} />
             <Route path="/AddSubCategory" element={<AddSubCategory id={'IN6110'} />} />

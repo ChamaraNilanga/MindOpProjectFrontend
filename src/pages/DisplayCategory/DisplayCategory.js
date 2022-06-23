@@ -68,7 +68,7 @@ function DisplayCategory(){
           <i className="fa fa-search"></i>
         </button>
       </div>
-      <button className="addcategorybtn"><Link to='/AddCategory' className="addcategorylink">Add Category</Link></button> 
+      <button className="addcategorybtn"><Link to='/AddCategoryQuiz' className="addcategorylink">Add Category</Link></button> 
 
         <div className="container">
         
