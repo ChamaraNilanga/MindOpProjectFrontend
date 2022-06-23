@@ -14,13 +14,15 @@ import Post from "./pages/Blog/post/Post";
 import SinglePost from "./pages/Blog/singlePost/SinglePost";
 import Write from "./pages/Blog/writeblog/Write";
 import DeleteBlog from "./pages/Blog/deleteblog/DeleteBlog";
-import Payment from './pages/Payment/payment';
+import StripeCheckoutComponent from './pages/Payment/StripeCheckoutComponent';
 import EditBlog from "./pages/Blog/editblog/EditBlog";
 import ChatComponent from './components/ChatStudent/chat';
 import ChatTeacher from "./components/ChatTeacher/chatTeacher";
+import StripePaymentSuccess from './pages/Payment/StripePaymentSuccess';
 
 function App() {
   const role = 's';
+  const user='1943';
   return (
     <div className="App">
 
@@ -30,12 +32,14 @@ function App() {
      {/* <Route path="/" element={<Navigationbar/>}/>    */}
      <Route path="/student" element={<ChatComponent/>}/>
      <Route path="/teacher" element={<ChatTeacher/>}/>
-     <Route path="/payment" element={<Payment/>}/>
+     <Route path="/payment" element={<StripeCheckoutComponent />}/>
+     <Route path="/stripepaymentsuccess" element={<StripePaymentSuccess/>}/>
+     
      {/* <Route exact path="/Blogs/" element={<MyBlog/>}/> */}
      <Route  path="/Blogs" element={<Post/>}/>
      <Route  path="/Blogs/Blogs" element={<Post/>}/>
-     <Route  path="/singlepost/" element={<SinglePost/>}/>
-     <Route  path="/write" element={<Write/>}/>
+     <Route  path="/singlepost/" element={<SinglePost user={user}/>}/>
+     <Route  path="/write" element={<Write user={user}/>}/>
      <Route  path="/myblogs/" element={<MyBlogs/>}/>
      <Route  path="Blogs/deleteblog/" element={<DeleteBlog/>}/>
      <Route path="/editblog/" element={<EditBlog/>}/>
