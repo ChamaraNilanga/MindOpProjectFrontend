@@ -1,0 +1,8 @@
+.forumhomesingle{
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: 1100px 300px; 
+    height: auto;
+    
+    
+}

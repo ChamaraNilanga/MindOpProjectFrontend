@@ -66,7 +66,9 @@ export default function Post() {
       {/* <img className="postImg" 
     src="https://images.unsplash.com/photo-1598929440520-dc9f18462281?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" 
     alt=""/> */}
+
       <div className="cards shadow-sm w-100" style={{ maxWidth: 250, minWidth: 250, maxHeight: 260,  minHeight: 260 }}>
+
 
  
       <div className="card-body" style={{ maxWidth: 350}}>
@@ -98,12 +100,15 @@ Written By: {blog.userid}
 </span> */}
 
       
+
+      </div>
+
       </div>
       </div>
       </div>
       </div>
       </div>
-                  </div>   
+                   
 
   )
 
