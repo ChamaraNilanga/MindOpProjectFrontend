@@ -1,0 +1,5 @@
+.alliconwithlist{
+    display:grid;
+    padding-left: 20px;
+    grid-template-columns: repeat(2,auto);
+}

@@ -1,0 +1,39 @@
+.Container{
+    position: relative;
+    width: 1350px;
+    height: 281px;
+    left: 47px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    border-radius: 10px;
+    background-color: rgba(55, 61, 96, 0.835);
+    
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    
+    
+}
+.head3{
+    color: azure;
+    margin-top: 5px;
+    /* margin-left: 10px; */
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+}
+.fa-circle-right{
+    color: rgb(251, 251, 255);
+    margin-top: 25px;
+    
+
+}
+.head{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    column-gap: 1060px;
+    justify-content:center;
+    
+}

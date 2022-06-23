@@ -1,0 +1,32 @@
+.singleforum{
+    position: relative;
+    width: auto;
+    height: auto;
+    background-color:rgba(55, 61, 96, 0.835) ;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+    border-radius: 7px;
+    padding-bottom: 10px;
+    color: aliceblue;
+    padding-top: 10px;
+}
+
+.singleforumdisplay{
+    background-color: aliceblue;
+    border-radius: 4px;
+    color: #000;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+.imagedisplay{
+    width:500px;
+    height: 500px;
+    align-items: center;
+    align-content: center;
+}
