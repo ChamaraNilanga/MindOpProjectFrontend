@@ -1,0 +1,9 @@
+.pinornon{
+    display:grid;
+    grid-template-columns: repeat(2,auto); 
+    gap: 500px;
+    background-color: rgb(186, 192, 198);
+    padding-top: 20px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}

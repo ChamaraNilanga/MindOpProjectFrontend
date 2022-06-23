@@ -86,7 +86,7 @@ roleassign()
 
 
 function App() {
-  const role = 'a';
+  const role = 's';
   const id='194075X';
   // const mod=40;
 
@@ -146,7 +146,7 @@ function App() {
          <Route  path="Blogs/deleteblog/" element={<DeleteBlog/>}/>
          <Route path='/forums/addcategory' element={<Addcategory/>}/>
          <Route path='/forums' element={<Forumcategory role={role}/>}/>
-         <Route path='/forum/questions' element={<Questionlistpage user={id}/>}/>
+         <Route path='/forum/questions' element={<Questionlistpage user={id} role={role}/>}/>
          <Route path="/forum/single" element={<Singlequestionforumpage user={id}/>}/>
          <Route path="/forum/addforum" element={<Addforumquestionpage/>}/>
          <Route path="/forum/mylist" element={<Forummylist user={id}/>}/>

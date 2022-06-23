@@ -12,10 +12,10 @@ const reqtoenroll=(modid,sid)=>{
     if(window.confirm('Are you sure you want to request to enroll?')){
     axios
     .post(`http://localhost:8070/coursedetails/studentenroll/${sid}&${modid}`,null)
-    .then(() => {
+    .then((res) => {
       console.log('Success')
       
-      alert('added successed!')
+      alert(res.data)
     })
 }}
     const [currentItems, setCurrentItems] = useState([]);
