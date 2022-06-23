@@ -91,10 +91,12 @@ function DisplayCategory(){
                      <p key={category.categoryid}>{category.categoryid}</p>
                      <div className="Qbank"><Link to='/DisplayQuestion'>Question bank</Link></div>
                      <div class="card-footer bg-transparent border-success" ></div>
-                    <button className="btn btn-warning" onClick={()=>updatecategory(category.catID,category.catname)} style={{backgroundColor:'##3FA781'}}><Link to='/AddCategory'>Edit</Link></button>
+                    <button className="btn btn-warning"  style={{backgroundColor:'##3FA781'}}><Link to="/EditCategory" state={{catname:category.categoryname,catID:category.categoryid}}>Edit</Link></button>
                     <div className="break"></div>
                    
-                    <button className="btn btn-danger" onClick={()=>deletecategory(category.catID)}>Delete</button>
+                    <button className="btn btn-danger" onClick={(e)=>{ 
+                        deletecategory(category.categoryid)
+             }}>Delete</button>
                      
                     </div>
                     </div>
