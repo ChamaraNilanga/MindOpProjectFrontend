@@ -14,6 +14,7 @@ function Forumquestionlist({questions,name,mylist,user,role}){
                 console.log(res.data);
                 alert(res.data);
                 getQuestion(user);
+                window.location.reload()
             })
         }
        
