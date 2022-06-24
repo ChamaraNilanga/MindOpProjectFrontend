@@ -21,12 +21,12 @@ function Subjectcard ({courses , role , text}){
                     
                     <Card style={{ width: '12rem' , height:'12rem'}} >
                     <Card.Body>
-                    <Link to="/singlecourse" state={{ id: course.modid }}><Card.Title className="title" key={course.modid} onClick={()=>{setModid(course.modid)}}>{course.modname}</Card.Title></Link>
-                    <Card.Text className="text" key={course.modid}>
+                    <Link to="/singlecourse" state={{ id: course.modid }}><Card.Title className="title" key={course.modid} onClick={()=>{setModid(course.modid)}} style={{color:'black'}}>{course.modname}</Card.Title></Link>
+                    <Card.Text className="text" key={course.modid} style={{color:'black'}}>
                     {`${course.descrip.substring(0, 20)}...`}
                     </Card.Text>
                     
-                    <Card.Text className="text" key={course.modid}>
+                    <Card.Text className="text" key={course.modid} style={{color:'black'}}>
                     Rs:{course.price}
                     </Card.Text>
                     

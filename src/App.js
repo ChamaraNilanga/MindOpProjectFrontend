@@ -42,7 +42,7 @@ import Addforumsubcomment from './pages/AddForumSubComment/Addforumsubcomment';
 
 
 function App() {
-  const role = 's';
+  const role = 'a';
   const id='194075X';
   // const mod=40;
   return (

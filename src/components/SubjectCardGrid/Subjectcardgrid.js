@@ -16,8 +16,8 @@ function Subjectcard ({courses , role , text}){
                     
                     <Card style={{ width: '12rem' , height:'12rem'}} >
                     <Card.Body>
-                    <Card.Title key={course.modid}>{course.modname}</Card.Title>
-                    <Card.Text className="text" key={course.modid}>
+                    <Card.Title key={course.modid} style={{color:'black'}}>{course.modname}</Card.Title>
+                    <Card.Text className="text" key={course.modid} style={{color:'black'}}>
                     {`${course.descrip.substring(0, 30)}...`}
                     </Card.Text>
                     
